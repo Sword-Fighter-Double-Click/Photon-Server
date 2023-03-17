@@ -71,14 +71,7 @@ public abstract class Fighter : MonoBehaviour
 		fighterAudio = transform.Find("Audio").GetComponent<FighterAudio>();
 		groundSensor = transform.Find("GroundSensor").GetComponent<Sensor>();
 
-		if (fighterNumber == 0)
-		{
-			tag = "Player1";
-		}
-		else if(fighterNumber == 1)
-		{
-			tag = "Player2";
-		}
+		ResetTag();
 	}
 
 	protected virtual void Update()
@@ -117,24 +110,41 @@ public abstract class Fighter : MonoBehaviour
 
 			Fighter enemyFighter = SearchFighterWithinRange(collider);
 
-			if (enemyFighter != null)
+			if (enemyFighter == null) continue;
+
+			if (action == MyConstants.Action.LethalMove)
 			{
 				hitLethalMove = true;
-			}
-			else
-			{
-				hitLethalMove = false;
-				continue;
 			}
 
 			collider.enabled = false;
 
 			GiveDamage(enemyFighter);
 		}
-				
 	}
 
 	#region HandleValue
+
+	public void ResetTag()
+	{
+        if (fighterNumber == 0)
+        {
+            tag = "Player1";
+        }
+        else if (fighterNumber == 1)
+        {
+            tag = "Player2";
+        }
+    }
+
+	public void ResetState()
+	{
+		SetAction(0);
+		foreach (BoxCollider2D boxCollider2D in motionColliders)
+		{
+			boxCollider2D.enabled = false;
+		}
+	}
 
 	private void OnGround()
 	{
@@ -206,6 +216,16 @@ public abstract class Fighter : MonoBehaviour
 	{
 		cantInputTime = value;
 	}
+
+	public void OnInput()
+	{
+		canInput = true;
+	}
+
+	public void OffInput()
+	{
+		canInput = false;
+	}
 	#endregion
 
 	#region HandleHitBox
@@ -250,7 +270,7 @@ public abstract class Fighter : MonoBehaviour
 		if (!isGround) return;
 		if ((action & (MyConstants.Action.Attack | MyConstants.Action.ChargedAttack | MyConstants.Action.JumpAttack | MyConstants.Action.LethalMove)) != 0) return;
 
-		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 0]))
+		if (Input.GetKeyDown(MyConstants.KeySetting.keys[fighterNumber, 0]))
 		{
 			isGround = false;
 			action = MyConstants.Action.Jump;

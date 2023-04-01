@@ -21,11 +21,15 @@ public class Sensor : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
+		if (other.gameObject.layer != 8) return;
+
 		m_ColCount++;
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
+		if (other.gameObject.layer != 8) return;
+
 		m_ColCount--;
 	}
 

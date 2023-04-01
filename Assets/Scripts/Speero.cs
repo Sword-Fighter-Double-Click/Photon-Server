@@ -9,7 +9,7 @@ public class Speero : Fighter
 	[SerializeField] private float jumpAttackRushPower = 30;
 	[SerializeField] private float jumpAttackDownPower = 100;
 
-	private BoxCollider2D playerHitBox;
+	private CapsuleCollider2D playerHitBox;
 
 	private GameObject lethalMoveAnimationClone = null;
 
@@ -19,7 +19,7 @@ public class Speero : Fighter
 	{
 		base.Start();
 
-		playerHitBox = GetComponent<BoxCollider2D>();
+		playerHitBox = GetComponent<CapsuleCollider2D>();
 	}
 
 	protected override void Update()
@@ -38,7 +38,7 @@ public class Speero : Fighter
 				
 				OffLethalMoveScreen();
 				
-				action = MyConstants.Action.None;
+				fighterAction = MyConstants.FighterAction.None;
 			}
 		}
 	}
@@ -96,7 +96,7 @@ public class Speero : Fighter
 		}
 		else
 		{
-			action = MyConstants.Action.None;
+			fighterAction = MyConstants.FighterAction.None;
 		}
 	}
 }

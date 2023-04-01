@@ -1,7 +1,7 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using MyConstants;
 
 public abstract class Fighter : MonoBehaviour
 {
@@ -17,18 +17,19 @@ public abstract class Fighter : MonoBehaviour
 	[SerializeField] private GameObject m_LandingDust;
 
 	[Header("Action")]
-	public MyConstants.Action action;
+	public FighterAction fighterAction;
 
 	[Header("Value")]
 	[Range(0, 1)] public int fighterNumber = 0;
 	public bool canInput = true;
+	public Fighter enemyFighter;
 
 	[Header("Stats")]
 	public float HP = 100;
 	public float FP = 0;
 	[SerializeField] protected float maxSpeed = 4.5f;
 	[SerializeField] protected float jumpForce = 7.5f;
-	[SerializeField] protected float counterDamageRate = 1.2f;
+	[SerializeField] protected float counterDamageRate = 1.2f; // 얘들 나중에 클래스로 만들어서 객체화하기
 	[SerializeField] protected float attackDamage = 6f;
 	[SerializeField] protected float chargedAttackDamage = 12;
 	[SerializeField] protected float jumpAttackDamage = 15;
@@ -63,19 +64,24 @@ public abstract class Fighter : MonoBehaviour
 
 	private GameObject lethalMoveScreenClone;
 
-	protected virtual void Start()
+	private void Awake()
 	{
 		animator = GetComponent<Animator>();
 		rigidbody2d = GetComponent<Rigidbody2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		fighterAudio = transform.Find("Audio").GetComponent<FighterAudio>();
 		groundSensor = transform.Find("GroundSensor").GetComponent<Sensor>();
+	}
 
-		ResetTag();
+	protected virtual void Start()
+	{
+		SettingUI();
 	}
 
 	protected virtual void Update()
 	{
+		print(tag +" : "+ fighterAction);
+
 		HandleCantInputTime(Time.deltaTime);
 
 		Death();
@@ -88,7 +94,7 @@ public abstract class Fighter : MonoBehaviour
 
 		CountCoolTime(Time.deltaTime);
 
-		//HandleUI();
+		HandleUI();
 
 		Jump();
 
@@ -112,7 +118,7 @@ public abstract class Fighter : MonoBehaviour
 
 			if (enemyFighter == null) continue;
 
-			if (action == MyConstants.Action.LethalMove)
+			if (fighterAction == FighterAction.LethalMove)
 			{
 				hitLethalMove = true;
 			}
@@ -125,21 +131,40 @@ public abstract class Fighter : MonoBehaviour
 
 	#region HandleValue
 
-	public void ResetTag()
+	private void SettingUI()
 	{
-        if (fighterNumber == 0)
-        {
-            tag = "Player1";
-        }
-        else if (fighterNumber == 1)
-        {
-            tag = "Player2";
-        }
-    }
+		if (fighterNumber == 0)
+		{
+			GameObject player1UI = GameObject.FindGameObjectWithTag("Player1UI");
+			HPBar = player1UI.transform.Find("HPBar").GetComponent<Image>();
+			FPBar = player1UI.transform.Find("FPBar").GetComponent<Image>();
+		}
+		else if (fighterNumber == 1)
+		{
+			GameObject player2UI = GameObject.FindGameObjectWithTag("Player2UI");
+			HPBar = player2UI.transform.Find("HPBar").GetComponent<Image>();
+			FPBar = player2UI.transform.Find("FPBar").GetComponent<Image>();
+		}
+	}
 
 	public void ResetState()
 	{
+		if (fighterNumber == 0)
+		{
+			tag = "Player1";
+			//spriteRenderer.flipX = false;
+		}
+		else if (fighterNumber == 1)
+		{
+			tag = "Player2";
+			//spriteRenderer.flipX = true;
+		}
+
+		animator.SetInteger("FacingDirection", 0);
+		HP = 100;
+		FP = 0;
 		SetAction(0);
+		animator.SetTrigger("RoundStart");
 		foreach (BoxCollider2D boxCollider2D in motionColliders)
 		{
 			boxCollider2D.enabled = false;
@@ -148,12 +173,13 @@ public abstract class Fighter : MonoBehaviour
 
 	private void OnGround()
 	{
-		if (action == MyConstants.Action.JumpAttack) return;
+		if (fighterAction == FighterAction.JumpAttack) return;
 
 		if (!isGround && groundSensor.State())
 		{
+			//print("Do");
 			isGround = true;
-			action = MyConstants.Action.None;
+			fighterAction = FighterAction.None;
 			animator.SetBool("Grounded", isGround);
 			animator.SetBool("Jump", false);
 		}
@@ -164,7 +190,7 @@ public abstract class Fighter : MonoBehaviour
 		if (isGround && !groundSensor.State())
 		{
 			isGround = false;
-			action = MyConstants.Action.Jump;
+			fighterAction = FighterAction.Jump;
 			animator.SetBool("Grounded", isGround);
 		}
 	}
@@ -188,14 +214,9 @@ public abstract class Fighter : MonoBehaviour
 
 	void SetAction(int value)
 	{
-		if (value <= 0)
-		{
-			action = MyConstants.Action.None;
+		if (value < (int)FighterAction.None && value > (int)FighterAction.LethalMove) return;
 
-			return;
-		}
-
-		action = (MyConstants.Action)(int)Mathf.Pow(2, value - 1);
+		fighterAction = (FighterAction)value;
 	}
 
 	private void HandleCantInputTime(float deltaTime)
@@ -219,12 +240,13 @@ public abstract class Fighter : MonoBehaviour
 
 	public void OnInput()
 	{
-		canInput = true;
+		cantInputTime = 0;
 	}
 
 	public void OffInput()
 	{
-		canInput = false;
+
+		cantInputTime = float.MaxValue;
 	}
 	#endregion
 
@@ -251,29 +273,35 @@ public abstract class Fighter : MonoBehaviour
 	#region Action
 	private void Movement()
 	{
-		if (!canInput) return;
-		if ((action & (MyConstants.Action.Attack | MyConstants.Action.ChargedAttack | MyConstants.Action.JumpAttack | MyConstants.Action.LethalMove)) != 0) return;
+		//print(fighterAction);
+		if (!canInput) return; // 공격하는데 이동합니다...
+		if (fighterAction == FighterAction.None)
+		{
+			//print("Move");
+			bool inputRight = Input.GetKey(KeySetting.keys[fighterNumber, 3]);
+			bool inputLeft = Input.GetKey(KeySetting.keys[fighterNumber, 1]);
 
-		bool inputRight = Input.GetKey(KeySetting.keys[fighterNumber, 3]);
-		bool inputLeft = Input.GetKey(KeySetting.keys[fighterNumber, 1]);
+			int direction = (inputLeft ? -1 : 0) + (inputRight ? 1 : 0);
+			// 여기 상대 플레이어 바라보게 만들기!
+			facingDirection = direction;
+			animator.SetInteger("FacingDirection", facingDirection);
 
-		facingDirection = (inputLeft ? -1 : 0) + (inputRight ? 1 : 0);
-		animator.SetInteger("FacingDirection", facingDirection);
-		transform.eulerAngles = Vector3.up * (inputLeft ? 180 : 0);
+			transform.eulerAngles = (enemyFighter.transform.position.x > transform.position.x ? Vector3.zero : Vector3.up * 180);
 
-		rigidbody2d.velocity = new Vector2(facingDirection * maxSpeed, rigidbody2d.velocity.y);
+			rigidbody2d.velocity = new Vector2(facingDirection * maxSpeed, rigidbody2d.velocity.y);
+		}
 	}
 
 	private void Jump()
 	{
 		if (!canInput) return;
 		if (!isGround) return;
-		if ((action & (MyConstants.Action.Attack | MyConstants.Action.ChargedAttack | MyConstants.Action.JumpAttack | MyConstants.Action.LethalMove)) != 0) return;
+		if (fighterAction != FighterAction.None) return;
 
-		if (Input.GetKeyDown(MyConstants.KeySetting.keys[fighterNumber, 0]))
+		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 0]))
 		{
 			isGround = false;
-			action = MyConstants.Action.Jump;
+			fighterAction = FighterAction.Jump;
 			animator.SetBool("Grounded", isGround);
 			animator.SetBool("Jump", true);
 			rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
@@ -285,17 +313,18 @@ public abstract class Fighter : MonoBehaviour
 	{
 		if (!canInput) return;
 		if (!isGround) return;
-		if (action == MyConstants.Action.Jump) return;
+        if (fighterAction != FighterAction.None) return;
 
-		if (Input.GetKey(KeySetting.keys[fighterNumber, 2]))
+        if (Input.GetKey(KeySetting.keys[fighterNumber, 2]))
 		{
-			action = MyConstants.Action.Guard;
+			fighterAction = FighterAction.Guard;
 
-			animator.CrossFade("Guard", 0.2f);
+			animator.CrossFade("Guard", 0f);
 		}
 		else if (Input.GetKeyUp(KeySetting.keys[fighterNumber, 2]))
 		{
-			action = MyConstants.Action.None;
+			fighterAction = FighterAction.None;
+			animator.SetTrigger("UnGuard");
 		}
 	}
 
@@ -303,11 +332,12 @@ public abstract class Fighter : MonoBehaviour
 	{
 		if (!canInput) return;
 		if (!isGround) return;
-		if (action != MyConstants.Action.None) return;
+        if (fighterAction != FighterAction.None) return;
 
-		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 4]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 4]))
 		{
-			action = MyConstants.Action.Attack;
+			fighterAction = FighterAction.Attack;
+			//print(fighterAction);
 
 			animator.CrossFade("Attack", 0);
 		}
@@ -317,12 +347,12 @@ public abstract class Fighter : MonoBehaviour
 	{
 		if (!canInput) return;
 		if (!isGround) return;
-		if (action != MyConstants.Action.None) return;
-		if (countChargedAttack > 0) return;
+        if (fighterAction != FighterAction.None) return;
+        if (countChargedAttack > 0) return;
 
 		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 5]))
 		{
-			action = MyConstants.Action.ChargedAttack;
+			fighterAction = FighterAction.ChargedAttack;
 
 			animator.CrossFade("ChargedAttack", 0);
 
@@ -334,12 +364,12 @@ public abstract class Fighter : MonoBehaviour
 	{
 		if (!canInput) return;
 		if (isGround) return;
-		if (action != MyConstants.Action.Jump) return;
-		if (countJumpAttack > 0) return;
+        if (fighterAction != FighterAction.Jump) return;
+        if (countJumpAttack > 0) return;
 
 		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 4]))
 		{
-			action = MyConstants.Action.JumpAttack;
+			fighterAction = FighterAction.JumpAttack;
 
 			animator.CrossFade("JumpAttack", 0);
 
@@ -351,11 +381,11 @@ public abstract class Fighter : MonoBehaviour
 	{
 		if (!canInput) return;
 		if (!isGround) return;
-		if (action != MyConstants.Action.None) return;
+        if (fighterAction != FighterAction.None) return;
 
-		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 6]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 6]))
 		{
-			action = MyConstants.Action.LethalMove;
+			fighterAction = FighterAction.LethalMove;
 
 			animator.CrossFade("LethalMove", 0);
 		}
@@ -394,7 +424,7 @@ public abstract class Fighter : MonoBehaviour
 	{
 		if (dust != null)
 		{
-			Vector3 dustSpawnPosition = transform.position + new Vector3(dustXOffset * facingDirection, 0.0f, 0.0f);
+			Vector3 dustSpawnPosition = transform.position + new Vector3(dustXOffset * facingDirection, 0f, 0f);
 			GameObject newDust = Instantiate(dust, dustSpawnPosition, Quaternion.identity);
 			newDust.transform.localScale = newDust.transform.localScale.x * new Vector3(facingDirection, 1, 1);
 		}
@@ -462,38 +492,39 @@ public abstract class Fighter : MonoBehaviour
 
 		float damage = 0;
 
-		int count;
+		//int count;
 
-		for (count = 0; count < absorptionRates.Length; count++)
-		{
-			if (action != (MyConstants.Action)(4 * Mathf.Pow(2, count))) continue;
+		//for (count = 0; count < absorptionRates.Length; count++)
+		//{
+		//	if (!fighterAction.Equals((FighterAction)count)) continue;
+			
+			damage += damages[(int)fighterAction-4];
 
-			damage += damages[count];
-
-			if (enemyFighter.action == MyConstants.Action.Guard)
+			if (enemyFighter.fighterAction == FighterAction.Guard)
 			{
-				damage *= absorptionRates[count];
+				SetAction(0);
+
+				damage = damages[(int)fighterAction - 4] - damage * absorptionRates[(int)fighterAction - 4];
 
 				isGuard = true;
 
 				cantInputTime = 1.5f;
 			}
-
-			if ((enemyFighter.action & (MyConstants.Action.None | MyConstants.Action.Hit | MyConstants.Action.Guard)) == 0)
+			else if (!(enemyFighter.fighterAction == FighterAction.None || enemyFighter.fighterAction == FighterAction.Hit))
 			{
-				damage *= counterDamageRate;
-			}
+                damage *= counterDamageRate;
+            }
 
-			break;
-		}
+			//break;
+		//}
 
 		float lethalMoveCantInputTime = 0;
 
-		if (count + 1 == absorptionRates.Length)
+		if (fighterAction.Equals(FighterAction.LethalMove))
 		{
 			lethalMoveCantInputTime = lethalMove.length + 0.5f;
 		}
-
+		
 		enemyFighter.HP -= damage;
 		enemyFighter.Hit(isGuard, transform.rotation.y, lethalMoveCantInputTime);
 	}

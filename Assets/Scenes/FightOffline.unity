@@ -806,7 +806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965192218}
   - component: {fileID: 965192216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 1125894866}
   m_Layer: 5
   m_Name: Player2UI
-  m_TagString: Untagged
+  m_TagString: Player2UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1430,7 +1430,7 @@ GameObject:
   - component: {fileID: 1523970815}
   m_Layer: 5
   m_Name: Player1UI
-  m_TagString: Untagged
+  m_TagString: Player1UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

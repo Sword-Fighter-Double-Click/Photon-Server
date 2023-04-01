@@ -2,16 +2,16 @@ using UnityEngine;
 
 namespace MyConstants
 {
-	public enum Action
+	public enum FighterAction
 	{
 		None = 0,
 		Hit = 1,
 		Jump = 2,
-		Guard = 4,
-		Attack = 8,
-		ChargedAttack = 16,
-		JumpAttack = 32,
-		LethalMove = 64
+		Guard = 3,
+		Attack = 4,
+		ChargedAttack = 5,
+		JumpAttack = 6,
+		LethalMove = 7
 	};
 
 	public class KeySetting

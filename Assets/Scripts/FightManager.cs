@@ -48,7 +48,6 @@ public class FightManager : MonoBehaviour
 				break;
 		}
 		player1.fighterNumber = 0;
-		player1.ResetTag();
 
         switch (player2CharacterNumber)
         {
@@ -60,7 +59,9 @@ public class FightManager : MonoBehaviour
                 break;
         }
 		player2.fighterNumber = 1;
-		player2.ResetTag();
+
+		player1.enemyFighter = player2;
+		player2.enemyFighter = player1;
 
         StartCoroutine(NewRound());
 	}
@@ -75,18 +76,12 @@ public class FightManager : MonoBehaviour
 		if (countRoundTime <= 0)
 		{
 			countRoundTime = 0;
-			if (handleTimesUp == null)
-			{
-				handleTimesUp = StartCoroutine(HandleTimesUp());
-			}
+			handleTimesUp ??= StartCoroutine(HandleTimesUp());
 		}
 
 		if (player1.HP < 0 || player2.HP < 0)
 		{
-			if (handlePlayerDeath == null)
-			{
-				handlePlayerDeath = StartCoroutine(HandlePlayerDeath());
-			}
+			handlePlayerDeath ??= StartCoroutine(HandlePlayerDeath());
 		}
 	}
 
@@ -108,12 +103,13 @@ public class FightManager : MonoBehaviour
 		countRoundTime = roundTime;
 
 		player1.transform.position = new Vector2(-6, 0);
+		player1.transform.eulerAngles = Vector3.zero;
 		player2.transform.position = new Vector2(6, 0);
-		player2.transform.eulerAngles = Vector3.up * -180;
+		player2.transform.eulerAngles = Vector3.up * 180;
 
 		countDown.gameObject.SetActive(true);
 
-		int count = countDownImages.Length - 1;
+		int count;
 		for (count = countDownImages.Length - 1; count > 0; count--)
 		{
 			countDown.sprite = countDownImages[count];

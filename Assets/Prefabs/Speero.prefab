@@ -494,7 +494,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 8629306368231908772}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b1868b03fd9fcb24abd230c9f8a66bb0, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_RunStopDust: {fileID: 7310271610845027193, guid: 39afca3c109b26049a80bc07593eb271, type: 3}
   m_JumpDust: {fileID: 8935918012585647707, guid: 4a4123fbc8b39d441868897a71d2b2b1, type: 3}
   m_LandingDust: {fileID: 9076098953984712191, guid: 0b745be9abb3a6d4dadd8705950196d1, type: 3}
-  action: 0
+  fighterAction: 0
   fighterNumber: 0
   canInput: 1
   enemyFighter: {fileID: 0}

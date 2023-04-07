@@ -80,7 +80,7 @@ public abstract class Fighter : MonoBehaviour
 
 	protected virtual void Update()
 	{
-		print(tag +" : "+ fighterAction);
+		//print(tag +" : "+ fighterAction);
 
 		HandleCantInputTime(Time.deltaTime);
 
@@ -88,7 +88,7 @@ public abstract class Fighter : MonoBehaviour
 
 		OnGround();
 
-		IsFalling();
+		//IsFalling();
 
 		SetAirspeed();
 
@@ -138,13 +138,15 @@ public abstract class Fighter : MonoBehaviour
 			GameObject player1UI = GameObject.FindGameObjectWithTag("Player1UI");
 			HPBar = player1UI.transform.Find("HPBar").GetComponent<Image>();
 			FPBar = player1UI.transform.Find("FPBar").GetComponent<Image>();
+			rigidbody2d.sharedMaterial = GameObject.Find("Fighter1PhysicsMaterial").GetComponent<Rigidbody2D>().sharedMaterial;
 		}
 		else if (fighterNumber == 1)
 		{
 			GameObject player2UI = GameObject.FindGameObjectWithTag("Player2UI");
 			HPBar = player2UI.transform.Find("HPBar").GetComponent<Image>();
 			FPBar = player2UI.transform.Find("FPBar").GetComponent<Image>();
-		}
+            rigidbody2d.sharedMaterial = GameObject.Find("Fighter2PhysicsMaterial").GetComponent<Rigidbody2D>().sharedMaterial;
+        }
 	}
 
 	public void ResetState()
@@ -177,7 +179,7 @@ public abstract class Fighter : MonoBehaviour
 
 		if (!isGround && groundSensor.State())
 		{
-			//print("Do");
+			rigidbody2d.sharedMaterial.friction = 10;
 			isGround = true;
 			fighterAction = FighterAction.None;
 			animator.SetBool("Grounded", isGround);
@@ -185,15 +187,16 @@ public abstract class Fighter : MonoBehaviour
 		}
 	}
 
-	private void IsFalling()
-	{
-		if (isGround && !groundSensor.State())
-		{
-			isGround = false;
-			fighterAction = FighterAction.Jump;
-			animator.SetBool("Grounded", isGround);
-		}
-	}
+	//private void IsFalling()
+	//{
+	//	if (isGround && !groundSensor.State())
+	//	{
+ //           //rigidbody2d.sharedMaterial.friction = 0;
+ //           isGround = false;
+	//		fighterAction = FighterAction.Jump;
+	//		animator.SetBool("Grounded", isGround);
+	//	}
+	//}
 
 	private void SetAirspeed()
 	{
@@ -245,7 +248,6 @@ public abstract class Fighter : MonoBehaviour
 
 	public void OffInput()
 	{
-
 		cantInputTime = float.MaxValue;
 	}
 	#endregion
@@ -275,21 +277,19 @@ public abstract class Fighter : MonoBehaviour
 	{
 		//print(fighterAction);
 		if (!canInput) return; // 공격하는데 이동합니다...
-		if (fighterAction == FighterAction.None)
-		{
-			//print("Move");
-			bool inputRight = Input.GetKey(KeySetting.keys[fighterNumber, 3]);
-			bool inputLeft = Input.GetKey(KeySetting.keys[fighterNumber, 1]);
+		if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Jump)) return;
+		//print("Move");
+		bool inputRight = Input.GetKey(KeySetting.keys[fighterNumber, 3]);
+		bool inputLeft = Input.GetKey(KeySetting.keys[fighterNumber, 1]);
 
-			int direction = (inputLeft ? -1 : 0) + (inputRight ? 1 : 0);
-			// 여기 상대 플레이어 바라보게 만들기!
-			facingDirection = direction;
-			animator.SetInteger("FacingDirection", facingDirection);
+		int direction = (inputLeft ? -1 : 0) + (inputRight ? 1 : 0);
+		// 여기 상대 플레이어 바라보게 만들기!
+		facingDirection = direction;
+		animator.SetInteger("FacingDirection", facingDirection);
 
-			transform.eulerAngles = (enemyFighter.transform.position.x > transform.position.x ? Vector3.zero : Vector3.up * 180);
+		transform.eulerAngles = (enemyFighter.transform.position.x > transform.position.x ? Vector3.zero : Vector3.up * 180);
 
-			rigidbody2d.velocity = new Vector2(facingDirection * maxSpeed, rigidbody2d.velocity.y);
-		}
+		rigidbody2d.velocity = new Vector2(facingDirection * maxSpeed, rigidbody2d.velocity.y);
 	}
 
 	private void Jump()
@@ -300,7 +300,8 @@ public abstract class Fighter : MonoBehaviour
 
 		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 0]))
 		{
-			isGround = false;
+			rigidbody2d.sharedMaterial.friction = 0;
+            isGround = false;
 			fighterAction = FighterAction.Jump;
 			animator.SetBool("Grounded", isGround);
 			animator.SetBool("Jump", true);
@@ -313,7 +314,7 @@ public abstract class Fighter : MonoBehaviour
 	{
 		if (!canInput) return;
 		if (!isGround) return;
-        if (fighterAction != FighterAction.None) return;
+        if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Guard)) return;
 
         if (Input.GetKey(KeySetting.keys[fighterNumber, 2]))
 		{
@@ -497,7 +498,7 @@ public abstract class Fighter : MonoBehaviour
 		//for (count = 0; count < absorptionRates.Length; count++)
 		//{
 		//	if (!fighterAction.Equals((FighterAction)count)) continue;
-			
+		print((int)fighterAction - 4);
 			damage += damages[(int)fighterAction-4];
 
 			if (enemyFighter.fighterAction == FighterAction.Guard)
@@ -520,7 +521,7 @@ public abstract class Fighter : MonoBehaviour
 
 		float lethalMoveCantInputTime = 0;
 
-		if (fighterAction.Equals(FighterAction.LethalMove))
+		if (fighterAction == FighterAction.LethalMove)
 		{
 			lethalMoveCantInputTime = lethalMove.length + 0.5f;
 		}

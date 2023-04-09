@@ -32,9 +32,9 @@ public class FightManager : MonoBehaviour
 
 	private bool roundStart = false;
 
-	private Coroutine handlePlayerDeath;
+	private Coroutine handlePlayerDeath = null;
 
-	private Coroutine handleTimesUp;
+	private Coroutine handleTimesUp = null;
 
     void Start()
 	{
@@ -76,12 +76,18 @@ public class FightManager : MonoBehaviour
 		if (countRoundTime <= 0)
 		{
 			countRoundTime = 0;
-			handleTimesUp ??= StartCoroutine(HandleTimesUp());
+			if (handleTimesUp == null)
+			{
+				handleTimesUp = StartCoroutine(HandleTimesUp());
+			}
 		}
 
 		if (player1.HP < 0 || player2.HP < 0)
 		{
-			handlePlayerDeath ??= StartCoroutine(HandlePlayerDeath());
+			if (handlePlayerDeath == null)
+			{
+				handlePlayerDeath = StartCoroutine(HandlePlayerDeath());
+			}
 		}
 	}
 
@@ -121,6 +127,7 @@ public class FightManager : MonoBehaviour
 		yield return new WaitForSeconds(1);
 		countDown.gameObject.SetActive(false);
 
+		handleTimesUp = null;
 		handlePlayerDeath = null;
 
 		roundStart = true;

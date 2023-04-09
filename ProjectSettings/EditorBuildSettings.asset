@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleOffline.unity
+    path: Assets/Scenes/Title.unity
     guid: 73453b15b6fd2804388d026eca15729f
   - enabled: 1
-    path: Assets/Scenes/FightOffline.unity
+    path: Assets/Scenes/Fight.unity
     guid: c24ed77d8f1b59a4ea17bccc06a56278
   m_configObjects: {}

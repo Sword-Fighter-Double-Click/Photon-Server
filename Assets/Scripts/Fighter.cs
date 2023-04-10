@@ -485,6 +485,10 @@ public abstract class Fighter : MonoBehaviour
 
 		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 6]))
 		{
+			if (FP < 100) return;
+			
+			FP = 0;
+			
 			fighterAction = FighterAction.LethalMove;
 
 			animator.CrossFade("LethalMove", 0);
@@ -668,6 +672,9 @@ public abstract class Fighter : MonoBehaviour
 
 		enemyFighter.HP -= damage;
 		enemyFighter.Hit(isGuard, transform.rotation.y, lethalMoveCantInputTime);
+
+		FP = Mathf.Clamp(FP + 10, 0, 100);
+		enemyFighter.FP = Mathf.Clamp(enemyFighter.FP + 5, 0, 100);
 	}
 	#endregion
 }

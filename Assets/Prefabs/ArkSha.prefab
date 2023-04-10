@@ -449,8 +449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPBar: {fileID: 0}
   FPBar: {fileID: 0}
-  lethalMoveScreen: {fileID: 0}
-  lethalMove: {fileID: 0}
+  lethalMoveScreen: {fileID: 7884028361994667446, guid: 28d34e61738e39649baeb9458ee085a0, type: 3}
+  lethalMove: {fileID: 7400000, guid: 7f96d8d6b9d4c5848a7a54180528df57, type: 2}
   motionColliders:
   - {fileID: 6030342681388329083}
   - {fileID: 7049087932641651359}

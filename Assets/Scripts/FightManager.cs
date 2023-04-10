@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class FightManager : MonoBehaviour
 {
 	public static int player1CharacterNumber;
-	public static int player2CharacterNumber;
+	public static int player2CharacterNumber = 1;
 
 	[Header("Caching")]
 	[SerializeField] private GameObject speero;

@@ -541,8 +541,8 @@ public abstract class Fighter : MonoBehaviour
 	}
 	#endregion
 
-	// 에셋 먼지 효과 함수
 	#region Action Effect
+	// 에셋 먼지 효과 함수
 	private void SpawnDustEffect(GameObject dust, float dustXOffset = 0)
 	{
 		if (dust != null)
@@ -577,6 +577,9 @@ public abstract class Fighter : MonoBehaviour
 		SpawnDustEffect(m_LandingDust);
 	}
 
+	/// <summary>
+	/// 궁극기 이미지 활성화
+	/// </summary>
 	protected void OnLethalMoveScreen()
 	{
 		lethalMoveScreenClone = Instantiate(lethalMoveScreen);
@@ -584,6 +587,9 @@ public abstract class Fighter : MonoBehaviour
 		lethalMoveScreenClone.SetActive(true);
 	}
 
+	/// <summary>
+	/// 궁극기 이미지 비활성화
+	/// </summary>
 	protected void OffLethalMoveScreen()
 	{
 		Destroy(lethalMoveScreenClone);

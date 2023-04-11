@@ -6,7 +6,7 @@
 
 <h4>게임 시연</h4>
 
-<A href=""> 게임 시연 영상 </A><br>
+<A href="https://youtu.be/lCd6Kfqe1H8"> 게임 시연 영상 </A><br>
 
 <hr class='hr-solid'/>
 

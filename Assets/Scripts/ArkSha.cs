@@ -41,7 +41,7 @@ public class ArkSha : Fighter
 
 		if (countStayJumpAttack > 0)
 		{
-			if (Input.GetKeyUp(MyConstants.KeySetting.keys[fighterNumber, 4]))
+			if (Input.GetKeyUp(KeySetting.keys[fighterNumber, 4]))
 			{
 				TryJumpAttack();
 			}
@@ -97,7 +97,7 @@ public class ArkSha : Fighter
 	/// <param name="path"></param>
 	void MoveDuringJumpAttack(int path)
 	{
-		rigidbody2d.AddForce(path > 0 ? Vector2.up * jumpAttackUpPower : Vector2.down * jumpAttackDownPower, ForceMode2D.Impulse);
+		rigidBody.AddForce(path > 0 ? Vector2.up * jumpAttackUpPower : Vector2.down * jumpAttackDownPower, ForceMode.Impulse);
 	}
 
 	/// <summary>

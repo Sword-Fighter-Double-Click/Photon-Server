@@ -1,11 +1,22 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using MyConstants;
 
 public abstract class Fighter : MonoBehaviour
 {
-	[Header("Caching")]
+    public enum FighterAction
+    {
+        None = 0,
+        Hit = 1,
+        Jump = 2,
+        Guard = 3,
+        Attack = 4,
+        ChargedAttack = 5,
+        JumpAttack = 6,
+        LethalMove = 7
+    };
+
+    [Header("Caching")]
 	[SerializeField] private Image HPBar;
 	[SerializeField] private Image FPBar;
 	[SerializeField] private GameObject lethalMoveScreen;
@@ -55,10 +66,10 @@ public abstract class Fighter : MonoBehaviour
 	[SerializeField] protected float guardKnockBackPower = 5;
 
 	protected Animator animator;
-	protected Rigidbody2D rigidbody2d;
+	protected Rigidbody rigidBody;
 	protected SpriteRenderer spriteRenderer;
 	private Sensor groundSensor;
-	private FighterAudio fighterAudio;
+	//private FighterAudio fighterAudio;
 
 	/// <summary>
 	/// 그라운드 체크 변수
@@ -85,11 +96,11 @@ public abstract class Fighter : MonoBehaviour
 
 	private void Awake()
 	{
-		animator = GetComponent<Animator>();
-		rigidbody2d = GetComponent<Rigidbody2D>();
-		spriteRenderer = GetComponent<SpriteRenderer>();
-		fighterAudio = transform.Find("Audio").GetComponent<FighterAudio>();
-		groundSensor = transform.Find("GroundSensor").GetComponent<Sensor>();
+		animator = GetComponentInChildren<Animator>();
+		rigidBody = GetComponent<Rigidbody>();
+		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+		//fighterAudio = transform.Find("Audio").GetComponent<FighterAudio>();
+		groundSensor = GetComponentInChildren<Sensor>();
 	}
 
 	// 자식 클래스에서도 쓸 수 있도록 추상화
@@ -132,9 +143,7 @@ public abstract class Fighter : MonoBehaviour
 		{
 			if (!collider.enabled) continue;
 
-			Fighter enemyFighter = SearchFighterWithinRange(collider);
-
-			if (enemyFighter == null) continue;
+			if (!SearchFighterWithinRange(collider)) continue;
 
 			// 적이 맞았다면
 
@@ -162,14 +171,14 @@ public abstract class Fighter : MonoBehaviour
 			GameObject player1UI = GameObject.FindGameObjectWithTag("Player1UI");
 			HPBar = player1UI.transform.Find("HPBar").GetComponent<Image>();
 			FPBar = player1UI.transform.Find("FPBar").GetComponent<Image>();
-			rigidbody2d.sharedMaterial = GameObject.Find("Fighter1PhysicsMaterial").GetComponent<Rigidbody2D>().sharedMaterial;
+			//rigidBody.sharedMaterial = GameObject.Find("Fighter1PhysicsMaterial").GetComponent<Rigidbody2D>().sharedMaterial;
 		}
 		else if (fighterNumber == 1)
 		{
 			GameObject player2UI = GameObject.FindGameObjectWithTag("Player2UI");
 			HPBar = player2UI.transform.Find("HPBar").GetComponent<Image>();
 			FPBar = player2UI.transform.Find("FPBar").GetComponent<Image>();
-			rigidbody2d.sharedMaterial = GameObject.Find("Fighter2PhysicsMaterial").GetComponent<Rigidbody2D>().sharedMaterial;
+			//rigidBody.sharedMaterial = GameObject.Find("Fighter2PhysicsMaterial").GetComponent<Rigidbody2D>().sharedMaterial;
 		}
 	}
 
@@ -214,7 +223,7 @@ public abstract class Fighter : MonoBehaviour
 		if (!isGround && groundSensor.State())
 		{
 			// 마찰력 10으로 설정
-			rigidbody2d.sharedMaterial.friction = 10;
+			//rigidBody.sharedMaterial.friction = 10;
 			isGround = true;
 			fighterAction = FighterAction.None;
 			animator.SetBool("Grounded", isGround);
@@ -228,7 +237,7 @@ public abstract class Fighter : MonoBehaviour
 	private void SetAirspeed()
 	{
 		// airSpeedY가 0 이하가 되면 낙하 애니메이션 출력
-		animator.SetFloat("AirSpeedY", rigidbody2d.velocity.y);
+		animator.SetFloat("AirSpeedY", rigidBody.velocity.y);
 	}
 
 	/// <summary>
@@ -359,7 +368,7 @@ public abstract class Fighter : MonoBehaviour
 		transform.eulerAngles = (enemyFighter.transform.position.x > transform.position.x ? Vector3.zero : Vector3.up * 180);
 		
 		// 이동
-		rigidbody2d.velocity = new Vector2(facingDirection * maxSpeed, rigidbody2d.velocity.y);
+		rigidBody.velocity = new Vector2(facingDirection * maxSpeed, rigidBody.velocity.y);
 	}
 
 	/// <summary>
@@ -375,14 +384,14 @@ public abstract class Fighter : MonoBehaviour
 		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 0]))
 		{
 			// 벽끼임 방지를 위해 마찰력 0으로 설정
-			rigidbody2d.sharedMaterial.friction = 0;
+			//rigidBody.sharedMaterial.friction = 0;
 			isGround = false;
 			fighterAction = FighterAction.Jump;
 			animator.SetBool("Grounded", isGround);
 			// 애니메이션 출력
 			animator.SetBool("Jump", true);
 			// 점프
-			rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
+			rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
 			groundSensor.Disable(0.2f);
 		}
 	}
@@ -512,7 +521,7 @@ public abstract class Fighter : MonoBehaviour
 			// 입력 불가 시간 설정
 			cantInputTime = lethalMoveCantInputTime > 0 ? lethalMoveCantInputTime : 0.1f;
 			// 넉백
-			rigidbody2d.AddForce(knockBackPath * guardKnockBackPower, ForceMode2D.Impulse);
+			rigidBody.AddForce(knockBackPath * guardKnockBackPower, ForceMode.Impulse);
 		}
 		else
 		{
@@ -525,7 +534,7 @@ public abstract class Fighter : MonoBehaviour
 			// 입력 불가 시간 설정
 			cantInputTime = lethalMoveCantInputTime > 0 ? lethalMoveCantInputTime : 0.3f;
 			// 넉백
-			rigidbody2d.AddForce(knockBackPath * hitKnockBackPower, ForceMode2D.Impulse);
+			rigidBody.AddForce(knockBackPath * hitKnockBackPower, ForceMode.Impulse);
 		}
 	}
 
@@ -540,6 +549,7 @@ public abstract class Fighter : MonoBehaviour
 			if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
 			{
 				animator.CrossFade("Death", 0);
+				OffInput();
 			}
 		}
 	}
@@ -557,29 +567,29 @@ public abstract class Fighter : MonoBehaviour
 		}
 	}
 
-	void AE_runStop()
-	{
-		fighterAudio.PlaySound("RunStop");
-		float dustXOffset = 0.6f;
-		SpawnDustEffect(m_RunStopDust, dustXOffset);
-	}
+	//void AE_runStop()
+	//{
+	//	fighterAudio.PlaySound("RunStop");
+	//	float dustXOffset = 0.6f;
+	//	SpawnDustEffect(m_RunStopDust, dustXOffset);
+	//}
 
-	void AE_footstep()
-	{
-		fighterAudio.PlaySound("Footstep");
-	}
+	//void AE_footstep()
+	//{
+	//	fighterAudio.PlaySound("Footstep");
+	//}
 
-	void AE_Jump()
-	{
-		fighterAudio.PlaySound("Jump");
-		SpawnDustEffect(m_JumpDust);
-	}
+	//void AE_Jump()
+	//{
+	//	fighterAudio.PlaySound("Jump");
+	//	SpawnDustEffect(m_JumpDust);
+	//}
 
-	void AE_Landing()
-	{
-		fighterAudio.PlaySound("Landing");
-		SpawnDustEffect(m_LandingDust);
-	}
+	//void AE_Landing()
+	//{
+	//	fighterAudio.PlaySound("Landing");
+	//	SpawnDustEffect(m_LandingDust);
+	//}
 
 	/// <summary>
 	/// 궁극기 이미지 활성화
@@ -606,22 +616,21 @@ public abstract class Fighter : MonoBehaviour
 	/// </summary>
 	/// <param name="searchRange"></param>
 	/// <returns></returns>
-	private Fighter SearchFighterWithinRange(Collider2D searchRange)
+	private bool SearchFighterWithinRange(Collider2D searchRange)
 	{
 		// BoxCast로 공격판정 생성
 		RaycastHit2D[] raycastHits = Physics2D.BoxCastAll(searchRange.bounds.center, searchRange.bounds.size, 0f, transform.rotation.y == 0 ? Vector2.right : Vector2.left, 0.01f, LayerMask.GetMask("Player"));
 
 		foreach (RaycastHit2D raycastHit in raycastHits)
 		{
-			// 태그가 같으면, 즉 나 자신이면 다음 코드를 실행하지 않음
-			if (CompareTag(raycastHit.collider.tag)) continue;
-
-			// 공격판정에 들어온 적 플레이어 데이터 반환
-			return raycastHit.collider.GetComponent<Fighter>();
+			if (raycastHit.collider.GetComponent<Fighter>() == enemyFighter)
+			{
+				return true;
+			}
 		}
 
 		// 찾지 못하면 null 반환
-		return null;
+		return false;
 	}
 
 	/// <summary>

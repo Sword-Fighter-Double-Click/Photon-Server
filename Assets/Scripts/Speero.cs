@@ -46,7 +46,7 @@ public class Speero : Fighter
 				OffLethalMoveScreen();
 				
 				// IDLE 상태로 초기화
-				fighterAction = MyConstants.FighterAction.None;
+				fighterAction = FighterAction.None;
 			}
 		}
 	}
@@ -91,7 +91,7 @@ public class Speero : Fighter
 	/// </summary>
 	void MoveDuringJumpAttack()
 	{
-		rigidbody2d.AddForce(Vector2.down * jumpAttackDownPower + (transform.rotation.y == 0 ? 1 : -1) * jumpAttackRushPower * Vector2.right, ForceMode2D.Impulse);
+		rigidBody.AddForce(Vector2.down * jumpAttackDownPower + (transform.rotation.y == 0 ? 1 : -1) * jumpAttackRushPower * Vector2.right, ForceMode.Impulse);
 	}
 
 	/// <summary>
@@ -127,7 +127,7 @@ public class Speero : Fighter
 		else
 		{
 			// IDLE 상태로 초기화
-			fighterAction = MyConstants.FighterAction.None;
+			fighterAction = FighterAction.None;
 		}
 	}
 }

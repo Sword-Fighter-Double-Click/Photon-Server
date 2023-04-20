@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Speero_IDLE
+  m_Name: Speero_Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -9223143712700854799, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
+      value: {fileID: -534791972, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
     - time: 0.083333336
-      value: {fileID: -8964868498340182493, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
+      value: {fileID: -1269293795, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
     - time: 0.16666667
-      value: {fileID: 4243077915946762814, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
+      value: {fileID: 1428301829, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
     - time: 0.25
-      value: {fileID: -4693299238982508404, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
+      value: {fileID: -760771796, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -9223143712700854799, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
-    - {fileID: -8964868498340182493, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
-    - {fileID: 4243077915946762814, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
-    - {fileID: -4693299238982508404, guid: ce55f9e9d8f90624296e0122aa7e6f74, type: 3}
+    - {fileID: -534791972, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
+    - {fileID: -1269293795, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
+    - {fileID: 1428301829, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
+    - {fileID: -760771796, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

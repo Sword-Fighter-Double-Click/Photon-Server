@@ -218,8 +218,6 @@ public abstract class Fighter : MonoBehaviour
 	/// </summary>
 	private void OnGround()
 	{
-		if (fighterAction == FighterAction.JumpAttack) return;
-
 		if (!isGround && groundSensor.State())
 		{
 			// 마찰력 10으로 설정
@@ -368,7 +366,7 @@ public abstract class Fighter : MonoBehaviour
 		transform.eulerAngles = (enemyFighter.transform.position.x > transform.position.x ? Vector3.zero : Vector3.up * 180);
 		
 		// 이동
-		rigidBody.velocity = new Vector2(facingDirection * maxSpeed, rigidBody.velocity.y);
+		rigidBody.velocity = new Vector3(facingDirection * maxSpeed, rigidBody.velocity.y);
 	}
 
 	/// <summary>

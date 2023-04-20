@@ -108,9 +108,9 @@ public class FightManager : MonoBehaviour
 
 		countRoundTime = roundTime;
 
-		player1.transform.position = new Vector2(-6, 0);
+		player1.transform.position = new Vector3(-6, 0, 3);
 		player1.transform.eulerAngles = Vector3.zero;
-		player2.transform.position = new Vector2(6, 0);
+		player2.transform.position = new Vector3(6, 0, 3);
 		player2.transform.eulerAngles = Vector3.up * 180;
 
 		countDown.gameObject.SetActive(true);

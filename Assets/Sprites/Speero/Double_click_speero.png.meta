@@ -1,0 +1,2368 @@
+fileFormatVersion: 2
+guid: 943b76abc3549664fb3a45ea53adc5ea
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Double_click_speero_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e6535120ba5724d9f2357629186902
+      internalID: -534791972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da773e663d2d694c905c6a4cfcf68ef
+      internalID: -1269293795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8b44ef6e1cee04b99933c82144ffd0
+      internalID: 1428301829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df85495fd57dee40a21dc9de1adaaef
+      internalID: -760771796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_4
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d66e788137a5b6458e50c0bdb4a1804
+      internalID: 156781651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_5
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bc10e5215235a4ab93f0968766cdd3
+      internalID: -1881730273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_6
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef5b36a91e6bc54abb995e20a238ee2
+      internalID: -432481702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_7
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5bce82b1fc72324b9679fa9d0d53bfc
+      internalID: 1392408986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_8
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aacb4a1aff8c8a4bb5be09af6b7b82a
+      internalID: 1453519206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_9
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1200
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd21c098b426bd4a9321354eabd45dd
+      internalID: 2036995365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285e31c7812b1b2489bd2c4127a1b7c5
+      internalID: -820261016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_11
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170aaa09110c574498456d206a2de2f1
+      internalID: -873816809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_12
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18fd1087bd5fa847b800862fec3dd02
+      internalID: -2060677075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_13
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7ed444a481fb545bc9293a9335b0aa
+      internalID: 1802254496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_14
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1082
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e49eb0356828bf4cb70dae0193a5b97
+      internalID: -1498481568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_15
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bde183ce646c44c9e3c26642255c69
+      internalID: 861184076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_16
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b1ad52ce25a7043a914a4efffaff99
+      internalID: -1942543110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_17
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf239ade3c268d4fae74ded53d4a24e
+      internalID: 1256948144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_18
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdfb18e0e1fcd444bd56b825c494dc7
+      internalID: -814980133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_19
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1080
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9b947317faffd4ead7fb198012312c
+      internalID: -1582018370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa3844e226110d45944c43ece1d4a1a
+      internalID: -902127812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_21
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679944ee88512d34f946e4ff8e196442
+      internalID: 1591054213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_22
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f82c193d2676ce47b1e1727e2cded91
+      internalID: -512442272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_23
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0509fd54ce63d54b8e2f79f570463bc
+      internalID: -882437448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_24
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52df25bea824b3442afc4f9659623bbd
+      internalID: -1533054340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_25
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 1, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271370707d577094184dc8897d64bcf2
+      internalID: -332354353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_26
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e952c158f0c4dd48bf01608013dfd63
+      internalID: 1237055544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_27
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11444e1966afcf45a1f3ade1807aa07
+      internalID: 1963967402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_28
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3c60018549a4f4ba6491eebe0aab44
+      internalID: -1543609562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_29
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 960
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac1c8d31d41ff543a78d8335182c91a
+      internalID: 1621024256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07327e0e424b04748b1bdc2c16a056af
+      internalID: -1866142867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_31
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db6e998323870942b7b8eb273343ffc
+      internalID: 1836409779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_32
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac6fcd3262e7bd4d963bec16bf4e1f3
+      internalID: 1275513008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_33
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79fc575d883fcd4499e7d40ee718d95
+      internalID: 2078996584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_34
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b03328a56e604045b2f449d4c588891
+      internalID: -69815974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_35
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e0a24e92b2e9044b6bdca7e6a69014
+      internalID: 1319605451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_36
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bca6081efa7b4949824cf631a35bfa5
+      internalID: 1469580030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_37
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be978c3b4d3e61c468077e0f32442c07
+      internalID: -9380218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_38
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad9339fcc86ed346990657994c4cb8c
+      internalID: 33696574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_39
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 840
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfc9cd0480be8e478cb75da47f2fefb
+      internalID: 1599673260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fcb16da9052c084e99c8ada81f71177
+      internalID: 1965591807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_41
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1555127475526104fa7afae6d04ae251
+      internalID: -1792633212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_42
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb279bb75d0abb040a130d7f34a2a12a
+      internalID: 1167162440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_43
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ae337966382a64387abf39bdfd0429
+      internalID: -1428168708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_44
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59653d6e042206b428a1b2019a8dbc5b
+      internalID: -1942670662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_45
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa655fb38398e2448b7d7224833e31fd
+      internalID: -1850679718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_46
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60309915469f7a4690664c8d234fdea
+      internalID: 129605237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_47
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a48f670469376049a3c65a0c8299776
+      internalID: -504518347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_48
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e08faf33740a4d44a4f4c965c9d6215
+      internalID: 819486524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_49
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 720
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e3bf2f59e0c7c43866c37a16e2b298
+      internalID: -293634520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56bbbe99cd97a514e92d3fcdafef9aa6
+      internalID: 831208929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_51
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00843d90bda8541449c7a417b6d8f283
+      internalID: 1494598500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_52
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8b127d8977c9a429defb4adc820d56
+      internalID: -1229181419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_53
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978f533a52e9dd249bc33c952425bf9e
+      internalID: -1578820313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_54
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec2c694bea7bb947bbcf30435872428
+      internalID: 1410812721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_55
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261b46321b1ad29428931c24bddaffa4
+      internalID: -247397326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_56
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a357e9c1e0cf265429239795abdc846b
+      internalID: 1614168700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_57
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4155ea5fe310c4e9d4a1fd0b621021
+      internalID: 1754521905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_58
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07500d7fea4a3c469297490046cc354
+      internalID: -1214568606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_59
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 600
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f5a55384d18b34f9c1871c6e2984d8
+      internalID: 1869039352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d87fb838b522d4d8cfbecd7fca3cdc
+      internalID: 1332990857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_61
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cb7e6351b91f64daff385288024f93
+      internalID: 1270319620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_62
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d558e5375822ff9439b0867a5b200146
+      internalID: -2056917082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_63
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f3ea7f0aa6bc943bae4c2fead68c8a
+      internalID: 1872649252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_64
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa96363e722cdf94f8cb7ee4f26bbf34
+      internalID: -960413168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_65
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7d217b2b8fe344baed3b0bfd53e3df
+      internalID: 1547230920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_66
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dbd7d3f38446848b6fc8729074c87b
+      internalID: -248745874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_67
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a2b228fde02a44cac1ed6f82bfa14d
+      internalID: 742396073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_68
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a223656a9956b4ca7754ccd8f1e3d9
+      internalID: -1047297261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_69
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 480
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f7337549c30e34aa5119baf9e5e188
+      internalID: 1929510745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79698724435901348a854c552882406d
+      internalID: -1801292163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_71
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0fa8ffa8a51d449b13af7f2f45d7f4
+      internalID: -24797252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_72
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2da3d4ee674d624cb2397dc9b7e5cca
+      internalID: -699492947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_73
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978e110831f713b4eb4f1c61549d8a12
+      internalID: 462842309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_74
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddba043e491784140afd53ae965d388d
+      internalID: -1897433668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_75
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1670e59b664e164c94c67bd37c66b4c
+      internalID: 1609114381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_76
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff55fba24381d247b1f9a0e9d716bf3
+      internalID: -998205474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_77
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef3eab3aa36a214fbd6af529ec95660
+      internalID: -2116276299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_78
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5405534fb57141849993473b33bbdde2
+      internalID: -296186820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_79
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ae8ec6bc84671428716f9b52d2c30f
+      internalID: -1450593536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cb883cc53c3754190a72c8bc021448
+      internalID: -1189916748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_81
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81acd94b6bd83b846b9bd240b6b59489
+      internalID: -266994965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_82
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f42b446dbc0db64983f129a72318ef7
+      internalID: -191891978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_83
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c946613d2f4296428809f3ab4f31852
+      internalID: 480158124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_84
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1eb7f661b8d374a8f1fa9341813ad2
+      internalID: -364849680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_85
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9b75d07d70cd545ab145dbe5e897fc
+      internalID: -553954439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_86
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a564a7a4fbde8246b203ebd8d427c8c
+      internalID: -45825457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_87
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71b8022106ece3489cd34d0c07bbdaf
+      internalID: 1672572879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_88
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717e0999d01021e409c44905f9f937da
+      internalID: 1946246777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_89
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e74746d2509c34b8233d64542822b0
+      internalID: 2067533041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f562a43b7ae6a92498ac360d471f7b6a
+      internalID: -1315099651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_91
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f5ea2a1667c264ea0ad34170ac66b7
+      internalID: 24132830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_92
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6733006d47053449b505d7fae09094
+      internalID: 1494566938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_93
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a2346460fd973446ad8a4b73444f8af
+      internalID: 1712634467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_94
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a672edc6f73a2449b87b16e206e7ab
+      internalID: 1296603452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_95
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8733e155706c0e648b0b2fddf3a457a5
+      internalID: -1100893680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_96
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3c003d1c2b39b4abc639a9124bce73
+      internalID: -571650822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_97
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be61723c49cea84da295e3b9d5ed189
+      internalID: -1719387144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_98
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ddc29e018d47e46a4807da5ad41190
+      internalID: 1202206779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_99
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa146b29a01366448431d2d107f947a
+      internalID: -1776920946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44d1b1f2c649b24faba4579e63b2356
+      internalID: -1545538821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Double_click_speero_67: 742396073
+      Double_click_speero_28: -1543609562
+      Double_click_speero_60: 1332990857
+      Double_click_speero_54: 1410812721
+      Double_click_speero_6: -432481702
+      Double_click_speero_56: 1614168700
+      Double_click_speero_27: 1963967402
+      Double_click_speero_86: -45825457
+      Double_click_speero_71: -24797252
+      Double_click_speero_17: 1256948144
+      Double_click_speero_74: -1897433668
+      Double_click_speero_70: -1801292163
+      Double_click_speero_72: -699492947
+      Double_click_speero_42: 1167162440
+      Double_click_speero_53: -1578820313
+      Double_click_speero_59: 1869039352
+      Double_click_speero_24: -1533054340
+      Double_click_speero_34: -69815974
+      Double_click_speero_16: -1942543110
+      Double_click_speero_99: -1776920946
+      Double_click_speero_50: 831208929
+      Double_click_speero_73: 462842309
+      Double_click_speero_91: 24132830
+      Double_click_speero_25: -332354353
+      Double_click_speero_96: -571650822
+      Double_click_speero_100: -1545538821
+      Double_click_speero_64: -960413168
+      Double_click_speero_47: -504518347
+      Double_click_speero_75: 1609114381
+      Double_click_speero_69: 1929510745
+      Double_click_speero_80: -1189916748
+      Double_click_speero_45: -1850679718
+      Double_click_speero_40: 1965591807
+      Double_click_speero_61: 1270319620
+      Double_click_speero_11: -873816809
+      Double_click_speero_82: -191891978
+      Double_click_speero_30: -1866142867
+      Double_click_speero_57: 1754521905
+      Double_click_speero_52: -1229181419
+      Double_click_speero_22: -512442272
+      Double_click_speero_10: -820261016
+      Double_click_speero_18: -814980133
+      Double_click_speero_55: -247397326
+      Double_click_speero_13: 1802254496
+      Double_click_speero_68: -1047297261
+      Double_click_speero_19: -1582018370
+      Double_click_speero_81: -266994965
+      Double_click_speero_65: 1547230920
+      Double_click_speero_3: -760771796
+      Double_click_speero_33: 2078996584
+      Double_click_speero_51: 1494598500
+      Double_click_speero_35: 1319605451
+      Double_click_speero_9: 2036995365
+      Double_click_speero_1: -1269293795
+      Double_click_speero_14: -1498481568
+      Double_click_speero_8: 1453519206
+      Double_click_speero_12: -2060677075
+      Double_click_speero_83: 480158124
+      Double_click_speero_63: 1872649252
+      Double_click_speero_77: -2116276299
+      Double_click_speero_62: -2056917082
+      Double_click_speero_92: 1494566938
+      Double_click_speero_76: -998205474
+      Double_click_speero_97: -1719387144
+      Double_click_speero_84: -364849680
+      Double_click_speero_39: 1599673260
+      Double_click_speero_90: -1315099651
+      Double_click_speero_2: 1428301829
+      Double_click_speero_43: -1428168708
+      Double_click_speero_4: 156781651
+      Double_click_speero_37: -9380218
+      Double_click_speero_23: -882437448
+      Double_click_speero_87: 1672572879
+      Double_click_speero_48: 819486524
+      Double_click_speero_85: -553954439
+      Double_click_speero_58: -1214568606
+      Double_click_speero_29: 1621024256
+      Double_click_speero_79: -1450593536
+      Double_click_speero_0: -534791972
+      Double_click_speero_98: 1202206779
+      Double_click_speero_94: 1296603452
+      Double_click_speero_5: -1881730273
+      Double_click_speero_49: -293634520
+      Double_click_speero_95: -1100893680
+      Double_click_speero_44: -1942670662
+      Double_click_speero_93: 1712634467
+      Double_click_speero_46: 129605237
+      Double_click_speero_21: 1591054213
+      Double_click_speero_78: -296186820
+      Double_click_speero_89: 2067533041
+      Double_click_speero_32: 1275513008
+      Double_click_speero_7: 1392408986
+      Double_click_speero_15: 861184076
+      Double_click_speero_36: 1469580030
+      Double_click_speero_31: 1836409779
+      Double_click_speero_66: -248745874
+      Double_click_speero_88: 1946246777
+      Double_click_speero_38: 33696574
+      Double_click_speero_26: 1237055544
+      Double_click_speero_41: -1792633212
+      Double_click_speero_20: -902127812
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

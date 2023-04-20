@@ -9,6 +9,7 @@ public class ArkSha : Fighter
 	[SerializeField] private float jumpAttackDownPower = 100;
 	// 점프공격 시 최소한 공중에 떠있는 시간을 정하는 변수
 	[SerializeField] private float stayJumpAttack = 0.85f;
+	[SerializeField] private float maxStayJumpAttack = 1.5f;
 
 	private float originalJumpAttackDamage;
 
@@ -21,6 +22,8 @@ public class ArkSha : Fighter
 	/// 점프공격 시 공중에 떠있는 시간을 저장하는 변수
 	/// </summary>
 	private float countStayJumpAttack;
+
+	private bool pressJumpAttack;
 
 	private bool isLethalMove;
 
@@ -37,18 +40,12 @@ public class ArkSha : Fighter
 
 		if (!isStayJumpAttack) return;
 
-		countStayJumpAttack -= Time.deltaTime;
+		countStayJumpAttack += Time.deltaTime;
 
-		if (countStayJumpAttack > 0)
+		pressJumpAttack = Input.GetKey(KeySetting.keys[fighterNumber, 4]);
+
+		if ((pressJumpAttack ? maxStayJumpAttack : stayJumpAttack) - countStayJumpAttack <= 0 || isGround)
 		{
-			if (Input.GetKeyUp(KeySetting.keys[fighterNumber, 4]))
-			{
-				TryJumpAttack();
-			}
-		}
-		else
-		{
-			countStayJumpAttack = 0;
 			TryJumpAttack();
 		}
 	}
@@ -59,7 +56,8 @@ public class ArkSha : Fighter
 	void StayJumpAttack()
 	{
 		isStayJumpAttack = true;
-		countStayJumpAttack = stayJumpAttack;
+		pressJumpAttack = false;
+		countStayJumpAttack = 0;
 	}
 
 	/// <summary>
@@ -67,7 +65,7 @@ public class ArkSha : Fighter
 	/// </summary>
 	void SetJumpAttackDamage()
 	{
-		jumpAttackDamage *= (stayJumpAttack - countStayJumpAttack) / stayJumpAttack;
+		jumpAttackDamage *= Mathf.Clamp(countStayJumpAttack, 0.3f, 1) / maxStayJumpAttack;
 	}
 
 	/// <summary>
@@ -97,7 +95,7 @@ public class ArkSha : Fighter
 	/// <param name="path"></param>
 	void MoveDuringJumpAttack(int path)
 	{
-		rigidBody.AddForce(path > 0 ? Vector2.up * jumpAttackUpPower : Vector2.down * jumpAttackDownPower, ForceMode.Impulse);
+		rigidBody.AddForce(path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower, ForceMode.Impulse);
 	}
 
 	/// <summary>

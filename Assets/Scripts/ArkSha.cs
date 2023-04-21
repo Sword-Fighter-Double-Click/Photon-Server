@@ -11,7 +11,7 @@ public class ArkSha : Fighter
 	[SerializeField] private float stayJumpAttack = 0.85f;
 	[SerializeField] private float maxStayJumpAttack = 1.5f;
 
-	private float originalJumpAttackDamage;
+	private float jumpAttackDamage;
 
 	/// <summary>
 	/// 점프공격 대기 중인지 확인하는 변수
@@ -27,13 +27,6 @@ public class ArkSha : Fighter
 
 	private bool isLethalMove;
 
-	protected override void Start()
-	{
-		base.Start();
-
-		originalJumpAttackDamage = jumpAttackDamage;
-	}
-
 	protected override void Update()
 	{
 		base.Update();
@@ -42,7 +35,7 @@ public class ArkSha : Fighter
 
 		countStayJumpAttack += Time.deltaTime;
 
-		pressJumpAttack = Input.GetKey(KeySetting.keys[fighterNumber, 4]);
+		pressJumpAttack = Input.GetKey(KeySetting.keys[number, 4]);
 
 		if ((pressJumpAttack ? maxStayJumpAttack : stayJumpAttack) - countStayJumpAttack <= 0 || isGround)
 		{
@@ -73,7 +66,7 @@ public class ArkSha : Fighter
 	/// </summary>
 	void InitializeJumpAttackDamage()
 	{
-		jumpAttackDamage = originalJumpAttackDamage;
+		jumpAttackDamage = skills[2].damage;
 	}
 
 	/// <summary>

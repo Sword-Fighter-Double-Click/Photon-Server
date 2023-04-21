@@ -1,55 +1,45 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FightManager : MonoBehaviour
 {
-	public static int player1CharacterNumber;
-	public static int player2CharacterNumber = 1;
+    public static int fighter1CharacterNumber;
+    public static int fighter2CharacterNumber = 1;
 
-	[Header("Caching")]
-	[SerializeField] private GameObject speero;
-	[SerializeField] private GameObject arksha;
+    [Header("Cashing")]
+    [SerializeField] private GameObject speero;
+    [SerializeField] private GameObject arksha;
 
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI roundStateText;
+    [SerializeField] private Image HPBar1, HPBar2, FPBar1, FPBar2;
 
-	[SerializeField] private TextMeshProUGUI roundCount;
-	[SerializeField] private Image countDown;
-	[SerializeField] private Sprite[] countDownImages;
-	[SerializeField] private GameObject timesUp;
-	[SerializeField] private Image HPBar1, HPBar2, FPBar1, FPBar2;
-	[SerializeField] private GameObject win1, win2;
+    [Header("Value")]
+    [SerializeField] private int roundTime = 60;
 
-	[Header("Value")]
-	[SerializeField] private int roundTime = 60;
-	
-	private Fighter player1, player2;
-	
-	private int player1WinCount = 0, player2WinCount = 0;
-	
-	private float countRoundTime;
+    private Fighter player1, player2;
 
-	private bool roundStart = false;
+    private int player1WinCount = 0, player2WinCount = 0;
 
-	private Coroutine handlePlayerDeath = null;
+    private float countTime;
 
-	private Coroutine handleTimesUp = null;
+    private bool roundStarted = false;
 
-    void Start()
-	{
-		switch (player1CharacterNumber)
-		{
-			case 0:
-				player1 = Instantiate(speero).GetComponent<Fighter>();
-				break;
-			case 1:
-				player1 = Instantiate(arksha).GetComponent<Fighter>();
-				break;
-		}
-		player1.fighterNumber = 0;
+    private void Start()
+    {
+        switch (fighter1CharacterNumber)
+        {
+            case 0:
+                player1 = Instantiate(speero).GetComponent<Fighter>();
+                break;
+            case 1:
+                player1 = Instantiate(arksha).GetComponent<Fighter>();
+                break;
+        }
 
-        switch (player2CharacterNumber)
+        switch (fighter2CharacterNumber)
         {
             case 0:
                 player2 = Instantiate(speero).GetComponent<Fighter>();
@@ -58,121 +48,105 @@ public class FightManager : MonoBehaviour
                 player2 = Instantiate(arksha).GetComponent<Fighter>();
                 break;
         }
-		player2.fighterNumber = 1;
 
-		player1.enemyFighter = player2;
-		player2.enemyFighter = player1;
+        player1.tag = "Player1";
+        player1.enemyFighter = player2;
+        player1.SettingUI();
+
+        player2.tag = "Player2";
+        player2.enemyFighter = player1;
+        player2.SettingUI();
 
         StartCoroutine(NewRound());
-	}
+    }
 
-	void Update()
-	{
-		if (!roundStart) return;
+    private void Update()
+    {
+        if (!roundStarted) return;
 
-		countRoundTime = Mathf.Clamp(countRoundTime - Time.deltaTime, 0, float.MaxValue);
-		roundCount.text = countRoundTime.ToString("F0");
+        countTime = Mathf.Clamp(countTime - Time.deltaTime, 0, roundTime);
+        timerText.text = countTime.ToString("F0");
 
-		if (countRoundTime <= 0)
-		{
-			countRoundTime = 0;
-			if (handleTimesUp == null)
-			{
-				handleTimesUp = StartCoroutine(HandleTimesUp());
-			}
-		}
+        if (countTime <= 0)
+        {
+            StartCoroutine(HandleTimesUp());
+            roundStarted = false;
+        }
 
-		if (player1.HP < 0 || player2.HP < 0)
-		{
-			if (handlePlayerDeath == null)
-			{
-				handlePlayerDeath = StartCoroutine(HandlePlayerDeath());
-			}
-		}
-	}
+        bool player1Lose = player1.currentHP <= 0;
+        bool player2Lose = player2.currentHP <= 0;
+        if (player1Lose || player2Lose)
+        {
+            StartCoroutine(HandlePlayerDeath(player1Lose, player2Lose));
+            roundStarted = false;
+        }
+    }
 
-	private IEnumerator NewRound()
-	{
-		roundStart = false;
+    private IEnumerator NewRound()
+    {
+        player1.ResetState();
+        player2.ResetState();
+        player1.OffInput();
+        player2.OffInput();
 
-		timesUp.SetActive(false);
-		player1.ResetState();
-		player2.ResetState();
-		player1.OffInput();
-		player2.OffInput();
+        HPBar1.fillAmount = 1;
+        //FPBar1.fillAmount = 1;
+        HPBar2.fillAmount = 1;
+        //FPBar2.fillAmount = 1;
 
-		HPBar1.fillAmount = 1;
-		FPBar1.fillAmount = 1;
-		HPBar2.fillAmount = 1;
-		FPBar2.fillAmount = 1;
+        countTime = roundTime;
+        timerText.text = countTime.ToString("F0");
 
-		countRoundTime = roundTime;
+        player1.transform.position = new Vector3(-6, 0, 3);
+        player1.transform.eulerAngles = Vector3.zero;
+        player2.transform.position = new Vector3(6, 0, 3);
+        player2.transform.eulerAngles = Vector3.up * 180;
 
-		player1.transform.position = new Vector3(-6, 0, 3);
-		player1.transform.eulerAngles = Vector3.zero;
-		player2.transform.position = new Vector3(6, 0, 3);
-		player2.transform.eulerAngles = Vector3.up * 180;
+        roundStateText.gameObject.SetActive(true);
 
-		countDown.gameObject.SetActive(true);
+        roundStateText.text = "Ready...";
 
-		int count;
-		for (count = countDownImages.Length - 1; count > 0; count--)
-		{
-			countDown.sprite = countDownImages[count];
-			yield return new WaitForSeconds(1);
-		}
-		countDown.sprite = countDownImages[count];
-		player1.OnInput();
-		player2.OnInput();
-		yield return new WaitForSeconds(1);
-		countDown.gameObject.SetActive(false);
+        player1.OnInput();
+        player2.OnInput();
+        yield return new WaitForSeconds(1);
+        roundStateText.gameObject.SetActive(false);
 
-		handleTimesUp = null;
-		handlePlayerDeath = null;
+        roundStarted = true;
+    }
 
-		roundStart = true;
-	}
+    private IEnumerator HandlePlayerDeath(bool player1Lose, bool player2Lose)
+    {
+        if (player1Lose)
+        {
+            player2WinCount++;
+        }
+        if (player2Lose)
+        {
+            player1WinCount++;
+        }
 
-	private IEnumerator HandlePlayerDeath()
-	{
-		roundStart = false;
-
-		bool player1Lose = player1.HP < 0;
-		bool player2Lose = player2.HP < 0;
-
-		if (player1Lose)
-		{
-			win2.SetActive(true);
-			player2WinCount++;
-		}
-		else if (player2Lose)
-		{
-			win1.SetActive(true);
-			player1WinCount++;
-		}
-
-		yield return new WaitForSeconds(2);
-		win1.SetActive(false);
-		win2.SetActive(false);
-
-		if (player1WinCount == 3 || player2WinCount == 3)
-		{
-			SceneManager.LoadScene("Title");
-			yield break;
-		}
-
-		StartCoroutine(NewRound());
-	}
-
-	private IEnumerator HandleTimesUp()
-	{
-		roundStart = false;
-
-		timesUp.SetActive(true);
+        roundStateText.text = "Round Set";
 
         yield return new WaitForSeconds(2);
 
-		timesUp.SetActive(false);
+        roundStateText.text = "";
+
+        if (player1WinCount == 3 || player2WinCount == 3)
+        {
+            LoadSceneManager.LoadScene("Title");
+            yield break;
+        }
+
+        StartCoroutine(NewRound());
+    }
+
+    private IEnumerator HandleTimesUp()
+    {
+        roundStateText.text = "Times Up!";
+
+        yield return new WaitForSeconds(2);
+
+        roundStateText.text = "";
 
         StartCoroutine(NewRound());
     }

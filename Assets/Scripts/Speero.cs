@@ -11,21 +11,12 @@ public class Speero : Fighter
 	[SerializeField] private float jumpAttackRushPower = 30;
 	[SerializeField] private float jumpAttackDownPower = 100;
 
-	private CapsuleCollider2D playerHitBox;
-
 	/// <summary>
 	/// 생성된 궁극기 애니메이션 오브젝트의 데이터를 저장하는 변수
 	/// </summary>
 	private GameObject lethalMoveAnimationClone = null;
 
 	private bool usingLethalMoveAnimation;
-
-	protected override void Start()
-	{
-		base.Start();
-
-		playerHitBox = GetComponent<CapsuleCollider2D>();
-	}
 
 	protected override void Update()
 	{
@@ -48,24 +39,6 @@ public class Speero : Fighter
 				// IDLE 상태로 초기화
 				fighterAction = FighterAction.None;
 			}
-		}
-	}
-
-	/// <summary>
-	/// 캐릭터 히트박스 활성화(1), 비활성화(0)
-	/// </summary>
-	/// <param name="value"></param>
-	void SetPlayerHitBox(int value)
-	{
-		if (value == 0)
-		{
-			playerHitBox.enabled = false;
-			cantInputTime = float.MaxValue;
-		}
-		else if (value == 1)
-		{
-			playerHitBox.enabled = true;
-			cantInputTime = 0;
 		}
 	}
 
@@ -100,7 +73,7 @@ public class Speero : Fighter
 	/// <param name="value"></param>
 	void SetCounterDamageRate(float value)
 	{
-		counterDamageRate = value;
+		status.counterDamageRate = value;
 	}
 
 	/// <summary>

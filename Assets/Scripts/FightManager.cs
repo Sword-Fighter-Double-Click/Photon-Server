@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FightManager : MonoBehaviour
 {
-    public static int fighter1CharacterNumber;
+    public static int fighter1CharacterNumber = 1;
     public static int fighter2CharacterNumber = 1;
 
     [Header("Cashing")]
@@ -106,10 +106,15 @@ public class FightManager : MonoBehaviour
 
         roundStateText.text = "Ready...";
 
+        yield return new WaitForSeconds(1);
         player1.OnInput();
         player2.OnInput();
-        yield return new WaitForSeconds(1);
-        roundStateText.gameObject.SetActive(false);
+
+        roundStateText.text = "Start!";
+        
+        yield return new WaitForSeconds(0.75f);
+
+        roundStateText.text = "";
 
         roundStarted = true;
     }

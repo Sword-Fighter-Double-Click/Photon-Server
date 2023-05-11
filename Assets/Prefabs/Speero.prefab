@@ -109,40 +109,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPBar: {fileID: 0}
   FPBar: {fileID: 0}
-  lethalMoveScreen: {fileID: 7884028361994667446, guid: 9826d0635a0fe844d8e32605c0b6ce45, type: 3}
-  lethalMove: {fileID: 7400000, guid: fea9512fcb30ede46867c0a786d1f122, type: 2}
-  motionColliders:
-  - {fileID: 1195111073004778744}
-  - {fileID: 2519363387768174108}
-  - {fileID: 1925191928008095896}
-  - {fileID: 2623409971847953493}
+  ultimateScreen: {fileID: 0}
+  ultimate: {fileID: 0}
   m_RunStopDust: {fileID: 7310271610845027193, guid: 39afca3c109b26049a80bc07593eb271, type: 3}
   m_JumpDust: {fileID: 8935918012585647707, guid: 4a4123fbc8b39d441868897a71d2b2b1, type: 3}
   m_LandingDust: {fileID: 9076098953984712191, guid: 0b745be9abb3a6d4dadd8705950196d1, type: 3}
   fighterAction: 0
-  fighterNumber: 0
   canInput: 1
   enemyFighter: {fileID: 0}
-  HP: 100
-  FP: 0
-  maxSpeed: 4.5
-  jumpForce: 15
-  counterDamageRate: 1.2
-  attackDamage: 6
-  chargedAttackDamage: 12
-  jumpAttackDamage: 15
-  lethalMoveDamage: 35
-  attackAbsorptionRate: 0.95
-  chargedAttackAbsorptionRate: 0.75
-  jumpAttackAbsorptionRate: 0.7
-  lethalMoveAbsorptionRate: 0.5
-  chargedAttackFP: 3
-  jumpAttackCoolFP: 5
-  lethalMoveFP: 75
-  chargedAttackCoolDownTime: 1.2
-  jumpAttackCoolDownTime: 1.5
-  hitKnockBackPower: 10
-  guardKnockBackPower: 5
+  currentHP: 0
+  currentUltimateGage: 0
+  status:
+    HP: 100
+    ultimateGage: 0
+    speed: 4.5
+    jumpForce: 7.5
+    counterDamageRate: 1.2
+    hitKnockBackPower: 10
+    guardKnockBackPower: 5
+  skills:
+  - name: 
+    damage: 0
+    absorptionRate: 0
+    colliderEnabled: 0
+    collider: {fileID: 0}
+  - name: 
+    damage: 0
+    absorptionRate: 0
+    colliderEnabled: 0
+    collider: {fileID: 0}
+  - name: 
+    damage: 0
+    absorptionRate: 0
+    colliderEnabled: 0
+    collider: {fileID: 0}
+  - name: 
+    damage: 0
+    absorptionRate: 0
+    colliderEnabled: 0
+    collider: {fileID: 0}
+  - name: 
+    damage: 0
+    absorptionRate: 0
+    colliderEnabled: 0
+    collider: {fileID: 0}
   lethalMoveAnimation: {fileID: 7700607198366470405, guid: 494eb1f8d4d668a49975aa5545af1cde, type: 3}
   jumpAttackRushPower: 30
   jumpAttackDownPower: 100
@@ -203,12 +213,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -534791972, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
+  m_Sprite: {fileID: 1938739037, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.0625, y: 3.75}
+  m_Size: {x: 1.3, y: 1.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

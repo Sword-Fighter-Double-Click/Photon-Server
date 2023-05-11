@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 915409985436445006}
-  - component: {fileID: 5358184856017441587}
+  - component: {fileID: 4134549386284330589}
   m_Layer: 7
   m_Name: 1
   m_TagString: Untagged
@@ -32,32 +32,19 @@ Transform:
   m_Father: {fileID: 4570151143123529479}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5358184856017441587
-BoxCollider2D:
+--- !u!65 &4134549386284330589
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4137054400110192693}
-  m_Enabled: 0
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.24367759, y: -0.3556069}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.86069125, y: 0.16942155}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.7495787, y: 0.15516505, z: 1}
+  m_Center: {x: 0.18616426, y: 0.3163769, z: 0}
 --- !u!1 &4570151142896927381
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967344547214550754}
-  - component: {fileID: 9124788676921858974}
+  - component: {fileID: 2060392006560769050}
   m_Layer: 7
   m_Name: 4
   m_TagString: Untagged
@@ -230,32 +217,19 @@ Transform:
   m_Father: {fileID: 4570151143123529479}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &9124788676921858974
-BoxCollider2D:
+--- !u!65 &2060392006560769050
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6617220739347261435}
-  m_Enabled: 0
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.0720928, y: -0.40841627}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7487633, y: 2.9229603}
-  m_EdgeRadius: 0
+  m_Size: {x: 2.1768804, y: 2.9368265, z: 1}
+  m_Center: {x: 0.8641779, y: 0.28245372, z: 0}
 --- !u!1 &7158722240959969977
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1526760552715123891}
-  - component: {fileID: 4647253395483582291}
+  - component: {fileID: 3780888692363842635}
   m_Layer: 7
   m_Name: 3
   m_TagString: Untagged
@@ -288,32 +262,19 @@ Transform:
   m_Father: {fileID: 4570151143123529479}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4647253395483582291
-BoxCollider2D:
+--- !u!65 &3780888692363842635
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7158722240959969977}
-  m_Enabled: 0
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.6177242, y: -0.6297028}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7835095, y: 1.4518228}
-  m_EdgeRadius: 0
+  m_Size: {x: 1.6672144, y: 1.8675389, z: 1}
+  m_Center: {x: 0.62471664, y: 0.40350288, z: 0}
 --- !u!1 &7312509891198960460
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2932499914427976664}
-  - component: {fileID: 8664758744767402455}
+  - component: {fileID: 1514918343057333582}
   m_Layer: 7
   m_Name: 2
   m_TagString: Untagged
@@ -346,32 +307,19 @@ Transform:
   m_Father: {fileID: 4570151143123529479}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &8664758744767402455
-BoxCollider2D:
+--- !u!65 &1514918343057333582
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7312509891198960460}
-  m_Enabled: 0
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.6652309, y: -0.56152576}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.723407, y: 1.0000001}
-  m_EdgeRadius: 0
+  m_Size: {x: 1.7651544, y: 1.0315883, z: 1}
+  m_Center: {x: 0.6471927, y: 0.10424038, z: 0}
 --- !u!1 &8457836882072688806
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,40 +371,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPBar: {fileID: 0}
   FPBar: {fileID: 0}
-  lethalMoveScreen: {fileID: 7884028361994667446, guid: 28d34e61738e39649baeb9458ee085a0, type: 3}
-  lethalMove: {fileID: 7400000, guid: 7f96d8d6b9d4c5848a7a54180528df57, type: 2}
-  motionColliders:
-  - {fileID: 5358184856017441587}
-  - {fileID: 8664758744767402455}
-  - {fileID: 4647253395483582291}
-  - {fileID: 9124788676921858974}
+  ultimateScreen: {fileID: 0}
+  ultimate: {fileID: 7400000, guid: 7f96d8d6b9d4c5848a7a54180528df57, type: 2}
   m_RunStopDust: {fileID: 7310271610845027193, guid: 39afca3c109b26049a80bc07593eb271, type: 3}
   m_JumpDust: {fileID: 8935918012585647707, guid: 4a4123fbc8b39d441868897a71d2b2b1, type: 3}
   m_LandingDust: {fileID: 9076098953984712191, guid: 0b745be9abb3a6d4dadd8705950196d1, type: 3}
   fighterAction: 0
-  fighterNumber: 0
   canInput: 1
   enemyFighter: {fileID: 0}
-  HP: 100
-  FP: 0
-  maxSpeed: 4.5
-  jumpForce: 15
-  counterDamageRate: 1.2
-  attackDamage: 6
-  chargedAttackDamage: 12
-  jumpAttackDamage: 15
-  lethalMoveDamage: 35
-  attackAbsorptionRate: 0.95
-  chargedAttackAbsorptionRate: 0.75
-  jumpAttackAbsorptionRate: 0.7
-  lethalMoveAbsorptionRate: 0.5
-  chargedAttackFP: 3
-  jumpAttackCoolFP: 5
-  lethalMoveFP: 75
-  chargedAttackCoolDownTime: 1.2
-  jumpAttackCoolDownTime: 1.5
-  hitKnockBackPower: 10
-  guardKnockBackPower: 5
+  currentHP: 0
+  currentUltimateGage: 0
+  status:
+    HP: 100
+    ultimateGage: 0
+    speed: 4.5
+    jumpForce: 14
+    counterDamageRate: 1.2
+    hitKnockBackPower: 10
+    guardKnockBackPower: 5
+  skills:
+  - name: Attack
+    damage: 6
+    absorptionRate: 0.95
+    colliderEnabled: 0
+    collider: {fileID: 4134549386284330589}
+  - name: Charged Attack
+    damage: 12
+    absorptionRate: 0.75
+    colliderEnabled: 0
+    collider: {fileID: 1514918343057333582}
+  - name: Jump Attack
+    damage: 15
+    absorptionRate: 0.75
+    colliderEnabled: 0
+    collider: {fileID: 3780888692363842635}
+  - name: Anti Ground Attack
+    damage: 0
+    absorptionRate: 0
+    colliderEnabled: 0
+    collider: {fileID: 0}
+  - name: Ultimate
+    damage: 35
+    absorptionRate: 0.5
+    colliderEnabled: 0
+    collider: {fileID: 2060392006560769050}
   jumpAttackUpPower: 3
   jumpAttackDownPower: 100
   stayJumpAttack: 0.5

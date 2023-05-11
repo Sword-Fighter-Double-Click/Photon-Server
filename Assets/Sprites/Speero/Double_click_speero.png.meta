@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -80,7 +80,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,30 +100,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -132,18 +108,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91e6535120ba5724d9f2357629186902
-      internalID: -534791972
+      spriteID: cfb08f121b9312149abfef88de4ba643
+      internalID: 1938739037
       vertices: []
       indices: 
       edges: []
@@ -153,18 +129,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 130
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7da773e663d2d694c905c6a4cfcf68ef
-      internalID: -1269293795
+      spriteID: 154f777f2b74d494f8c1798ff6578af5
+      internalID: 445004819
       vertices: []
       indices: 
       edges: []
@@ -174,18 +150,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 260
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e8b44ef6e1cee04b99933c82144ffd0
-      internalID: 1428301829
+      spriteID: fa23f16f99e73614ebe0e830e3e148e7
+      internalID: 315628706
       vertices: []
       indices: 
       edges: []
@@ -195,18 +171,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 390
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1df85495fd57dee40a21dc9de1adaaef
-      internalID: -760771796
+      spriteID: db6a8815898c0dd449b8f4e9da5d7ac2
+      internalID: 2025831656
       vertices: []
       indices: 
       edges: []
@@ -216,18 +192,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 520
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d66e788137a5b6458e50c0bdb4a1804
-      internalID: 156781651
+      spriteID: 371db70ce36d3bb43af81b7493459f8f
+      internalID: 86977223
       vertices: []
       indices: 
       edges: []
@@ -237,18 +213,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 650
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8bc10e5215235a4ab93f0968766cdd3
-      internalID: -1881730273
+      spriteID: 826aba5c27327034b87f7128a7fb6664
+      internalID: 1790514847
       vertices: []
       indices: 
       edges: []
@@ -258,18 +234,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 780
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ef5b36a91e6bc54abb995e20a238ee2
-      internalID: -432481702
+      spriteID: 61554b26f589b6444951e6fdfd6891be
+      internalID: 804298458
       vertices: []
       indices: 
       edges: []
@@ -279,18 +255,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 910
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5bce82b1fc72324b9679fa9d0d53bfc
-      internalID: 1392408986
+      spriteID: 835bbafbd1b00394cb510683f0a0acb1
+      internalID: -128689002
       vertices: []
       indices: 
       edges: []
@@ -300,18 +276,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1040
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aacb4a1aff8c8a4bb5be09af6b7b82a
-      internalID: 1453519206
+      spriteID: 2142706ddeb24114bbb61637efa6fec4
+      internalID: 1438437150
       vertices: []
       indices: 
       edges: []
@@ -321,18 +297,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1170
-        y: 1200
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfd21c098b426bd4a9321354eabd45dd
-      internalID: 2036995365
+      spriteID: 715e9b8b5dd724642ad925c4ced3b38c
+      internalID: -1296704232
       vertices: []
       indices: 
       edges: []
@@ -341,19 +317,19 @@ TextureImporter:
       name: Double_click_speero_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1080
+        x: 1300
+        y: 1440
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 285e31c7812b1b2489bd2c4127a1b7c5
-      internalID: -820261016
+      spriteID: 3f331efb6f6f13841bbc315a072aa8a6
+      internalID: 1427688092
       vertices: []
       indices: 
       edges: []
@@ -362,19 +338,19 @@ TextureImporter:
       name: Double_click_speero_11
       rect:
         serializedVersion: 2
-        x: 130
-        y: 1080
+        x: 0
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 170aaa09110c574498456d206a2de2f1
-      internalID: -873816809
+      spriteID: 1d5743bfbd6fc654b9688fd7fdda9100
+      internalID: 1390182094
       vertices: []
       indices: 
       edges: []
@@ -383,19 +359,19 @@ TextureImporter:
       name: Double_click_speero_12
       rect:
         serializedVersion: 2
-        x: 260
-        y: 1080
+        x: 130
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e18fd1087bd5fa847b800862fec3dd02
-      internalID: -2060677075
+      spriteID: 4d31fd27aa422f3469d2c2b7cf931707
+      internalID: 1831529980
       vertices: []
       indices: 
       edges: []
@@ -404,19 +380,19 @@ TextureImporter:
       name: Double_click_speero_13
       rect:
         serializedVersion: 2
-        x: 390
-        y: 1080
+        x: 260
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae7ed444a481fb545bc9293a9335b0aa
-      internalID: 1802254496
+      spriteID: 035d375e7e573ca4bb12d609b3ee95b8
+      internalID: -812064149
       vertices: []
       indices: 
       edges: []
@@ -425,19 +401,19 @@ TextureImporter:
       name: Double_click_speero_14
       rect:
         serializedVersion: 2
-        x: 520
-        y: 1082
+        x: 390
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e49eb0356828bf4cb70dae0193a5b97
-      internalID: -1498481568
+      spriteID: 3bd8acdf6a254854c837a907d03d4895
+      internalID: -1839038416
       vertices: []
       indices: 
       edges: []
@@ -446,19 +422,19 @@ TextureImporter:
       name: Double_click_speero_15
       rect:
         serializedVersion: 2
-        x: 650
-        y: 1080
+        x: 520
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82bde183ce646c44c9e3c26642255c69
-      internalID: 861184076
+      spriteID: 2069a5b9fece36b4f9e4037a93df4482
+      internalID: 1567994287
       vertices: []
       indices: 
       edges: []
@@ -467,19 +443,19 @@ TextureImporter:
       name: Double_click_speero_16
       rect:
         serializedVersion: 2
-        x: 780
-        y: 1080
+        x: 650
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64b1ad52ce25a7043a914a4efffaff99
-      internalID: -1942543110
+      spriteID: a73d1e35d33d1c34589a33a3450c42b1
+      internalID: -1782156710
       vertices: []
       indices: 
       edges: []
@@ -488,19 +464,19 @@ TextureImporter:
       name: Double_click_speero_17
       rect:
         serializedVersion: 2
-        x: 910
-        y: 1080
+        x: 780
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bf239ade3c268d4fae74ded53d4a24e
-      internalID: 1256948144
+      spriteID: 174509511081ee34bae566d3c443b0ef
+      internalID: 694311095
       vertices: []
       indices: 
       edges: []
@@ -509,19 +485,19 @@ TextureImporter:
       name: Double_click_speero_18
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 1080
+        x: 910
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fdfb18e0e1fcd444bd56b825c494dc7
-      internalID: -814980133
+      spriteID: e3bc8c4475c7c9549933c05a72870957
+      internalID: -1064519821
       vertices: []
       indices: 
       edges: []
@@ -530,19 +506,19 @@ TextureImporter:
       name: Double_click_speero_19
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 1080
+        x: 1040
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d9b947317faffd4ead7fb198012312c
-      internalID: -1582018370
+      spriteID: 23f9dea95e500874e95d8eebb0755a68
+      internalID: -1310127598
       vertices: []
       indices: 
       edges: []
@@ -551,19 +527,19 @@ TextureImporter:
       name: Double_click_speero_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 960
+        x: 1170
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aa3844e226110d45944c43ece1d4a1a
-      internalID: -902127812
+      spriteID: a22d931b5b0bf1946addffed22e81982
+      internalID: -577236853
       vertices: []
       indices: 
       edges: []
@@ -572,19 +548,19 @@ TextureImporter:
       name: Double_click_speero_21
       rect:
         serializedVersion: 2
-        x: 130
-        y: 960
+        x: 1300
+        y: 1320
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 679944ee88512d34f946e4ff8e196442
-      internalID: 1591054213
+      spriteID: 6e4f548201da58b4daa619d5ed6eab13
+      internalID: -126239535
       vertices: []
       indices: 
       edges: []
@@ -593,19 +569,19 @@ TextureImporter:
       name: Double_click_speero_22
       rect:
         serializedVersion: 2
-        x: 260
-        y: 960
+        x: 0
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f82c193d2676ce47b1e1727e2cded91
-      internalID: -512442272
+      spriteID: cc605ab42fb7c9946a53cd57bdf647a3
+      internalID: -2110697621
       vertices: []
       indices: 
       edges: []
@@ -614,19 +590,19 @@ TextureImporter:
       name: Double_click_speero_23
       rect:
         serializedVersion: 2
-        x: 390
-        y: 960
+        x: 130
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0509fd54ce63d54b8e2f79f570463bc
-      internalID: -882437448
+      spriteID: 4d83d2aa07a18ce47b30b598308b750c
+      internalID: -232202764
       vertices: []
       indices: 
       edges: []
@@ -635,19 +611,19 @@ TextureImporter:
       name: Double_click_speero_24
       rect:
         serializedVersion: 2
-        x: 520
-        y: 960
+        x: 260
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52df25bea824b3442afc4f9659623bbd
-      internalID: -1533054340
+      spriteID: 34753a8228c3df54cb8d6b24799bf3c5
+      internalID: 602978158
       vertices: []
       indices: 
       edges: []
@@ -656,19 +632,19 @@ TextureImporter:
       name: Double_click_speero_25
       rect:
         serializedVersion: 2
-        x: 650
-        y: 960
+        x: 390
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 1, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 271370707d577094184dc8897d64bcf2
-      internalID: -332354353
+      spriteID: 08832aee6e6f8cb42a976295c1ab5956
+      internalID: -1377643008
       vertices: []
       indices: 
       edges: []
@@ -677,19 +653,19 @@ TextureImporter:
       name: Double_click_speero_26
       rect:
         serializedVersion: 2
-        x: 780
-        y: 960
+        x: 520
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e952c158f0c4dd48bf01608013dfd63
-      internalID: 1237055544
+      spriteID: 0c3094715b44e084ab7361eca7001319
+      internalID: -2144079691
       vertices: []
       indices: 
       edges: []
@@ -698,19 +674,19 @@ TextureImporter:
       name: Double_click_speero_27
       rect:
         serializedVersion: 2
-        x: 910
-        y: 960
+        x: 650
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f11444e1966afcf45a1f3ade1807aa07
-      internalID: 1963967402
+      spriteID: f76209cd7b181bc438a7a0673327df45
+      internalID: 1210663736
       vertices: []
       indices: 
       edges: []
@@ -719,19 +695,19 @@ TextureImporter:
       name: Double_click_speero_28
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 960
+        x: 780
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f3c60018549a4f4ba6491eebe0aab44
-      internalID: -1543609562
+      spriteID: 9361a7d397f796d4b92e27fdf4c43e73
+      internalID: -224651964
       vertices: []
       indices: 
       edges: []
@@ -740,19 +716,19 @@ TextureImporter:
       name: Double_click_speero_29
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 960
+        x: 910
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac1c8d31d41ff543a78d8335182c91a
-      internalID: 1621024256
+      spriteID: 721102cd72de9e44d990d2eb1e5bccf1
+      internalID: 444710684
       vertices: []
       indices: 
       edges: []
@@ -761,19 +737,19 @@ TextureImporter:
       name: Double_click_speero_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 840
+        x: 1040
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07327e0e424b04748b1bdc2c16a056af
-      internalID: -1866142867
+      spriteID: 8589cd6c033881e4cbc068c5cd7ab9b5
+      internalID: -1555982632
       vertices: []
       indices: 
       edges: []
@@ -782,19 +758,19 @@ TextureImporter:
       name: Double_click_speero_31
       rect:
         serializedVersion: 2
-        x: 130
-        y: 840
+        x: 1170
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1db6e998323870942b7b8eb273343ffc
-      internalID: 1836409779
+      spriteID: 9d51652c1fab88d4b94b79a13df3c570
+      internalID: 1774046496
       vertices: []
       indices: 
       edges: []
@@ -803,19 +779,19 @@ TextureImporter:
       name: Double_click_speero_32
       rect:
         serializedVersion: 2
-        x: 260
-        y: 840
+        x: 1300
+        y: 1200
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ac6fcd3262e7bd4d963bec16bf4e1f3
-      internalID: 1275513008
+      spriteID: c5a776726f098b144b09bc9938c9344b
+      internalID: 1415566701
       vertices: []
       indices: 
       edges: []
@@ -824,19 +800,19 @@ TextureImporter:
       name: Double_click_speero_33
       rect:
         serializedVersion: 2
-        x: 390
-        y: 840
+        x: 0
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79fc575d883fcd4499e7d40ee718d95
-      internalID: 2078996584
+      spriteID: 5a63b8845571ec74c961b4f01a6323fb
+      internalID: -204425479
       vertices: []
       indices: 
       edges: []
@@ -845,19 +821,19 @@ TextureImporter:
       name: Double_click_speero_34
       rect:
         serializedVersion: 2
-        x: 520
-        y: 840
+        x: 130
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b03328a56e604045b2f449d4c588891
-      internalID: -69815974
+      spriteID: 737dc3499f12bb040802c5fea7fe1591
+      internalID: -742790024
       vertices: []
       indices: 
       edges: []
@@ -866,19 +842,19 @@ TextureImporter:
       name: Double_click_speero_35
       rect:
         serializedVersion: 2
-        x: 650
-        y: 840
+        x: 260
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e0a24e92b2e9044b6bdca7e6a69014
-      internalID: 1319605451
+      spriteID: 07456723c7fc4fb4da677c8e21617b3f
+      internalID: -66228305
       vertices: []
       indices: 
       edges: []
@@ -887,19 +863,19 @@ TextureImporter:
       name: Double_click_speero_36
       rect:
         serializedVersion: 2
-        x: 780
-        y: 840
+        x: 390
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bca6081efa7b4949824cf631a35bfa5
-      internalID: 1469580030
+      spriteID: c5cbc0ec52b18d642a134df6fded5261
+      internalID: -1699314764
       vertices: []
       indices: 
       edges: []
@@ -908,19 +884,19 @@ TextureImporter:
       name: Double_click_speero_37
       rect:
         serializedVersion: 2
-        x: 910
-        y: 840
+        x: 520
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be978c3b4d3e61c468077e0f32442c07
-      internalID: -9380218
+      spriteID: 9ed1ca9f805795449bcfaf5b406cb608
+      internalID: 1667868548
       vertices: []
       indices: 
       edges: []
@@ -929,19 +905,19 @@ TextureImporter:
       name: Double_click_speero_38
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 840
+        x: 650
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ad9339fcc86ed346990657994c4cb8c
-      internalID: 33696574
+      spriteID: 69f71a60ef04c7341b0354208ecf1c65
+      internalID: -1963714443
       vertices: []
       indices: 
       edges: []
@@ -950,19 +926,19 @@ TextureImporter:
       name: Double_click_speero_39
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 840
+        x: 780
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbfc9cd0480be8e478cb75da47f2fefb
-      internalID: 1599673260
+      spriteID: e6cc401ab4b3fe146acbf8bf077fab31
+      internalID: 2010648675
       vertices: []
       indices: 
       edges: []
@@ -971,19 +947,19 @@ TextureImporter:
       name: Double_click_speero_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 720
+        x: 910
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fcb16da9052c084e99c8ada81f71177
-      internalID: 1965591807
+      spriteID: 839f1be491de9ec43b44811d8ca96bf3
+      internalID: 509192238
       vertices: []
       indices: 
       edges: []
@@ -992,19 +968,19 @@ TextureImporter:
       name: Double_click_speero_41
       rect:
         serializedVersion: 2
-        x: 130
-        y: 720
+        x: 1040
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1555127475526104fa7afae6d04ae251
-      internalID: -1792633212
+      spriteID: 562bd737315fe8c4c80efd74406b794c
+      internalID: 1295632586
       vertices: []
       indices: 
       edges: []
@@ -1013,19 +989,19 @@ TextureImporter:
       name: Double_click_speero_42
       rect:
         serializedVersion: 2
-        x: 260
-        y: 720
+        x: 1170
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb279bb75d0abb040a130d7f34a2a12a
-      internalID: 1167162440
+      spriteID: 30f3cd4a91de73a4ab1d65d7fb7887e9
+      internalID: 156469203
       vertices: []
       indices: 
       edges: []
@@ -1034,19 +1010,19 @@ TextureImporter:
       name: Double_click_speero_43
       rect:
         serializedVersion: 2
-        x: 390
-        y: 720
+        x: 1300
+        y: 1080
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7ae337966382a64387abf39bdfd0429
-      internalID: -1428168708
+      spriteID: 984c4b58ad5d1a54da0bcc0dfd1b1488
+      internalID: -1475074391
       vertices: []
       indices: 
       edges: []
@@ -1055,19 +1031,19 @@ TextureImporter:
       name: Double_click_speero_44
       rect:
         serializedVersion: 2
-        x: 520
-        y: 720
+        x: 0
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59653d6e042206b428a1b2019a8dbc5b
-      internalID: -1942670662
+      spriteID: 2d24a1fe48179594b9c0c97e88053288
+      internalID: 1556384353
       vertices: []
       indices: 
       edges: []
@@ -1076,19 +1052,19 @@ TextureImporter:
       name: Double_click_speero_45
       rect:
         serializedVersion: 2
-        x: 650
-        y: 720
+        x: 130
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa655fb38398e2448b7d7224833e31fd
-      internalID: -1850679718
+      spriteID: 18b817982bef3c048a18a6ccbeb20a28
+      internalID: -1991813196
       vertices: []
       indices: 
       edges: []
@@ -1097,19 +1073,19 @@ TextureImporter:
       name: Double_click_speero_46
       rect:
         serializedVersion: 2
-        x: 780
-        y: 720
+        x: 260
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f60309915469f7a4690664c8d234fdea
-      internalID: 129605237
+      spriteID: 3ec6c1ea362b9ca44b34474574699687
+      internalID: 820532327
       vertices: []
       indices: 
       edges: []
@@ -1118,19 +1094,19 @@ TextureImporter:
       name: Double_click_speero_47
       rect:
         serializedVersion: 2
-        x: 910
-        y: 720
+        x: 390
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a48f670469376049a3c65a0c8299776
-      internalID: -504518347
+      spriteID: 244e732859f5a234fa1789036b402bc8
+      internalID: -18954998
       vertices: []
       indices: 
       edges: []
@@ -1139,19 +1115,19 @@ TextureImporter:
       name: Double_click_speero_48
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 720
+        x: 520
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e08faf33740a4d44a4f4c965c9d6215
-      internalID: 819486524
+      spriteID: f988e7b596a8afc48a8f3ca270bc6edb
+      internalID: -2096099243
       vertices: []
       indices: 
       edges: []
@@ -1160,19 +1136,19 @@ TextureImporter:
       name: Double_click_speero_49
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 720
+        x: 650
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7e3bf2f59e0c7c43866c37a16e2b298
-      internalID: -293634520
+      spriteID: 145a7c30d955f5541adcd2932f577237
+      internalID: 2102291087
       vertices: []
       indices: 
       edges: []
@@ -1181,19 +1157,19 @@ TextureImporter:
       name: Double_click_speero_50
       rect:
         serializedVersion: 2
-        x: 0
-        y: 600
+        x: 780
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56bbbe99cd97a514e92d3fcdafef9aa6
-      internalID: 831208929
+      spriteID: e42a9a269e375104095d7d4515ff91d3
+      internalID: 1419619446
       vertices: []
       indices: 
       edges: []
@@ -1202,19 +1178,19 @@ TextureImporter:
       name: Double_click_speero_51
       rect:
         serializedVersion: 2
-        x: 130
-        y: 600
+        x: 910
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00843d90bda8541449c7a417b6d8f283
-      internalID: 1494598500
+      spriteID: 30e75e084dbcba44487157f5392abcca
+      internalID: 219368868
       vertices: []
       indices: 
       edges: []
@@ -1223,19 +1199,19 @@ TextureImporter:
       name: Double_click_speero_52
       rect:
         serializedVersion: 2
-        x: 260
-        y: 600
+        x: 1040
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f8b127d8977c9a429defb4adc820d56
-      internalID: -1229181419
+      spriteID: 398e8ef5fac039140a5833d9be23f6f8
+      internalID: -566186477
       vertices: []
       indices: 
       edges: []
@@ -1244,19 +1220,19 @@ TextureImporter:
       name: Double_click_speero_53
       rect:
         serializedVersion: 2
-        x: 390
-        y: 600
+        x: 1170
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 978f533a52e9dd249bc33c952425bf9e
-      internalID: -1578820313
+      spriteID: 72ccc35501da24744be46244c20e7346
+      internalID: -1962826445
       vertices: []
       indices: 
       edges: []
@@ -1265,19 +1241,19 @@ TextureImporter:
       name: Double_click_speero_54
       rect:
         serializedVersion: 2
-        x: 520
-        y: 600
+        x: 1300
+        y: 960
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ec2c694bea7bb947bbcf30435872428
-      internalID: 1410812721
+      spriteID: c862313878fa4af408791429a67160bd
+      internalID: 1260104633
       vertices: []
       indices: 
       edges: []
@@ -1286,19 +1262,19 @@ TextureImporter:
       name: Double_click_speero_55
       rect:
         serializedVersion: 2
-        x: 650
-        y: 600
+        x: 0
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 261b46321b1ad29428931c24bddaffa4
-      internalID: -247397326
+      spriteID: 9cdbcbe8d6bc6994f8f22688c74b25ff
+      internalID: -2120751369
       vertices: []
       indices: 
       edges: []
@@ -1307,19 +1283,19 @@ TextureImporter:
       name: Double_click_speero_56
       rect:
         serializedVersion: 2
-        x: 780
-        y: 600
+        x: 130
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a357e9c1e0cf265429239795abdc846b
-      internalID: 1614168700
+      spriteID: 94f10abc6c9cfb74c8c5d847c54b1b1e
+      internalID: -1519250877
       vertices: []
       indices: 
       edges: []
@@ -1328,19 +1304,19 @@ TextureImporter:
       name: Double_click_speero_57
       rect:
         serializedVersion: 2
-        x: 910
-        y: 600
+        x: 260
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab4155ea5fe310c4e9d4a1fd0b621021
-      internalID: 1754521905
+      spriteID: 5097495e1beeb6241acb9ad48bd3df18
+      internalID: -71228187
       vertices: []
       indices: 
       edges: []
@@ -1349,19 +1325,19 @@ TextureImporter:
       name: Double_click_speero_58
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 600
+        x: 390
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f07500d7fea4a3c469297490046cc354
-      internalID: -1214568606
+      spriteID: dfad5cd4698f4184bbe2dcfc8402e7a6
+      internalID: -774140400
       vertices: []
       indices: 
       edges: []
@@ -1370,19 +1346,19 @@ TextureImporter:
       name: Double_click_speero_59
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 600
+        x: 520
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f5a55384d18b34f9c1871c6e2984d8
-      internalID: 1869039352
+      spriteID: e359204342a9f3d4e9ae8744799f3d9e
+      internalID: -1877115613
       vertices: []
       indices: 
       edges: []
@@ -1391,19 +1367,19 @@ TextureImporter:
       name: Double_click_speero_60
       rect:
         serializedVersion: 2
-        x: 0
-        y: 480
+        x: 650
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43d87fb838b522d4d8cfbecd7fca3cdc
-      internalID: 1332990857
+      spriteID: a4f621ab471aa844f883f1fc84de2c9d
+      internalID: -272102091
       vertices: []
       indices: 
       edges: []
@@ -1412,19 +1388,19 @@ TextureImporter:
       name: Double_click_speero_61
       rect:
         serializedVersion: 2
-        x: 130
-        y: 480
+        x: 780
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08cb7e6351b91f64daff385288024f93
-      internalID: 1270319620
+      spriteID: 6c0320c59d0bde84fb546b29e9fe732f
+      internalID: 261012058
       vertices: []
       indices: 
       edges: []
@@ -1433,19 +1409,19 @@ TextureImporter:
       name: Double_click_speero_62
       rect:
         serializedVersion: 2
-        x: 260
-        y: 480
+        x: 910
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d558e5375822ff9439b0867a5b200146
-      internalID: -2056917082
+      spriteID: d0a9a555572159d4f847154327de59af
+      internalID: 1626859829
       vertices: []
       indices: 
       edges: []
@@ -1454,19 +1430,19 @@ TextureImporter:
       name: Double_click_speero_63
       rect:
         serializedVersion: 2
-        x: 390
-        y: 480
+        x: 1040
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93f3ea7f0aa6bc943bae4c2fead68c8a
-      internalID: 1872649252
+      spriteID: a7ee381d6e2ce614bbd199050ab44722
+      internalID: -261466285
       vertices: []
       indices: 
       edges: []
@@ -1475,19 +1451,19 @@ TextureImporter:
       name: Double_click_speero_64
       rect:
         serializedVersion: 2
-        x: 520
-        y: 480
+        x: 1170
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa96363e722cdf94f8cb7ee4f26bbf34
-      internalID: -960413168
+      spriteID: ba208961f82c14f4380e2e67c3c4cb20
+      internalID: -302976517
       vertices: []
       indices: 
       edges: []
@@ -1496,19 +1472,19 @@ TextureImporter:
       name: Double_click_speero_65
       rect:
         serializedVersion: 2
-        x: 650
-        y: 480
+        x: 1300
+        y: 840
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f7d217b2b8fe344baed3b0bfd53e3df
-      internalID: 1547230920
+      spriteID: 7e11edc16d44eee4b94a705bb6a0c367
+      internalID: -1037517951
       vertices: []
       indices: 
       edges: []
@@ -1517,19 +1493,19 @@ TextureImporter:
       name: Double_click_speero_66
       rect:
         serializedVersion: 2
-        x: 780
-        y: 480
+        x: 0
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87dbd7d3f38446848b6fc8729074c87b
-      internalID: -248745874
+      spriteID: 0cd6e9edc6f89e34b804e6f37844ea78
+      internalID: -801859380
       vertices: []
       indices: 
       edges: []
@@ -1538,19 +1514,19 @@ TextureImporter:
       name: Double_click_speero_67
       rect:
         serializedVersion: 2
-        x: 910
-        y: 480
+        x: 130
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5a2b228fde02a44cac1ed6f82bfa14d
-      internalID: 742396073
+      spriteID: cd412d425b098b245ad5fdd75e793eb2
+      internalID: 1067866501
       vertices: []
       indices: 
       edges: []
@@ -1559,19 +1535,19 @@ TextureImporter:
       name: Double_click_speero_68
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 480
+        x: 260
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41a223656a9956b4ca7754ccd8f1e3d9
-      internalID: -1047297261
+      spriteID: 90c670b8f083a294c966f4b6688f528c
+      internalID: -84898352
       vertices: []
       indices: 
       edges: []
@@ -1580,19 +1556,19 @@ TextureImporter:
       name: Double_click_speero_69
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 480
+        x: 390
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09f7337549c30e34aa5119baf9e5e188
-      internalID: 1929510745
+      spriteID: feb57284d7e4a40428bbbe176b0589d3
+      internalID: -1200804030
       vertices: []
       indices: 
       edges: []
@@ -1601,19 +1577,19 @@ TextureImporter:
       name: Double_click_speero_70
       rect:
         serializedVersion: 2
-        x: 0
-        y: 360
+        x: 780
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79698724435901348a854c552882406d
-      internalID: -1801292163
+      spriteID: 1079a9c89fbf9dd449663dec5dc87bb4
+      internalID: 896616805
       vertices: []
       indices: 
       edges: []
@@ -1622,19 +1598,19 @@ TextureImporter:
       name: Double_click_speero_71
       rect:
         serializedVersion: 2
-        x: 130
-        y: 360
+        x: 910
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f0fa8ffa8a51d449b13af7f2f45d7f4
-      internalID: -24797252
+      spriteID: 25ba52209d61af94d9e19b869dc85d6e
+      internalID: 763323419
       vertices: []
       indices: 
       edges: []
@@ -1643,19 +1619,19 @@ TextureImporter:
       name: Double_click_speero_72
       rect:
         serializedVersion: 2
-        x: 260
-        y: 360
+        x: 1040
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2da3d4ee674d624cb2397dc9b7e5cca
-      internalID: -699492947
+      spriteID: 24d2755b83958bb4a8246a1980b4d4a5
+      internalID: -1440918600
       vertices: []
       indices: 
       edges: []
@@ -1664,19 +1640,19 @@ TextureImporter:
       name: Double_click_speero_73
       rect:
         serializedVersion: 2
-        x: 390
-        y: 360
+        x: 1170
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 978e110831f713b4eb4f1c61549d8a12
-      internalID: 462842309
+      spriteID: a5b96c813bd4c78479fb3ffcd029423a
+      internalID: 1381199743
       vertices: []
       indices: 
       edges: []
@@ -1685,19 +1661,19 @@ TextureImporter:
       name: Double_click_speero_74
       rect:
         serializedVersion: 2
-        x: 520
-        y: 360
+        x: 1300
+        y: 720
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddba043e491784140afd53ae965d388d
-      internalID: -1897433668
+      spriteID: 1ea3eb880bd7e6d45a0adc0de67a6775
+      internalID: 1363700610
       vertices: []
       indices: 
       edges: []
@@ -1706,19 +1682,19 @@ TextureImporter:
       name: Double_click_speero_75
       rect:
         serializedVersion: 2
-        x: 650
-        y: 360
+        x: 0
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1670e59b664e164c94c67bd37c66b4c
-      internalID: 1609114381
+      spriteID: 99686b8bcb5351c4c9e8c4cceebb1169
+      internalID: 1200973579
       vertices: []
       indices: 
       edges: []
@@ -1727,19 +1703,19 @@ TextureImporter:
       name: Double_click_speero_76
       rect:
         serializedVersion: 2
-        x: 780
-        y: 360
+        x: 130
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eff55fba24381d247b1f9a0e9d716bf3
-      internalID: -998205474
+      spriteID: 61cadc29b219e1745ac408c9abd69a66
+      internalID: -373536962
       vertices: []
       indices: 
       edges: []
@@ -1748,19 +1724,19 @@ TextureImporter:
       name: Double_click_speero_77
       rect:
         serializedVersion: 2
-        x: 910
-        y: 360
+        x: 260
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ef3eab3aa36a214fbd6af529ec95660
-      internalID: -2116276299
+      spriteID: c311ad6edbcee814ca27580a894675df
+      internalID: 1314011781
       vertices: []
       indices: 
       edges: []
@@ -1769,19 +1745,19 @@ TextureImporter:
       name: Double_click_speero_78
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 360
+        x: 390
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5405534fb57141849993473b33bbdde2
-      internalID: -296186820
+      spriteID: e3b270cf2c591c444b6509756b2ed882
+      internalID: -404869098
       vertices: []
       indices: 
       edges: []
@@ -1790,19 +1766,19 @@ TextureImporter:
       name: Double_click_speero_79
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 360
+        x: 520
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9ae8ec6bc84671428716f9b52d2c30f
-      internalID: -1450593536
+      spriteID: c5feba15d8039b6438b41bdc5f587567
+      internalID: 1797396771
       vertices: []
       indices: 
       edges: []
@@ -1811,19 +1787,19 @@ TextureImporter:
       name: Double_click_speero_80
       rect:
         serializedVersion: 2
-        x: 0
-        y: 240
+        x: 650
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64cb883cc53c3754190a72c8bc021448
-      internalID: -1189916748
+      spriteID: ac92c72d156517d409ba8d38f00f4e63
+      internalID: 2069118004
       vertices: []
       indices: 
       edges: []
@@ -1832,19 +1808,19 @@ TextureImporter:
       name: Double_click_speero_81
       rect:
         serializedVersion: 2
-        x: 130
-        y: 240
+        x: 780
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81acd94b6bd83b846b9bd240b6b59489
-      internalID: -266994965
+      spriteID: d5a983a031225eb42b46ebfa1982cadf
+      internalID: -1819858751
       vertices: []
       indices: 
       edges: []
@@ -1853,19 +1829,19 @@ TextureImporter:
       name: Double_click_speero_82
       rect:
         serializedVersion: 2
-        x: 260
-        y: 240
+        x: 910
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f42b446dbc0db64983f129a72318ef7
-      internalID: -191891978
+      spriteID: fb4f41dcd42ecac42bc86c0645ef7209
+      internalID: -784832624
       vertices: []
       indices: 
       edges: []
@@ -1874,19 +1850,19 @@ TextureImporter:
       name: Double_click_speero_83
       rect:
         serializedVersion: 2
-        x: 390
-        y: 240
+        x: 1040
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c946613d2f4296428809f3ab4f31852
-      internalID: 480158124
+      spriteID: 3a87dcc01daca6b498560461e7f7be73
+      internalID: -593466283
       vertices: []
       indices: 
       edges: []
@@ -1895,19 +1871,19 @@ TextureImporter:
       name: Double_click_speero_84
       rect:
         serializedVersion: 2
-        x: 520
-        y: 240
+        x: 1170
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e1eb7f661b8d374a8f1fa9341813ad2
-      internalID: -364849680
+      spriteID: 2a2eefdc07447684c8105bb3ee074b11
+      internalID: 1509326360
       vertices: []
       indices: 
       edges: []
@@ -1916,19 +1892,19 @@ TextureImporter:
       name: Double_click_speero_85
       rect:
         serializedVersion: 2
-        x: 650
-        y: 240
+        x: 1300
+        y: 600
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc9b75d07d70cd545ab145dbe5e897fc
-      internalID: -553954439
+      spriteID: 3a7bb0ac4635fd749b7a62dbb6f2cd91
+      internalID: 862261517
       vertices: []
       indices: 
       edges: []
@@ -1937,19 +1913,19 @@ TextureImporter:
       name: Double_click_speero_86
       rect:
         serializedVersion: 2
-        x: 780
-        y: 240
+        x: 0
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a564a7a4fbde8246b203ebd8d427c8c
-      internalID: -45825457
+      spriteID: 3c05be41dbec7424abe797a03fb34745
+      internalID: 171240315
       vertices: []
       indices: 
       edges: []
@@ -1958,19 +1934,19 @@ TextureImporter:
       name: Double_click_speero_87
       rect:
         serializedVersion: 2
-        x: 910
-        y: 240
+        x: 130
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a71b8022106ece3489cd34d0c07bbdaf
-      internalID: 1672572879
+      spriteID: c8f082161acc64b4a9c378e70c31a5cb
+      internalID: 923358183
       vertices: []
       indices: 
       edges: []
@@ -1979,19 +1955,19 @@ TextureImporter:
       name: Double_click_speero_88
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 240
+        x: 260
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 717e0999d01021e409c44905f9f937da
-      internalID: 1946246777
+      spriteID: bd2bd9307bec6a64e9fd71e1032d3d85
+      internalID: -2089215826
       vertices: []
       indices: 
       edges: []
@@ -2000,19 +1976,19 @@ TextureImporter:
       name: Double_click_speero_89
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 240
+        x: 390
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3e74746d2509c34b8233d64542822b0
-      internalID: 2067533041
+      spriteID: 55b3efa4696b361419635c57f4a57088
+      internalID: 1493921869
       vertices: []
       indices: 
       edges: []
@@ -2021,19 +1997,19 @@ TextureImporter:
       name: Double_click_speero_90
       rect:
         serializedVersion: 2
-        x: 0
-        y: 120
+        x: 520
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f562a43b7ae6a92498ac360d471f7b6a
-      internalID: -1315099651
+      spriteID: e8b109eff229ca148be1fbf97988aeef
+      internalID: 1909467726
       vertices: []
       indices: 
       edges: []
@@ -2042,19 +2018,19 @@ TextureImporter:
       name: Double_click_speero_91
       rect:
         serializedVersion: 2
-        x: 130
-        y: 120
+        x: 650
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63f5ea2a1667c264ea0ad34170ac66b7
-      internalID: 24132830
+      spriteID: 0b6eb63d6b5e00d4387a5b2aa206a9ac
+      internalID: -255709181
       vertices: []
       indices: 
       edges: []
@@ -2063,19 +2039,19 @@ TextureImporter:
       name: Double_click_speero_92
       rect:
         serializedVersion: 2
-        x: 260
-        y: 120
+        x: 780
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a6733006d47053449b505d7fae09094
-      internalID: 1494566938
+      spriteID: 137357f9c8c5e1a42b50e7867c5f7467
+      internalID: -474369020
       vertices: []
       indices: 
       edges: []
@@ -2084,19 +2060,19 @@ TextureImporter:
       name: Double_click_speero_93
       rect:
         serializedVersion: 2
-        x: 390
-        y: 120
+        x: 910
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a2346460fd973446ad8a4b73444f8af
-      internalID: 1712634467
+      spriteID: 69b70fd3e467e644494814fbe162cc44
+      internalID: -1358527702
       vertices: []
       indices: 
       edges: []
@@ -2105,19 +2081,19 @@ TextureImporter:
       name: Double_click_speero_94
       rect:
         serializedVersion: 2
-        x: 520
-        y: 120
+        x: 1040
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29a672edc6f73a2449b87b16e206e7ab
-      internalID: 1296603452
+      spriteID: 2992f86d55e071d4da03d4ebd722d22a
+      internalID: 1993461499
       vertices: []
       indices: 
       edges: []
@@ -2126,19 +2102,19 @@ TextureImporter:
       name: Double_click_speero_95
       rect:
         serializedVersion: 2
-        x: 650
-        y: 120
+        x: 1170
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8733e155706c0e648b0b2fddf3a457a5
-      internalID: -1100893680
+      spriteID: 48a536dc424c00045ac3fbcb9ed21bfb
+      internalID: 164628760
       vertices: []
       indices: 
       edges: []
@@ -2147,19 +2123,19 @@ TextureImporter:
       name: Double_click_speero_96
       rect:
         serializedVersion: 2
-        x: 780
-        y: 120
+        x: 1300
+        y: 480
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3c003d1c2b39b4abc639a9124bce73
-      internalID: -571650822
+      spriteID: 54f52a3ca4e72f3468dbe969fb537eba
+      internalID: -2040817398
       vertices: []
       indices: 
       edges: []
@@ -2168,19 +2144,19 @@ TextureImporter:
       name: Double_click_speero_97
       rect:
         serializedVersion: 2
-        x: 910
-        y: 120
+        x: 0
+        y: 360
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4be61723c49cea84da295e3b9d5ed189
-      internalID: -1719387144
+      spriteID: 29e2068a0a78b8e4883c1c87142fb638
+      internalID: 711355907
       vertices: []
       indices: 
       edges: []
@@ -2189,19 +2165,19 @@ TextureImporter:
       name: Double_click_speero_98
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 120
+        x: 130
+        y: 360
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06ddc29e018d47e46a4807da5ad41190
-      internalID: 1202206779
+      spriteID: 829e2d5d4a5784d4ca7347752fc5bdf5
+      internalID: 47613730
       vertices: []
       indices: 
       edges: []
@@ -2210,19 +2186,19 @@ TextureImporter:
       name: Double_click_speero_99
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 120
+        x: 260
+        y: 360
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaa146b29a01366448431d2d107f947a
-      internalID: -1776920946
+      spriteID: 1a8147ad2d5660443811936fc2af07f6
+      internalID: 895846556
       vertices: []
       indices: 
       edges: []
@@ -2231,19 +2207,628 @@ TextureImporter:
       name: Double_click_speero_100
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 390
+        y: 360
         width: 130
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.195}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c44d1b1f2c649b24faba4579e63b2356
-      internalID: -1545538821
+      spriteID: 0d281d26724ffb04f8732e101d075492
+      internalID: 263527845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_101
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391fc77d56d8aed428a567a7c8e80a72
+      internalID: 1391438404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_102
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc15c4f986ccd5f41af0a5105fc0bd85
+      internalID: 297685833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_103
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f020cf92ea7a4594587953484c0bd696
+      internalID: 1029133400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_104
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee35f5693c8a26247970d1bc7d2373d4
+      internalID: 2050305753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_105
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef6d08977e2d664a894115b08092b80
+      internalID: 1908939890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_106
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7681bf8ba2d95c4f92c6eb3340d31f7
+      internalID: -1960944105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_107
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 360
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af83e5ca3f61ac84aa9db2c3ee563a3f
+      internalID: -1270036907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840306d375f526b4ea0e7e002ffbcd8a
+      internalID: -532383157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_109
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747039ca984f8b44ea6b3b7aad38f671
+      internalID: 891493166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_110
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6631c2600c196a74c83d2deb1ddc6be1
+      internalID: -2121228029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_111
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69529ed60ae6e7a4e972176c2f57442c
+      internalID: -1590977366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_112
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed6e34a91beed0438a3208e7297eb7a
+      internalID: -1874468977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_113
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36621a5188df9214a98bd3fc708a1c1f
+      internalID: 184788354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_114
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ec853d47d4fd745a082342dafd9ab8
+      internalID: -519734007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_115
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4744a1a19f7db3439a0228c391a4da8
+      internalID: 2103112225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_116
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83abc2250feaa2141a75e43d446426cd
+      internalID: 1348780881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_117
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7828e0d94219992418a388bed234b1f9
+      internalID: 1121505255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_118
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 240
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e63124ceef68584fa132464fbfcca0c
+      internalID: -2098340945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8837c639ff47b5e4c8289acfa4309c2d
+      internalID: -203914959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_120
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab10c6c2a4b2e53408285566c90071e0
+      internalID: -797575452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_121
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1ee3105d5d5a94a861852ff0a575ed
+      internalID: -11888538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_122
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b97f515a69c9a4bbe4ff63689d7e4a
+      internalID: -1366105048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_123
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30f4407a2830514cacf680320e1856e
+      internalID: 1953853915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_124
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6769181d2616b8c4c8b1fca596b763af
+      internalID: -211189111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_125
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eeb2700700fee041aaf4b1a745e2999
+      internalID: -1392460092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_126
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ab9ed1c5f410a48a58700120c72690
+      internalID: 868514418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_127
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacf7e7801e1e76499dc5984e60435b6
+      internalID: -1142826420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_128
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f0a74be41444642a744ed98d5941b2
+      internalID: 840492016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double_click_speero_129
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 120
+        width: 130
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0070a0c118cf049bded7555f8eb75d
+      internalID: 313686814
       vertices: []
       indices: 
       edges: []
@@ -2259,107 +2844,136 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Double_click_speero_67: 742396073
-      Double_click_speero_28: -1543609562
-      Double_click_speero_60: 1332990857
-      Double_click_speero_54: 1410812721
-      Double_click_speero_6: -432481702
-      Double_click_speero_56: 1614168700
-      Double_click_speero_27: 1963967402
-      Double_click_speero_86: -45825457
-      Double_click_speero_71: -24797252
-      Double_click_speero_17: 1256948144
-      Double_click_speero_74: -1897433668
-      Double_click_speero_70: -1801292163
-      Double_click_speero_72: -699492947
-      Double_click_speero_42: 1167162440
-      Double_click_speero_53: -1578820313
-      Double_click_speero_59: 1869039352
-      Double_click_speero_24: -1533054340
-      Double_click_speero_34: -69815974
-      Double_click_speero_16: -1942543110
-      Double_click_speero_99: -1776920946
-      Double_click_speero_50: 831208929
-      Double_click_speero_73: 462842309
-      Double_click_speero_91: 24132830
-      Double_click_speero_25: -332354353
-      Double_click_speero_96: -571650822
-      Double_click_speero_100: -1545538821
-      Double_click_speero_64: -960413168
-      Double_click_speero_47: -504518347
-      Double_click_speero_75: 1609114381
-      Double_click_speero_69: 1929510745
-      Double_click_speero_80: -1189916748
-      Double_click_speero_45: -1850679718
-      Double_click_speero_40: 1965591807
-      Double_click_speero_61: 1270319620
-      Double_click_speero_11: -873816809
-      Double_click_speero_82: -191891978
-      Double_click_speero_30: -1866142867
-      Double_click_speero_57: 1754521905
-      Double_click_speero_52: -1229181419
-      Double_click_speero_22: -512442272
-      Double_click_speero_10: -820261016
-      Double_click_speero_18: -814980133
-      Double_click_speero_55: -247397326
-      Double_click_speero_13: 1802254496
-      Double_click_speero_68: -1047297261
-      Double_click_speero_19: -1582018370
-      Double_click_speero_81: -266994965
-      Double_click_speero_65: 1547230920
-      Double_click_speero_3: -760771796
-      Double_click_speero_33: 2078996584
-      Double_click_speero_51: 1494598500
-      Double_click_speero_35: 1319605451
-      Double_click_speero_9: 2036995365
-      Double_click_speero_1: -1269293795
-      Double_click_speero_14: -1498481568
-      Double_click_speero_8: 1453519206
-      Double_click_speero_12: -2060677075
-      Double_click_speero_83: 480158124
-      Double_click_speero_63: 1872649252
-      Double_click_speero_77: -2116276299
-      Double_click_speero_62: -2056917082
-      Double_click_speero_92: 1494566938
-      Double_click_speero_76: -998205474
-      Double_click_speero_97: -1719387144
-      Double_click_speero_84: -364849680
-      Double_click_speero_39: 1599673260
-      Double_click_speero_90: -1315099651
-      Double_click_speero_2: 1428301829
-      Double_click_speero_43: -1428168708
-      Double_click_speero_4: 156781651
-      Double_click_speero_37: -9380218
-      Double_click_speero_23: -882437448
-      Double_click_speero_87: 1672572879
-      Double_click_speero_48: 819486524
-      Double_click_speero_85: -553954439
-      Double_click_speero_58: -1214568606
-      Double_click_speero_29: 1621024256
-      Double_click_speero_79: -1450593536
-      Double_click_speero_0: -534791972
-      Double_click_speero_98: 1202206779
-      Double_click_speero_94: 1296603452
-      Double_click_speero_5: -1881730273
-      Double_click_speero_49: -293634520
-      Double_click_speero_95: -1100893680
-      Double_click_speero_44: -1942670662
-      Double_click_speero_93: 1712634467
-      Double_click_speero_46: 129605237
-      Double_click_speero_21: 1591054213
-      Double_click_speero_78: -296186820
-      Double_click_speero_89: 2067533041
-      Double_click_speero_32: 1275513008
-      Double_click_speero_7: 1392408986
-      Double_click_speero_15: 861184076
-      Double_click_speero_36: 1469580030
-      Double_click_speero_31: 1836409779
-      Double_click_speero_66: -248745874
-      Double_click_speero_88: 1946246777
-      Double_click_speero_38: 33696574
-      Double_click_speero_26: 1237055544
-      Double_click_speero_41: -1792633212
-      Double_click_speero_20: -902127812
+      Double_click_speero_102: 297685833
+      Double_click_speero_112: -1874468977
+      Double_click_speero_67: 1067866501
+      Double_click_speero_105: 1908939890
+      Double_click_speero_28: -224651964
+      Double_click_speero_60: -272102091
+      Double_click_speero_110: -2121228029
+      Double_click_speero_54: 1260104633
+      Double_click_speero_6: 804298458
+      Double_click_speero_56: -1519250877
+      Double_click_speero_27: 1210663736
+      Double_click_speero_86: 171240315
+      Double_click_speero_127: -1142826420
+      Double_click_speero_71: 763323419
+      Double_click_speero_17: 694311095
+      Double_click_speero_74: 1363700610
+      Double_click_speero_70: 896616805
+      Double_click_speero_72: -1440918600
+      Double_click_speero_42: 156469203
+      Double_click_speero_53: -1962826445
+      Double_click_speero_59: -1877115613
+      Double_click_speero_24: 602978158
+      Double_click_speero_34: -742790024
+      Double_click_speero_16: -1782156710
+      Double_click_speero_117: 1121505255
+      Double_click_speero_99: 895846556
+      Double_click_speero_50: 1419619446
+      Double_click_speero_73: 1381199743
+      Double_click_speero_91: -255709181
+      Double_click_speero_25: -1377643008
+      Double_click_speero_96: -2040817398
+      Double_click_speero_100: 263527845
+      Double_click_speero_64: -302976517
+      Double_click_speero_47: -18954998
+      Double_click_speero_75: 1200973579
+      Double_click_speero_69: -1200804030
+      Double_click_speero_80: 2069118004
+      Double_click_speero_45: -1991813196
+      Double_click_speero_40: 509192238
+      Double_click_speero_61: 261012058
+      Double_click_speero_11: 1390182094
+      Double_click_speero_82: -784832624
+      Double_click_speero_30: -1555982632
+      Double_click_speero_124: -211189111
+      Double_click_speero_57: -71228187
+      Double_click_speero_52: -566186477
+      Double_click_speero_115: 2103112225
+      Double_click_speero_120: -797575452
+      Double_click_speero_22: -2110697621
+      Double_click_speero_107: -1270036907
+      Double_click_speero_10: 1427688092
+      Double_click_speero_18: -1064519821
+      Double_click_speero_55: -2120751369
+      Double_click_speero_13: -812064149
+      Double_click_speero_68: -84898352
+      Double_click_speero_19: -1310127598
+      Double_click_speero_81: -1819858751
+      Double_click_speero_126: 868514418
+      Double_click_speero_65: -1037517951
+      Double_click_speero_3: 2025831656
+      Double_click_speero_33: -204425479
+      Double_click_speero_51: 219368868
+      Double_click_speero_35: -66228305
+      Double_click_speero_106: -1960944105
+      Double_click_speero_9: -1296704232
+      Double_click_speero_113: 184788354
+      Double_click_speero_122: -1366105048
+      Double_click_speero_1: 445004819
+      Double_click_speero_14: -1839038416
+      Double_click_speero_8: 1438437150
+      Double_click_speero_12: 1831529980
+      Double_click_speero_83: -593466283
+      Double_click_speero_119: -203914959
+      Double_click_speero_63: -261466285
+      Double_click_speero_77: 1314011781
+      Double_click_speero_62: 1626859829
+      Double_click_speero_92: -474369020
+      Double_click_speero_76: -373536962
+      Double_click_speero_97: 711355907
+      Double_click_speero_84: 1509326360
+      Double_click_speero_39: 2010648675
+      Double_click_speero_90: 1909467726
+      Double_click_speero_101: 1391438404
+      Double_click_speero_2: 315628706
+      Double_click_speero_43: -1475074391
+      Double_click_speero_4: 86977223
+      Double_click_speero_37: 1667868548
+      Double_click_speero_23: -232202764
+      Double_click_speero_116: 1348780881
+      Double_click_speero_87: 923358183
+      Double_click_speero_48: -2096099243
+      Double_click_speero_85: 862261517
+      Double_click_speero_108: -532383157
+      Double_click_speero_58: -774140400
+      Double_click_speero_29: 444710684
+      Double_click_speero_79: 1797396771
+      Double_click_speero_129: 313686814
+      Double_click_speero_0: 1938739037
+      Double_click_speero_98: 47613730
+      Double_click_speero_94: 1993461499
+      Double_click_speero_5: 1790514847
+      Double_click_speero_49: 2102291087
+      Double_click_speero_95: 164628760
+      Double_click_speero_44: 1556384353
+      Double_click_speero_93: -1358527702
+      Double_click_speero_114: -519734007
+      Double_click_speero_46: 820532327
+      Double_click_speero_21: -126239535
+      Double_click_speero_78: -404869098
+      Double_click_speero_123: 1953853915
+      Double_click_speero_89: 1493921869
+      Double_click_speero_32: 1415566701
+      Double_click_speero_128: 840492016
+      Double_click_speero_7: -128689002
+      Double_click_speero_15: 1567994287
+      Double_click_speero_36: -1699314764
+      Double_click_speero_31: 1774046496
+      Double_click_speero_66: -801859380
+      Double_click_speero_118: -2098340945
+      Double_click_speero_88: -2089215826
+      Double_click_speero_38: -1963714443
+      Double_click_speero_26: -2144079691
+      Double_click_speero_125: -1392460092
+      Double_click_speero_41: 1295632586
+      Double_click_speero_109: 891493166
+      Double_click_speero_103: 1029133400
+      Double_click_speero_121: -11888538
+      Double_click_speero_104: 2050305753
+      Double_click_speero_20: -577236853
+      Double_click_speero_111: -1590977366
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

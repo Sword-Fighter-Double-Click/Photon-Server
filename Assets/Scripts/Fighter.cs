@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Animation))]
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SpriteRenderer))]
 public abstract class Fighter : MonoBehaviour
@@ -15,14 +16,14 @@ public abstract class Fighter : MonoBehaviour
         Attack = 4,
         ChargedAttack = 5,
         JumpAttack = 6,
-        LethalMove = 7
+        Ultimate = 7
     };
 
     [Header("Caching")]
     [SerializeField] private Image HPBar;
     [SerializeField] private Image FPBar;
-    [SerializeField] private GameObject lethalMoveScreen;
-    [SerializeField] private AnimationClip lethalMove;
+    [SerializeField] private GameObject ultimateScreen;
+    [SerializeField] private AnimationClip ultimate;
 
     // 기존 에셋에 있던 먼지 효과 프리팹 오브젝트
     [SerializeField] private GameObject m_RunStopDust;
@@ -72,9 +73,9 @@ public abstract class Fighter : MonoBehaviour
     /// <summary>
     /// 적이 궁극기에 맞았는지를 저장하는 변수
     /// </summary>
-    protected bool hitLethalMove;
+    protected bool hitUltimate;
 
-    private GameObject lethalMoveScreenClone;
+    private GameObject ultimateScreenClone;
 
     private void Awake()
     {
@@ -111,7 +112,7 @@ public abstract class Fighter : MonoBehaviour
 
         JumpAttack();
 
-        LethalMove();
+        Ultimate();
 
         // 켜져 있는 Collider의 크기를 이용하여 공격판정을 생성하고 적이 맞았는지 확인하는 반복문
         foreach (FighterSkill skill in skills)
@@ -122,15 +123,15 @@ public abstract class Fighter : MonoBehaviour
             {
                 // 적이 맞았다면
 
-                if (fighterAction == FighterAction.LethalMove)
+                if (fighterAction == FighterAction.Ultimate)
                 {
-                    hitLethalMove = true;
+                    hitUltimate = true;
                 }
 
                 skill.colliderEnabled = false;
 
                 // 데미지를 가함
-                GiveDamage();
+                GiveDamage(skill);
             }
         }
     }
@@ -143,17 +144,15 @@ public abstract class Fighter : MonoBehaviour
     public void SettingUI()
     {
         Transform UI;
-        if (CompareTag("Player1"))
+        foreach (string word in new string[] { "1", "2" })
         {
-            UI = GameObject.FindGameObjectWithTag("Player1UI").transform;
-            HPBar = UI.Find("HPBar").GetComponent<Image>();
-            FPBar = UI.Find("Ultimate").Find("Empty").GetComponent<Image>();
-        }
-        else if (CompareTag("Player2"))
-        {
-            UI = GameObject.FindGameObjectWithTag("Player2UI").transform;
-            HPBar = UI.Find("HPBar").GetComponent<Image>();
-            FPBar = UI.Find("Ultimate").Find("Empty").GetComponent<Image>();
+            string temp = "Player" + word;
+            if (CompareTag(temp))
+            {
+                UI = GameObject.FindGameObjectWithTag(temp + "UI").transform;
+                HPBar = UI.Find("HPBar").GetComponent<Image>();
+                FPBar = UI.Find("Ultimate").Find("Empty").GetComponent<Image>();
+            }
         }
     }
 
@@ -166,8 +165,17 @@ public abstract class Fighter : MonoBehaviour
         animator.SetInteger("FacingDirection", 0);
         currentHP = status.HP;
         currentUltimateGage = 0;
-        SetAction(0);
-        animator.SetTrigger("RoundStart");
+        SetAction(FighterAction.None);
+        animator.SetTrigger("Reset");
+
+        if (CompareTag("Player1"))
+        {
+            number = 0;
+        }
+        else if(CompareTag("Player2"))
+        {
+            number = 1;
+        }
 
         // 공격판정 초기화
         foreach (FighterSkill skill in skills)
@@ -208,11 +216,16 @@ public abstract class Fighter : MonoBehaviour
     /// 플레이어의 상태를 정수로 설정
     /// </summary>
     /// <param name="value"></param>
-    void SetAction(int value)
+    void SetAction(FighterAction value)
     {
-        if (value < (int)FighterAction.None && value > (int)FighterAction.LethalMove) return;
+        //if (value < (int)FighterAction.None && value > (int)FighterAction.Ultimate) return;
 
-        fighterAction = (FighterAction)value;
+        fighterAction = value;
+    }
+
+    void SetAction(string value)
+    {
+        fighterAction = (FighterAction)Enum.Parse(typeof(FighterAction), value);
     }
 
     /// <summary>
@@ -258,7 +271,7 @@ public abstract class Fighter : MonoBehaviour
     {
         cantInputTime = float.MaxValue;
     }
-    #endregion
+#endregion
 
     #region HandleHitBox
     /// <summary>
@@ -425,7 +438,7 @@ public abstract class Fighter : MonoBehaviour
     /// <summary>
     /// 궁극기
     /// </summary>
-    private void LethalMove()
+    private void Ultimate()
     {
         if (!canInput) return;
         if (!isGround) return;
@@ -438,9 +451,9 @@ public abstract class Fighter : MonoBehaviour
 
             currentUltimateGage = 0;
 
-            fighterAction = FighterAction.LethalMove;
+            fighterAction = FighterAction.Ultimate;
 
-            animator.CrossFade("LethalMove", 0);
+            animator.CrossFade("Ultimate", 0);
         }
     }
 
@@ -449,8 +462,8 @@ public abstract class Fighter : MonoBehaviour
     /// </summary>
     /// <param name="isGuard"></param>
     /// <param name="enemyRotationY"></param>
-    /// <param name="lethalMoveCantInputTime"></param>
-    private void Hit(bool isGuard, float enemyRotationY, float lethalMoveCantInputTime)
+    /// <param name="ultimateCantInputTime"></param>
+    private void Hit(bool isGuard, float enemyRotationY, float ultimateCantInputTime)
     {
         Vector2 knockBackPath = enemyRotationY == 0 ? Vector2.right : Vector2.left;
 
@@ -459,7 +472,7 @@ public abstract class Fighter : MonoBehaviour
         if (isGuard)
         {
             // 입력 불가 시간 설정
-            cantInputTime = lethalMoveCantInputTime > 0 ? lethalMoveCantInputTime : 0.1f;
+            cantInputTime = ultimateCantInputTime > 0 ? ultimateCantInputTime : 0.1f;
             // 넉백
             rigidBody.AddForce(knockBackPath * status.guardKnockBackPower, ForceMode.Impulse);
         }
@@ -471,9 +484,9 @@ public abstract class Fighter : MonoBehaviour
                 OffHitBox(count);
             }
             animator.CrossFade("Hit", 0);
-            SetAction(0);
+            SetAction(FighterAction.Hit);
             // 입력 불가 시간 설정
-            cantInputTime = lethalMoveCantInputTime > 0 ? lethalMoveCantInputTime : 0.3f;
+            cantInputTime = ultimateCantInputTime > 0 ? ultimateCantInputTime : 0.3f;
             // 넉백
             rigidBody.AddForce(knockBackPath * status.hitKnockBackPower, ForceMode.Impulse);
         }
@@ -535,11 +548,11 @@ public abstract class Fighter : MonoBehaviour
     /// <summary>
     /// 궁극기 이미지 활성화
     /// </summary>
-    protected void OnLethalMoveScreen()
+    protected void OnUltimateScreen()
     {
-        lethalMoveScreenClone = Instantiate(lethalMoveScreen);
+        //ultimateScreenClone = Instantiate(ultimateScreen);
 
-        lethalMoveScreenClone.SetActive(true);
+        //ultimateScreenClone.SetActive(true);
     }
 
     /// <summary>
@@ -547,7 +560,7 @@ public abstract class Fighter : MonoBehaviour
     /// </summary>
     protected void OffLethalMoveScreen()
     {
-        Destroy(lethalMoveScreenClone);
+        //Destroy(ultimateScreenClone);
     }
     #endregion
 
@@ -559,28 +572,16 @@ public abstract class Fighter : MonoBehaviour
     /// <returns></returns>
     private bool SearchFighterWithinRange(BoxCollider searchRange)
     {
-        //공격 판정 변경하기
-        Collider[] colliders = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size /2,out Collider[] results,Quaternion.identity,LayerMask.GetMask("Player"));
-        // BoxCast로 공격판정 생성
-        RaycastHit[] raycastHits = Physics.BoxCastAll(searchRange.bounds.center, searchRange.bounds.size/2, transform.rotation.y == 0 ? Vector3.right : Vector3.left,Quaternion.identity, 0.01f, LayerMask.GetMask("Player"));
+        int count = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size /2, new Collider[2],Quaternion.identity,LayerMask.GetMask("Player"));
 
-        foreach (RaycastHit raycastHit in raycastHits)
-        {
-            if (!raycastHit.collider.CompareTag(tag))
-            {
-                return true;
-            }
-        }
-
-        // 찾지 못하면 null 반환
-        return false;
+        return count > 1;
     }
 
     /// <summary>
     /// 적 플레이어에게 데미지를 가하는 함수
     /// </summary>
     /// <param name="enemyFighter"></param>
-    private void GiveDamage()
+    private void GiveDamage(FighterSkill fighterSkill)
     {
         bool isGuard = false;
 
@@ -590,18 +591,18 @@ public abstract class Fighter : MonoBehaviour
         if (cantInputTime > 0) return;
 
         // 현재 공격의 데미지 저장
-        damage += skills[(int)fighterAction - 4].damage;
+        damage += fighterSkill.damage;
 
         // 가드 시 데미지 감소
         if (enemyFighter.fighterAction == FighterAction.Guard)
         {
-            damage = skills[(int)fighterAction - 4].damage * skills[(int)fighterAction - 4].absorptionRate / 100;
+            damage = fighterSkill.damage * fighterSkill.absorptionRate / 100;
 
             isGuard = true;
 
             cantInputTime = 0.5f;
 
-            SetAction(0);
+            SetAction(FighterAction.None);
         }
         // 적 플레이어가 공격 애니메이션일 시, 카운데 배율을 곱하여 데미지 증가
         else if (!(enemyFighter.fighterAction == FighterAction.None || enemyFighter.fighterAction == FighterAction.Hit))
@@ -611,9 +612,9 @@ public abstract class Fighter : MonoBehaviour
 
         // 현재 공격이 궁극기일 시, 시전시간+0.5초의 입력 불가 시간을 적에게 적용한다.
         float lethalMoveCantInputTime = 0;
-        if (fighterAction == FighterAction.LethalMove)
+        if (fighterAction == FighterAction.Ultimate)
         {
-            lethalMoveCantInputTime = lethalMove.length + 0.5f;
+            lethalMoveCantInputTime = ultimate.length + 0.5f;
         }
 
         enemyFighter.currentHP -= damage;

@@ -82,7 +82,7 @@ public class Speero : Fighter
 	void HandleLethalMoveAnimation()
 	{
 		// 맞았다면
-		if (hitLethalMove)
+		if (hitUltimate)
 		{
 			usingLethalMoveAnimation = true;
 
@@ -92,9 +92,9 @@ public class Speero : Fighter
 			// 캐릭터 이미지 비활성화
 			SetPlayerVisible(0);
 			
-			OnLethalMoveScreen();
+			OnUltimateScreen();
 
-			hitLethalMove = false;
+			hitUltimate = false;
 		}
 		// 맞지 않았다면
 		else

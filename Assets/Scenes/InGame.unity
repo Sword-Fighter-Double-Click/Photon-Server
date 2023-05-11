@@ -4713,7 +4713,7 @@ GameObject:
   - component: {fileID: 1496612943}
   - component: {fileID: 1496612944}
   m_Layer: 5
-  m_Name: CountDown
+  m_Name: RoundStateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4984,20 +4984,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speero: {fileID: 3434485483101110125, guid: c58623fc1b7e05542b357dd60f648bef, type: 3}
   arksha: {fileID: 8457836882072688806, guid: aa46fdb9ba522204d873dd4860e79ad0, type: 3}
-  roundTimeCountText: {fileID: 0}
-  countDownText: {fileID: 0}
-  countDownImages:
-  - {fileID: -626916352, guid: 271cc8a4c507d7b4fa286545815758ca, type: 3}
-  - {fileID: -1210913115, guid: 271cc8a4c507d7b4fa286545815758ca, type: 3}
-  - {fileID: -1302422640, guid: 271cc8a4c507d7b4fa286545815758ca, type: 3}
-  - {fileID: -402035084, guid: 271cc8a4c507d7b4fa286545815758ca, type: 3}
-  timesUp: {fileID: 582220012}
+  timerText: {fileID: 1271210310}
+  roundStateText: {fileID: 1496612944}
   HPBar1: {fileID: 1674688016}
   HPBar2: {fileID: 184813863}
   FPBar1: {fileID: 1432867063}
   FPBar2: {fileID: 1845167342}
-  win1: {fileID: 1118392916}
-  win2: {fileID: 636423925}
   roundTime: 60
 --- !u!4 &1590721760
 Transform:

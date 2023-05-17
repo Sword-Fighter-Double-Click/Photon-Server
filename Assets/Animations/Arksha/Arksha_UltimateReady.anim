@@ -77,13 +77,13 @@ AnimationClip:
   m_Events:
   - time: 0.083333336
     functionName: OnHitBox
-    data: 
+    data: Ultimate
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 3
+    intParameter: 0
     messageOptions: 0
   - time: 0.25
-    functionName: HandleLethalMoveAnimation
+    functionName: HandleUltimateAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -91,8 +91,8 @@ AnimationClip:
     messageOptions: 0
   - time: 0.25
     functionName: OffHitBox
-    data: 
+    data: Ultimate
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 3
+    intParameter: 0
     messageOptions: 0

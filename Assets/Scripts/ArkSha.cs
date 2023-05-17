@@ -41,7 +41,7 @@ public class ArkSha : Fighter
 
 		countStayJumpAttack += Time.deltaTime;
 
-		pressJumpAttack = Input.GetKey(KeySetting.keys[number, 4]);
+		pressJumpAttack = Input.GetKey(KeySetting.keys[(int)fighterPosition, 4]);
 
 		if ((pressJumpAttack ? maxStayJumpAttack : stayJumpAttack) - countStayJumpAttack <= 0 || isGround)
 		{
@@ -100,13 +100,13 @@ public class ArkSha : Fighter
 	/// <summary>
 	/// 궁극기 효과 출력
 	/// </summary>
-    void HandleLethalMoveAnimation()
+    void HandleUltimateAnimation()
     {
 		// 맞았다면
         if (hitUltimate)
         {
 			// 추가타 발생
-			animator.CrossFade("HitLethalMove", 0);
+			animator.CrossFade("HitUltimate", 0);
 
 			// 궁극기 배경화면 활성화
             OnUltimateScreen();
@@ -116,7 +116,7 @@ public class ArkSha : Fighter
         else
         {
 			// 궁극기 종료 애니메이션 출력
-			animator.CrossFade("MissLethalMove", 0);
+			animator.CrossFade("MissUltimate", 0);
         }
     }
 }

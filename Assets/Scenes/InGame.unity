@@ -4982,14 +4982,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99301bd5ae7b33c4bbd208c6e36b867b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speero: {fileID: 3434485483101110125, guid: c58623fc1b7e05542b357dd60f648bef, type: 3}
-  arksha: {fileID: 8457836882072688806, guid: aa46fdb9ba522204d873dd4860e79ad0, type: 3}
+  fighters:
+  - {fileID: 3434485483101110125, guid: c58623fc1b7e05542b357dd60f648bef, type: 3}
+  - {fileID: 8457836882072688806, guid: aa46fdb9ba522204d873dd4860e79ad0, type: 3}
   timerText: {fileID: 1271210310}
   roundStateText: {fileID: 1496612944}
   HPBar1: {fileID: 1674688016}
   HPBar2: {fileID: 184813863}
-  FPBar1: {fileID: 1432867063}
-  FPBar2: {fileID: 1845167342}
+  ultimateGageBar1: {fileID: 1654945609}
+  ultimateGageBar2: {fileID: 1305900433}
   roundTime: 60
 --- !u!4 &1590721760
 Transform:

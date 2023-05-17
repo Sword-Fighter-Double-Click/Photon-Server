@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Realtime;
 
 public class FightManager : MonoBehaviour
 {
@@ -9,12 +11,11 @@ public class FightManager : MonoBehaviour
     public static int fighter2CharacterNumber = 1;
 
     [Header("Cashing")]
-    [SerializeField] private GameObject speero;
-    [SerializeField] private GameObject arksha;
+    [SerializeField] private List<GameObject> fighters = new List<GameObject>();
 
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI roundStateText;
-    [SerializeField] private Image HPBar1, HPBar2, FPBar1, FPBar2;
+    [SerializeField] private Image HPBar1, HPBar2, ultimateGageBar1, ultimateGageBar2;
 
     [Header("Value")]
     [SerializeField] private int roundTime = 60;
@@ -29,32 +30,15 @@ public class FightManager : MonoBehaviour
 
     private void Start()
     {
-        switch (fighter1CharacterNumber)
-        {
-            case 0:
-                player1 = Instantiate(speero).GetComponent<Fighter>();
-                break;
-            case 1:
-                player1 = Instantiate(arksha).GetComponent<Fighter>();
-                break;
-        }
-
-        switch (fighter2CharacterNumber)
-        {
-            case 0:
-                player2 = Instantiate(speero).GetComponent<Fighter>();
-                break;
-            case 1:
-                player2 = Instantiate(arksha).GetComponent<Fighter>();
-                break;
-        }
+        player1 = Instantiate(fighters[fighter1CharacterNumber]).GetComponent<Fighter>();
+        player2 = Instantiate(fighters[fighter2CharacterNumber]).GetComponent<Fighter>();
 
         player1.tag = "Player1";
-        player1.enemyFighter = player2;
+        player1.SetEnemyFighter(player2);
         player1.SettingUI();
 
         player2.tag = "Player2";
-        player2.enemyFighter = player1;
+        player2.SetEnemyFighter(player1);
         player2.SettingUI();
 
         StartCoroutine(NewRound());

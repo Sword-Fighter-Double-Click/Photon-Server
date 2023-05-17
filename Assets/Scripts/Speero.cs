@@ -4,7 +4,7 @@ using UnityEngine;
 public class Speero : Fighter
 {
 	[Header("Speero Object")]
-	[SerializeField] GameObject lethalMoveAnimation;
+	[SerializeField] private GameObject ultimateAnimation;
 
 	// 점프공격 시 얼마나 이동하는지를 정하는 변수
 	[Header("Speero Value")]
@@ -34,7 +34,7 @@ public class Speero : Fighter
 				
 				SetPlayerVisible(1);
 				
-				OffLethalMoveScreen();
+				OffUltimateScreen();
 				
 				// IDLE 상태로 초기화
 				fighterAction = FighterAction.None;
@@ -87,7 +87,7 @@ public class Speero : Fighter
 			usingLethalMoveAnimation = true;
 
 			// 애니메이션 오브젝트 생성
-			lethalMoveAnimationClone = Instantiate(lethalMoveAnimation);
+			lethalMoveAnimationClone = Instantiate(ultimateAnimation);
 			
 			// 캐릭터 이미지 비활성화
 			SetPlayerVisible(0);

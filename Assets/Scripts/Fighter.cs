@@ -9,15 +9,21 @@ public abstract class Fighter : MonoBehaviour
 {
     public enum FighterAction
     {
-        None = 0,
-        Hit = 1,
-        Jump = 2,
-        Guard = 3,
-        Attack = 4,
-        ChargedAttack = 5,
-        JumpAttack = 6,
-        Ultimate = 7
+        None,
+        Hit,
+        Jump,
+        Guard,
+        Attack,
+        ChargedAttack,
+        JumpAttack,
+        Ultimate
     };
+
+    public enum FighterPosition
+    {
+        Left,
+        Right
+    }
 
     [Header("Caching")]
     [SerializeField] private Image HPBar;
@@ -26,9 +32,9 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField] private AnimationClip ultimate;
 
     // 기존 에셋에 있던 먼지 효과 프리팹 오브젝트
-    [SerializeField] private GameObject m_RunStopDust;
-    [SerializeField] private GameObject m_JumpDust;
-    [SerializeField] private GameObject m_LandingDust;
+    //[SerializeField] private GameObject m_RunStopDust;
+    //[SerializeField] private GameObject m_JumpDust;
+    //[SerializeField] private GameObject m_LandingDust;
 
     [Header("Action")]
     // Attack, None, Guard와 같이 플레이어의 상태를 지정하는 변수
@@ -36,13 +42,13 @@ public abstract class Fighter : MonoBehaviour
 
     [Header("Value")]
     // 0번은 왼쪽 플레이어, 1번은 오른쪽 플레이어로 지정됨
-    protected int number = 0;
+    protected FighterPosition fighterPosition;
     /// <summary>
     /// 키 입력 여부를 정하는 변수
     /// </summary>
     [SerializeField] private bool canInput = true;
     // 상대 캐릭터 클래스 저장 변수
-    [HideInInspector] public Fighter enemyFighter;
+    private Fighter enemyFighter;
 
     // 최대 속도, 점프 높이, 카운터 데미지 배율, 공격 데미지, 가드 시 데미지 감소율 등등 여러 스테이터스 값을 저장하는 변수들
     [Header("Stats")]
@@ -170,11 +176,11 @@ public abstract class Fighter : MonoBehaviour
 
         if (CompareTag("Player1"))
         {
-            number = 0;
+            fighterPosition = FighterPosition.Left;
         }
         else if(CompareTag("Player2"))
         {
-            number = 1;
+            fighterPosition = FighterPosition.Right;
         }
 
         // 공격판정 초기화
@@ -185,6 +191,11 @@ public abstract class Fighter : MonoBehaviour
 
         // rigidbody 초기화
         rigidBody.velocity = Vector3.zero;
+    }
+
+    public void SetEnemyFighter(Fighter fighter)
+    {
+        enemyFighter = fighter;
     }
 
     /// <summary>
@@ -275,21 +286,30 @@ public abstract class Fighter : MonoBehaviour
 
     #region HandleHitBox
     /// <summary>
-    /// 인자 내 정수값에 해당하는 공격 판정 collider 활성화
+    /// 인자 내 문자열에 해당하는 공격 판정 collider 활성화 및 비활성화 설정
     /// </summary>
-    /// <param name="number"></param>
-    void OnHitBox(int number)
+    /// <param name="action"></param>
+    /// <param name="enable"></param>
+    void OnHitBox(FighterAction action)
     {
-        skills[number].colliderEnabled = true;
+        skills[(int)action].colliderEnabled = true;
     }
 
-    /// <summary>
-    /// 인자 내 정수값에 해당하는 공격 판정 collider 비활성화
-    /// </summary>
-    /// <param name="number"></param>
-    void OffHitBox(int number)
+    void OffHitBox(FighterAction action)
     {
-        skills[number].colliderEnabled = false;
+        skills[(int)action].colliderEnabled = false;
+    }
+
+    void OnHitBox(string value)
+    {
+        int string2Number = (int)(FighterAction)Enum.Parse(typeof(FighterAction), value);
+        skills[string2Number].colliderEnabled = true;
+    }
+
+    void OffHitBox(string value)
+    {
+        int string2Number = (int)(FighterAction)Enum.Parse(typeof(FighterAction), value);
+        skills[string2Number].colliderEnabled = false;
     }
     #endregion
 
@@ -315,8 +335,8 @@ public abstract class Fighter : MonoBehaviour
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Jump)) return;
 
         // 키 입력 여부 저장
-        bool inputRight = Input.GetKey(KeySetting.keys[number, 3]);
-        bool inputLeft = Input.GetKey(KeySetting.keys[number, 1]);
+        bool inputRight = Input.GetKey(KeySetting.keys[(int)fighterPosition, 3]);
+        bool inputLeft = Input.GetKey(KeySetting.keys[(int)fighterPosition, 1]);
 
         // 방향 설정 및 저장
         int direction = (inputLeft ? -1 : 0) + (inputRight ? 1 : 0);
@@ -342,7 +362,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[number, 0]))
+        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 0]))
         {
             // 벽끼임 방지를 위해 마찰력 0으로 설정
             //rigidBody.sharedMaterial.friction = 0;
@@ -368,13 +388,13 @@ public abstract class Fighter : MonoBehaviour
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Guard)) return;
 
         // 키를 누르고 있으면 가드 활성화, 떼면 가드 비활성화
-        if (Input.GetKey(KeySetting.keys[number, 2]))
+        if (Input.GetKey(KeySetting.keys[(int)fighterPosition, 2]))
         {
             fighterAction = FighterAction.Guard;
 
             animator.CrossFade("Guard", 0f);
         }
-        else if (Input.GetKeyUp(KeySetting.keys[number, 2]))
+        else if (Input.GetKeyUp(KeySetting.keys[(int)fighterPosition, 2]))
         {
             fighterAction = FighterAction.None;
             animator.SetTrigger("UnGuard");
@@ -391,7 +411,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[number, 4]))
+        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 4]))
         {
             fighterAction = FighterAction.Attack;
 
@@ -409,7 +429,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[number, 5]))
+        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 5]))
         {
             fighterAction = FighterAction.ChargedAttack;
 
@@ -427,7 +447,7 @@ public abstract class Fighter : MonoBehaviour
         // 점프 상태에서만 함수 진입
         if (fighterAction != FighterAction.Jump) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[number, 4]))
+        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 4]))
         {
             fighterAction = FighterAction.JumpAttack;
 
@@ -445,7 +465,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에서만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[number, 6]))
+        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 6]))
         {
             if (currentUltimateGage < status.ultimateGage) return;
 
@@ -479,10 +499,7 @@ public abstract class Fighter : MonoBehaviour
         else
         {
             // 현재 공격 중단
-            for (int count = 0; count < skills.Length; count++)
-            {
-                OffHitBox(count);
-            }
+            OffHitBox(fighterAction);
             animator.CrossFade("Hit", 0);
             SetAction(FighterAction.Hit);
             // 입력 불가 시간 설정
@@ -511,15 +528,15 @@ public abstract class Fighter : MonoBehaviour
 
     #region Action Effect
     // 에셋 먼지 효과 함수
-    private void SpawnDustEffect(GameObject dust, float dustXOffset = 0)
-    {
-        if (dust != null)
-        {
-            Vector3 dustSpawnPosition = transform.position + new Vector3(dustXOffset * facingDirection, 0f, 0f);
-            GameObject newDust = Instantiate(dust, dustSpawnPosition, Quaternion.identity);
-            newDust.transform.localScale = newDust.transform.localScale.x * new Vector3(facingDirection, 1, 1);
-        }
-    }
+    //private void SpawnDustEffect(GameObject dust, float dustXOffset = 0)
+    //{
+    //    if (dust != null)
+    //    {
+    //        Vector3 dustSpawnPosition = transform.position + new Vector3(dustXOffset * facingDirection, 0f, 0f);
+    //        GameObject newDust = Instantiate(dust, dustSpawnPosition, Quaternion.identity);
+    //        newDust.transform.localScale = newDust.transform.localScale.x * new Vector3(facingDirection, 1, 1);
+    //    }
+    //}
 
     //void AE_runStop()
     //{
@@ -558,7 +575,7 @@ public abstract class Fighter : MonoBehaviour
     /// <summary>
     /// 궁극기 이미지 비활성화
     /// </summary>
-    protected void OffLethalMoveScreen()
+    protected void OffUltimateScreen()
     {
         //Destroy(ultimateScreenClone);
     }

@@ -285,31 +285,33 @@ public abstract class Fighter : MonoBehaviour
 #endregion
 
     #region HandleHitBox
+
     /// <summary>
-    /// 인자 내 문자열에 해당하는 공격 판정 collider 활성화 및 비활성화 설정
+    /// 인자 내 문자열에 해당하는 공격 판정 collider 활성화 설정
     /// </summary>
-    /// <param name="action"></param>
-    /// <param name="enable"></param>
-    void OnHitBox(FighterAction action)
-    {
-        skills[(int)action].colliderEnabled = true;
-    }
-
-    void OffHitBox(FighterAction action)
-    {
-        skills[(int)action].colliderEnabled = false;
-    }
-
+    /// <param name="value"></param>
     void OnHitBox(string value)
     {
-        int string2Number = (int)(FighterAction)Enum.Parse(typeof(FighterAction), value);
-        skills[string2Number].colliderEnabled = true;
+        for (int count = 0; count < skills.Length; count++)
+        {
+            if (skills[count].name.Equals(value))
+            {
+                skills[count].colliderEnabled = true;
+                print("!!!");
+            }
+        }
     }
 
     void OffHitBox(string value)
     {
-        int string2Number = (int)(FighterAction)Enum.Parse(typeof(FighterAction), value);
-        skills[string2Number].colliderEnabled = false;
+        for (int count = 0; count < skills.Length; count++)
+        {
+            if (skills[count].name.Equals(value))
+            {
+                skills[count].colliderEnabled = false;
+                print("...");
+            }
+        }
     }
     #endregion
 
@@ -499,7 +501,7 @@ public abstract class Fighter : MonoBehaviour
         else
         {
             // 현재 공격 중단
-            OffHitBox(fighterAction);
+            OffHitBox(fighterAction.ToString());
             animator.CrossFade("Hit", 0);
             SetAction(FighterAction.Hit);
             // 입력 불가 시간 설정
@@ -589,9 +591,20 @@ public abstract class Fighter : MonoBehaviour
     /// <returns></returns>
     private bool SearchFighterWithinRange(BoxCollider searchRange)
     {
-        int count = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size /2, new Collider[2],Quaternion.identity,LayerMask.GetMask("Player"));
-
+        int count = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size/2, new Collider[2],Quaternion.identity,LayerMask.GetMask("Player"));
+        print(count);
+        //RaycastHit[] raycastHits = Physics.BoxCastAll(searchRange.center, searchRange.size / 2, Vector3.right * facingDirection, Quaternion.identity, LayerMask.GetMask("Player"));
         return count > 1;
+        /*print(raycastHits.Length);
+        foreach(RaycastHit raycastHit in raycastHits)
+        {
+            if (raycastHit.collider == enemyFighter.GetComponent<CapsuleCollider>())
+            {
+                return true;
+            }
+        }
+
+        return false;*/
     }
 
     /// <summary>

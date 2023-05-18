@@ -228,8 +228,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1768804, y: 2.9368265, z: 1}
-  m_Center: {x: 0.8641779, y: 0.28245372, z: 0}
+  m_Size: {x: 2.1768804, y: 2.6230474, z: 1}
+  m_Center: {x: 0.8641779, y: 0.4393589, z: 0}
 --- !u!1 &7158722240959969977
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,8 +273,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6672144, y: 1.8675389, z: 1}
-  m_Center: {x: 0.62471664, y: 0.40350288, z: 0}
+  m_Size: {x: 1.6672144, y: 3.3298907, z: 1}
+  m_Center: {x: 0.62471664, y: -0.32767248, z: 0}
 --- !u!1 &7312509891198960460
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,12 +373,8 @@ MonoBehaviour:
   FPBar: {fileID: 0}
   ultimateScreen: {fileID: 0}
   ultimate: {fileID: 7400000, guid: 7f96d8d6b9d4c5848a7a54180528df57, type: 2}
-  m_RunStopDust: {fileID: 7310271610845027193, guid: 39afca3c109b26049a80bc07593eb271, type: 3}
-  m_JumpDust: {fileID: 8935918012585647707, guid: 4a4123fbc8b39d441868897a71d2b2b1, type: 3}
-  m_LandingDust: {fileID: 9076098953984712191, guid: 0b745be9abb3a6d4dadd8705950196d1, type: 3}
   fighterAction: 0
   canInput: 1
-  enemyFighter: {fileID: 0}
   currentHP: 0
   currentUltimateGage: 0
   status:
@@ -395,12 +391,12 @@ MonoBehaviour:
     absorptionRate: 0.95
     colliderEnabled: 0
     collider: {fileID: 4134549386284330589}
-  - name: Charged Attack
+  - name: ChargedAttack
     damage: 12
     absorptionRate: 0.75
     colliderEnabled: 0
     collider: {fileID: 1514918343057333582}
-  - name: Jump Attack
+  - name: JumpAttack
     damage: 15
     absorptionRate: 0.75
     colliderEnabled: 0

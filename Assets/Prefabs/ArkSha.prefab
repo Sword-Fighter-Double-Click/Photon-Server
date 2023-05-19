@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1304853206678221092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6565953571431412199}
+  - component: {fileID: 8079202875153189763}
+  m_Layer: 7
+  m_Name: 1_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6565953571431412199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304853206678221092}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4570151143123529479}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8079202875153189763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304853206678221092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8390331, y: 2.8639686, z: 1}
+  m_Center: {x: -0.07818572, y: 0.73685426, z: 0}
 --- !u!1 &4137054400110192693
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +56,7 @@ GameObject:
   - component: {fileID: 915409985436445006}
   - component: {fileID: 4134549386284330589}
   m_Layer: 7
-  m_Name: 1
+  m_Name: 1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,8 +88,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7495787, y: 0.15516505, z: 1}
-  m_Center: {x: 0.18616426, y: 0.3163769, z: 0}
+  m_Size: {x: 3.0630996, y: 1.0007977, z: 1}
+  m_Center: {x: 0.47456503, y: -0.45045942, z: 0}
 --- !u!1 &4570151142896927381
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +178,7 @@ Transform:
   m_Children:
   - {fileID: 4570151143426128072}
   - {fileID: 915409985436445006}
+  - {fileID: 6565953571431412199}
   - {fileID: 2932499914427976664}
   - {fileID: 1526760552715123891}
   - {fileID: 967344547214550754}
@@ -215,7 +261,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4570151143123529479}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2060392006560769050
 BoxCollider:
@@ -260,7 +306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4570151143123529479}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3780888692363842635
 BoxCollider:
@@ -305,7 +351,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4570151143123529479}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1514918343057333582
 BoxCollider:
@@ -375,8 +421,10 @@ MonoBehaviour:
   ultimate: {fileID: 7400000, guid: 7f96d8d6b9d4c5848a7a54180528df57, type: 2}
   fighterAction: 0
   canInput: 1
+  isDead: 0
   currentHP: 0
   currentUltimateGage: 0
+  currentSpeed: 0
   status:
     HP: 100
     ultimateGage: 0
@@ -387,10 +435,15 @@ MonoBehaviour:
     guardKnockBackPower: 5
   skills:
   - name: Attack
-    damage: 6
+    damage: 10
     absorptionRate: 0.95
     colliderEnabled: 0
     collider: {fileID: 4134549386284330589}
+  - name: Attack2
+    damage: 12
+    absorptionRate: 0.95
+    colliderEnabled: 0
+    collider: {fileID: 8079202875153189763}
   - name: ChargedAttack
     damage: 12
     absorptionRate: 0.75
@@ -472,7 +525,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 728a7c240959ba74faff43a3817a8e98, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02106cb4fe140f94eb6f17d27e19c984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

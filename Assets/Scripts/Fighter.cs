@@ -21,8 +21,8 @@ public abstract class Fighter : MonoBehaviour
 
     public enum FighterPosition
     {
-        Left,
-        Right
+        Left = -1,
+        Right = 1
     }
 
     [Header("Caching")]
@@ -42,18 +42,21 @@ public abstract class Fighter : MonoBehaviour
 
     [Header("Value")]
     // 0번은 왼쪽 플레이어, 1번은 오른쪽 플레이어로 지정됨
+    protected int fighterNumber;
     protected FighterPosition fighterPosition;
     /// <summary>
     /// 키 입력 여부를 정하는 변수
     /// </summary>
     [SerializeField] private bool canInput = true;
+    public bool isDead = false;
     // 상대 캐릭터 클래스 저장 변수
     private Fighter enemyFighter;
 
     // 최대 속도, 점프 높이, 카운터 데미지 배율, 공격 데미지, 가드 시 데미지 감소율 등등 여러 스테이터스 값을 저장하는 변수들
     [Header("Stats")]
-    public float currentHP;
+    [SerializeField] private float currentHP;
     public float currentUltimateGage;
+    [SerializeField] private float currentSpeed;
     [SerializeField] protected FighterStatus status;
     [SerializeField] protected FighterSkill[] skills = new FighterSkill[5];
 
@@ -62,6 +65,14 @@ public abstract class Fighter : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     private Sensor groundSensor;
     protected AudioSource audioSource;
+
+    private int attackCount = 1;
+    private float watingTimeToNextAttack = 0.3f;
+    private float countWatingTimeToNextAttack;
+    private int run;
+    private int backDash;
+    private float walkPressTime = 0.2f;
+    private float countWalkPressTime;
     //private FighterAudio fighterAudio;
 
     /// <summary>
@@ -82,6 +93,7 @@ public abstract class Fighter : MonoBehaviour
     protected bool hitUltimate;
 
     private GameObject ultimateScreenClone;
+    private PhysicMaterial physicMaterial;
 
     private void Awake()
     {
@@ -91,11 +103,16 @@ public abstract class Fighter : MonoBehaviour
         //fighterAudio = transform.Find("Audio").GetComponent<FighterAudio>();
         groundSensor = GetComponentInChildren<Sensor>();
         audioSource = Camera.main.GetComponent<AudioSource>();
+        physicMaterial = GetComponentInChildren<CapsuleCollider>().material;
+
+        currentSpeed = status.speed;
     }
 
     // 자식 클래스에서도 쓸 수 있도록 추상화
     protected virtual void Update()
     {
+        SetPositionWithEnemyFighter();
+
         HandleCantInputTime(Time.deltaTime);
 
         Death();
@@ -108,7 +125,13 @@ public abstract class Fighter : MonoBehaviour
 
         Jump();
 
-        Movement();
+        Move();
+
+        Turn();
+
+        Run();
+
+        BackDash();
 
         Guard();
 
@@ -171,15 +194,18 @@ public abstract class Fighter : MonoBehaviour
         animator.SetInteger("FacingDirection", 0);
         currentHP = status.HP;
         currentUltimateGage = 0;
+        isDead = false;
         SetAction(FighterAction.None);
         animator.SetTrigger("Reset");
 
         if (CompareTag("Player1"))
         {
+            fighterNumber = 0;
             fighterPosition = FighterPosition.Left;
         }
-        else if(CompareTag("Player2"))
+        else if (CompareTag("Player2"))
         {
+            fighterNumber = 1;
             fighterPosition = FighterPosition.Right;
         }
 
@@ -198,6 +224,11 @@ public abstract class Fighter : MonoBehaviour
         enemyFighter = fighter;
     }
 
+    private void SetPositionWithEnemyFighter()
+    {
+        fighterPosition = enemyFighter.transform.position.x > transform.position.x ? FighterPosition.Left : FighterPosition.Right;
+    }
+
     /// <summary>
     /// 그라운드 체크
     /// </summary>
@@ -205,12 +236,11 @@ public abstract class Fighter : MonoBehaviour
     {
         if (!isGround && groundSensor.State())
         {
-            // 마찰력 10으로 설정
-            //rigidBody.sharedMaterial.friction = 10;
             isGround = true;
             fighterAction = FighterAction.None;
             animator.SetBool("Grounded", isGround);
             animator.SetBool("Jump", false);
+            physicMaterial.dynamicFriction = 1;
         }
     }
 
@@ -229,8 +259,6 @@ public abstract class Fighter : MonoBehaviour
     /// <param name="value"></param>
     void SetAction(FighterAction value)
     {
-        //if (value < (int)FighterAction.None && value > (int)FighterAction.Ultimate) return;
-
         fighterAction = value;
     }
 
@@ -282,7 +310,7 @@ public abstract class Fighter : MonoBehaviour
     {
         cantInputTime = float.MaxValue;
     }
-#endregion
+    #endregion
 
     #region HandleHitBox
 
@@ -297,7 +325,6 @@ public abstract class Fighter : MonoBehaviour
             if (skills[count].name.Equals(value))
             {
                 skills[count].colliderEnabled = true;
-                print("!!!");
             }
         }
     }
@@ -309,7 +336,6 @@ public abstract class Fighter : MonoBehaviour
             if (skills[count].name.Equals(value))
             {
                 skills[count].colliderEnabled = false;
-                print("...");
             }
         }
     }
@@ -330,28 +356,97 @@ public abstract class Fighter : MonoBehaviour
     /// <summary>
     /// 이동 및 플레이어 방향 조정
     /// </summary>
-    private void Movement()
+    private void Move()
     {
         if (!canInput) return;
         // IDLE과 점프일 때만 이동 함수 진입
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Jump)) return;
 
         // 키 입력 여부 저장
-        bool inputRight = Input.GetKey(KeySetting.keys[(int)fighterPosition, 3]);
-        bool inputLeft = Input.GetKey(KeySetting.keys[(int)fighterPosition, 1]);
+        bool inputRight = Input.GetKey(KeySetting.keys[fighterNumber, 3]);
+        bool inputLeft = Input.GetKey(KeySetting.keys[fighterNumber, 1]);
 
         // 방향 설정 및 저장
         int direction = (inputLeft ? -1 : 0) + (inputRight ? 1 : 0);
+
         facingDirection = direction;
 
         // 이동 애니메이션 출력
         animator.SetInteger("FacingDirection", facingDirection);
 
-        // 이동 방향에 따라 이미지 방향 설정
-        transform.eulerAngles = (enemyFighter.transform.position.x > transform.position.x ? Vector3.zero : Vector3.up * 180);
-
         // 이동
-        rigidBody.velocity = new Vector3(facingDirection * status.speed, rigidBody.velocity.y);
+        rigidBody.velocity = new Vector3(facingDirection * currentSpeed, rigidBody.velocity.y);
+    }
+
+    private void Turn()
+    {
+        // 이동 방향에 따라 이미지 방향 설정
+        transform.eulerAngles = fighterPosition == FighterPosition.Left ? Vector3.zero : 180 * Vector3.up;
+    }
+
+    private void Run()
+    {
+        if (run == 1 && ((Time.time - countWalkPressTime) > walkPressTime))
+        {
+            run = 0;
+        }
+
+        int keyNumber = fighterPosition == FighterPosition.Left ? 3 : 1;
+
+        if (run == 2 && Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]))
+        {
+            //print("Dash");
+            run = 0;
+            currentSpeed *= 10 / 15f;
+            //rigidBody.AddForce(50 * (int)fighterPosition * Vector3.left, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, keyNumber]))
+        {
+            if (run == 0)
+            {
+                countWalkPressTime = Time.time;
+                run = 1;
+            }
+
+            else if (run == 1 && ((Time.time - countWalkPressTime) < walkPressTime))
+            {
+                run = 2;
+                currentSpeed *= 1.5f;
+            }
+        }
+    }
+
+    private void BackDash()
+    {
+        if (backDash == 1 && ((Time.time - countWalkPressTime) > walkPressTime))
+        {
+            backDash = 0;
+        }
+
+        int keyNumber = fighterPosition == FighterPosition.Left ? 1 : 3;
+
+        if (backDash == 2 && Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]))
+        {
+            //print("Dash");
+            backDash = 0;
+            //rigidBody.AddForce(50 * (int)fighterPosition * Vector3.left, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, keyNumber]))
+        {
+            if (backDash == 0)
+            {
+                countWalkPressTime = Time.time;
+                backDash = 1;
+            }
+
+            else if (backDash == 1 && ((Time.time - countWalkPressTime) < walkPressTime))
+            {
+                backDash = 2;
+                rigidBody.AddForce(50 * (int)fighterPosition * Vector3.right, ForceMode.Impulse);
+            }
+        }
     }
 
     /// <summary>
@@ -364,7 +459,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 0]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 0]))
         {
             // 벽끼임 방지를 위해 마찰력 0으로 설정
             //rigidBody.sharedMaterial.friction = 0;
@@ -376,6 +471,8 @@ public abstract class Fighter : MonoBehaviour
             // 점프
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, status.jumpForce);
             groundSensor.Disable(0.2f);
+
+            physicMaterial.dynamicFriction = 0;
         }
     }
 
@@ -390,13 +487,13 @@ public abstract class Fighter : MonoBehaviour
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Guard)) return;
 
         // 키를 누르고 있으면 가드 활성화, 떼면 가드 비활성화
-        if (Input.GetKey(KeySetting.keys[(int)fighterPosition, 2]))
+        if (Input.GetKey(KeySetting.keys[fighterNumber, 2]))
         {
             fighterAction = FighterAction.Guard;
 
             animator.CrossFade("Guard", 0f);
         }
-        else if (Input.GetKeyUp(KeySetting.keys[(int)fighterPosition, 2]))
+        else if (Input.GetKeyUp(KeySetting.keys[fighterNumber, 2]))
         {
             fighterAction = FighterAction.None;
             animator.SetTrigger("UnGuard");
@@ -412,12 +509,20 @@ public abstract class Fighter : MonoBehaviour
         if (!isGround) return;
         // IDLE 상태에만 함수 진입
         if (fighterAction != FighterAction.None) return;
-
-        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 4]))
+        //공격모션 수정하기
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 4]))
         {
             fighterAction = FighterAction.Attack;
-
-            animator.CrossFade("Attack", 0);
+            if (Time.time - countWatingTimeToNextAttack <= watingTimeToNextAttack)
+            {
+                attackCount = attackCount == 2 ? 1 : attackCount++;
+            }
+            else
+            {
+                attackCount = 1;
+            }
+            animator.CrossFade("Attack" + attackCount, 0);
+            countWatingTimeToNextAttack = Time.time;
         }
     }
 
@@ -431,7 +536,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 5]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 5]))
         {
             fighterAction = FighterAction.ChargedAttack;
 
@@ -449,7 +554,7 @@ public abstract class Fighter : MonoBehaviour
         // 점프 상태에서만 함수 진입
         if (fighterAction != FighterAction.Jump) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 4]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 4]))
         {
             fighterAction = FighterAction.JumpAttack;
 
@@ -467,7 +572,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에서만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[(int)fighterPosition, 6]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 6]))
         {
             if (currentUltimateGage < status.ultimateGage) return;
 
@@ -483,11 +588,13 @@ public abstract class Fighter : MonoBehaviour
     /// 피격 
     /// </summary>
     /// <param name="isGuard"></param>
-    /// <param name="enemyRotationY"></param>
+    /// <param name="facingDirection"></param>
     /// <param name="ultimateCantInputTime"></param>
-    private void Hit(bool isGuard, float enemyRotationY, float ultimateCantInputTime)
+    private void Hit(float damage, bool isGuard, float facingDirection, float ultimateCantInputTime)
     {
-        Vector2 knockBackPath = enemyRotationY == 0 ? Vector2.right : Vector2.left;
+        currentHP -= damage;
+
+        Vector2 knockBackPath = facingDirection * Vector2.right;
 
         // 가드 시 입력 불가와 넉백이 시간이 가드를 안했을 때보다 줄어듭니다.
         // 궁극기는 시전시간이 끝날 때까지 고정적으로 입력을 못하게 만듭니다.
@@ -517,13 +624,12 @@ public abstract class Fighter : MonoBehaviour
     private void Death()
     {
         // HP가 0이 되면 애니메이션을 출력
-        if (currentHP <= 0)
+        if (currentHP <= 0 && !isDead)
         {
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
-            {
-                animator.CrossFade("Death", 0);
-                OffInput();
-            }
+            isDead = true;
+            print("!!!");
+            animator.CrossFade("Death", 0);
+            OffInput();
         }
     }
     #endregion
@@ -591,26 +697,14 @@ public abstract class Fighter : MonoBehaviour
     /// <returns></returns>
     private bool SearchFighterWithinRange(BoxCollider searchRange)
     {
-        int count = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size/2, new Collider[2],Quaternion.identity,LayerMask.GetMask("Player"));
-        print(count);
-        //RaycastHit[] raycastHits = Physics.BoxCastAll(searchRange.center, searchRange.size / 2, Vector3.right * facingDirection, Quaternion.identity, LayerMask.GetMask("Player"));
+        int count = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size / 2, new Collider[2], Quaternion.identity, LayerMask.GetMask("Player"));
         return count > 1;
-        /*print(raycastHits.Length);
-        foreach(RaycastHit raycastHit in raycastHits)
-        {
-            if (raycastHit.collider == enemyFighter.GetComponent<CapsuleCollider>())
-            {
-                return true;
-            }
-        }
-
-        return false;*/
     }
 
     /// <summary>
     /// 적 플레이어에게 데미지를 가하는 함수
     /// </summary>
-    /// <param name="enemyFighter"></param>
+    /// <param name="fighterSkill"></param>
     private void GiveDamage(FighterSkill fighterSkill)
     {
         bool isGuard = false;
@@ -626,7 +720,7 @@ public abstract class Fighter : MonoBehaviour
         // 가드 시 데미지 감소
         if (enemyFighter.fighterAction == FighterAction.Guard)
         {
-            damage = fighterSkill.damage * fighterSkill.absorptionRate / 100;
+            damage = fighterSkill.damage - fighterSkill.damage * fighterSkill.absorptionRate;
 
             isGuard = true;
 
@@ -641,14 +735,13 @@ public abstract class Fighter : MonoBehaviour
         }
 
         // 현재 공격이 궁극기일 시, 시전시간+0.5초의 입력 불가 시간을 적에게 적용한다.
-        float lethalMoveCantInputTime = 0;
+        float ultimateCantInputTime = 0;
         if (fighterAction == FighterAction.Ultimate)
         {
-            lethalMoveCantInputTime = ultimate.length + 0.5f;
+            ultimateCantInputTime = ultimate.length + 0.5f;
         }
 
-        enemyFighter.currentHP -= damage;
-        enemyFighter.Hit(isGuard, transform.rotation.y, lethalMoveCantInputTime);
+        enemyFighter.Hit(damage, isGuard, fighterPosition == FighterPosition.Left ? 1 : -1, ultimateCantInputTime);
 
         currentUltimateGage = Mathf.Clamp(currentUltimateGage + 10, 0, 100);
         enemyFighter.currentUltimateGage = Mathf.Clamp(enemyFighter.currentUltimateGage + 5, 0, 100);

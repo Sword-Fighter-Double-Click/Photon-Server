@@ -41,7 +41,7 @@ public class ArkSha : Fighter
 
 		countStayJumpAttack += Time.deltaTime;
 
-		pressJumpAttack = Input.GetKey(KeySetting.keys[(int)fighterPosition, 4]);
+		pressJumpAttack = Input.GetKey(KeySetting.keys[fighterNumber, 4]);
 
 		if ((pressJumpAttack ? maxStayJumpAttack : stayJumpAttack) - countStayJumpAttack <= 0 || isGround)
 		{

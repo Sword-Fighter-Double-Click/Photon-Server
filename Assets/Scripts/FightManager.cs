@@ -57,11 +57,9 @@ public class FightManager : MonoBehaviour
             roundStarted = false;
         }
 
-        bool player1Lose = player1.currentHP <= 0;
-        bool player2Lose = player2.currentHP <= 0;
-        if (player1Lose || player2Lose)
+        if (player1.isDead || player2.isDead)
         {
-            StartCoroutine(HandlePlayerDeath(player1Lose, player2Lose));
+            StartCoroutine(HandlePlayerDeath(player1.isDead, player2.isDead));
             roundStarted = false;
         }
     }
@@ -74,9 +72,7 @@ public class FightManager : MonoBehaviour
         player2.OffInput();
 
         HPBar1.fillAmount = 1;
-        //FPBar1.fillAmount = 1;
         HPBar2.fillAmount = 1;
-        //FPBar2.fillAmount = 1;
 
         countTime = roundTime;
         timerText.text = countTime.ToString("F0");

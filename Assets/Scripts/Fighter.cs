@@ -195,7 +195,7 @@ public abstract class Fighter : MonoBehaviour
         currentHP = status.HP;
         currentUltimateGage = 0;
         isDead = false;
-        SetAction(FighterAction.None);
+        SetAction(FighterAction.None.ToString());
         animator.SetTrigger("Reset");
 
         if (CompareTag("Player1"))
@@ -257,10 +257,10 @@ public abstract class Fighter : MonoBehaviour
     /// 플레이어의 상태를 정수로 설정
     /// </summary>
     /// <param name="value"></param>
-    void SetAction(FighterAction value)
-    {
-        fighterAction = value;
-    }
+    //void SetAction(FighterAction value)
+    //{
+    //    fighterAction = value;
+    //}
 
     void SetAction(string value)
     {
@@ -507,10 +507,11 @@ public abstract class Fighter : MonoBehaviour
     {
         if (!canInput) return;
         if (!isGround) return;
+
+        if (!Input.GetKeyDown(KeySetting.keys[fighterNumber, 4])) return;
+
         // IDLE 상태에만 함수 진입
-        if (fighterAction != FighterAction.None) return;
-        //공격모션 수정하기
-        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 4]))
+        if (fighterAction == FighterAction.None)
         {
             fighterAction = FighterAction.Attack;
             if (Time.time - countWatingTimeToNextAttack <= watingTimeToNextAttack)
@@ -523,6 +524,10 @@ public abstract class Fighter : MonoBehaviour
             }
             animator.CrossFade("Attack" + attackCount, 0);
             countWatingTimeToNextAttack = Time.time;
+        }
+        else
+        {
+
         }
     }
 
@@ -610,7 +615,7 @@ public abstract class Fighter : MonoBehaviour
             // 현재 공격 중단
             OffHitBox(fighterAction.ToString());
             animator.CrossFade("Hit", 0);
-            SetAction(FighterAction.Hit);
+            SetAction(FighterAction.Hit.ToString());
             // 입력 불가 시간 설정
             cantInputTime = ultimateCantInputTime > 0 ? ultimateCantInputTime : 0.3f;
             // 넉백
@@ -726,7 +731,7 @@ public abstract class Fighter : MonoBehaviour
 
             cantInputTime = 0.5f;
 
-            SetAction(FighterAction.None);
+            SetAction(FighterAction.None.ToString());
         }
         // 적 플레이어가 공격 애니메이션일 시, 카운데 배율을 곱하여 데미지 증가
         else if (!(enemyFighter.fighterAction == FighterAction.None || enemyFighter.fighterAction == FighterAction.Hit))

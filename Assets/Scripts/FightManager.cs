@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class FightManager : MonoBehaviour
 {
-    public static int fighter1CharacterNumber = 1;
+    public static int fighter1CharacterNumber = 0;
     public static int fighter2CharacterNumber = 1;
 
     [Header("Cashing")]

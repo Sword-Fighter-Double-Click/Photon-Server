@@ -116,6 +116,7 @@ MonoBehaviour:
   isDead: 0
   currentHP: 0
   currentUltimateGage: 0
+  currentSpeed: 0
   status:
     HP: 100
     ultimateGage: 0
@@ -210,7 +211,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1938739037, guid: 943b76abc3549664fb3a45ea53adc5ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7150ff4e539b88d45a0bb0623f703988, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

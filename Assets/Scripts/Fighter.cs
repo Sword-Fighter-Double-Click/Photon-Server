@@ -71,6 +71,8 @@ public abstract class Fighter : MonoBehaviour
     private float countWatingTimeToNextAttack;
     private int run;
     private int backDash;
+    private float backDashDelay = 0.75f;
+    private float countBackDashDelay;
     private float walkPressTime = 0.2f;
     private float countWalkPressTime;
     //private FighterAudio fighterAudio;
@@ -375,7 +377,8 @@ public abstract class Fighter : MonoBehaviour
         animator.SetInteger("FacingDirection", facingDirection);
 
         // 이동
-        rigidBody.velocity = new Vector3(facingDirection * currentSpeed, rigidBody.velocity.y);
+        transform.position += new Vector3(facingDirection * currentSpeed,0,0)*Time.deltaTime;
+        //rigidBody.velocity = new Vector3(facingDirection * currentSpeed, rigidBody.velocity.y);
     }
 
     private void Turn()
@@ -393,7 +396,7 @@ public abstract class Fighter : MonoBehaviour
 
         int keyNumber = fighterPosition == FighterPosition.Left ? 3 : 1;
 
-        if (run == 2 && Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]))
+        if ((run == 2 && Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber])) || (run == 2 && !isGround))
         {
             //print("Dash");
             run = 0;
@@ -419,6 +422,14 @@ public abstract class Fighter : MonoBehaviour
 
     private void BackDash()
     {
+        if (!isGround) return;
+
+        if (countBackDashDelay > 0)
+        {
+            countBackDashDelay -= Time.deltaTime;
+            return;
+        }
+
         if (backDash == 1 && ((Time.time - countWalkPressTime) > walkPressTime))
         {
             backDash = 0;
@@ -443,8 +454,9 @@ public abstract class Fighter : MonoBehaviour
 
             else if (backDash == 1 && ((Time.time - countWalkPressTime) < walkPressTime))
             {
-                backDash = 2;
+                backDash = 0;
                 rigidBody.AddForce(50 * (int)fighterPosition * Vector3.right, ForceMode.Impulse);
+                countBackDashDelay = backDashDelay;
             }
         }
     }
@@ -487,10 +499,9 @@ public abstract class Fighter : MonoBehaviour
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Guard)) return;
 
         // 키를 누르고 있으면 가드 활성화, 떼면 가드 비활성화
-        if (Input.GetKey(KeySetting.keys[fighterNumber, 2]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 2]))
         {
             fighterAction = FighterAction.Guard;
-
             animator.CrossFade("Guard", 0f);
         }
         else if (Input.GetKeyUp(KeySetting.keys[fighterNumber, 2]))

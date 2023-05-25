@@ -4,6 +4,7 @@ using UnityEngine;
 public class ArkSha : Fighter
 {
 	[Header("Arksha Value")]
+	[SerializeField] private float ultimatePower = 5;
 	// 점프공격 시 얼마나 이동하는지를 정하는 변수
 	[SerializeField] private float jumpAttackUpPower = 5;
 	[SerializeField] private float jumpAttackDownPower = 100;
@@ -94,8 +95,12 @@ public class ArkSha : Fighter
 	/// <param name="path"></param>
 	void MoveDuringJumpAttack(int path)
 	{
-		print(path);
 		rigidBody.AddForce(path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower, ForceMode.Impulse);
+	}
+
+	void MoveDuringUltimate()
+	{
+		rigidBody.AddForce(Vector3.up * ultimatePower, ForceMode.Impulse);
 	}
 
 	/// <summary>

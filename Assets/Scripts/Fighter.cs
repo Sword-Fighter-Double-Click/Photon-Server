@@ -29,7 +29,7 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField] private Image HPBar;
     [SerializeField] private Image FPBar;
     [SerializeField] private GameObject ultimateScreen;
-    [SerializeField] private AnimationClip ultimate;
+    [SerializeField] private float ultimateCantInputTime;
 
     // 기존 에셋에 있던 먼지 효과 프리팹 오브젝트
     //[SerializeField] private GameObject m_RunStopDust;
@@ -50,7 +50,7 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField] private bool canInput = true;
     public bool isDead = false;
     // 상대 캐릭터 클래스 저장 변수
-    private Fighter enemyFighter;
+    protected Fighter enemyFighter;
 
     // 최대 속도, 점프 높이, 카운터 데미지 배율, 공격 데미지, 가드 시 데미지 감소율 등등 여러 스테이터스 값을 저장하는 변수들
     [Header("Stats")]
@@ -66,7 +66,9 @@ public abstract class Fighter : MonoBehaviour
     private Sensor groundSensor;
     protected AudioSource audioSource;
 
-    private int attackCount = 1;
+	protected bool counterAttack;
+	private float attackDelay = 0.4f;
+	private float countAttackDelay;
     private bool canNextAttack;
     private int run;
     private int backDash;
@@ -186,7 +188,7 @@ public abstract class Fighter : MonoBehaviour
             {
                 UI = GameObject.FindGameObjectWithTag(temp + "UI").transform;
                 HPBar = UI.Find("HPBar").GetComponent<Image>();
-                FPBar = UI.Find("Ultimate").Find("Empty").GetComponent<Image>();
+                FPBar = UI.Find("Ultimate").Find("Enable").GetComponent<Image>();
             }
         }
     }
@@ -202,7 +204,7 @@ public abstract class Fighter : MonoBehaviour
         currentUltimateGage = 0;
         isDead = false;
         SetAction(FighterAction.None.ToString());
-        animator.SetTrigger("Reset");
+		animator.CrossFade("Reset", 0);
 
         if (CompareTag("Player1"))
         {
@@ -261,7 +263,7 @@ public abstract class Fighter : MonoBehaviour
 
     private void SetVelocityX()
     {
-        animator.SetFloat("VelocityX", rigidBody.velocity.x);
+        animator.SetFloat("VelocityX", Mathf.Abs(rigidBody.velocity.x));
     }
 
     /// <summary>
@@ -296,6 +298,11 @@ public abstract class Fighter : MonoBehaviour
             canInput = true;
         }
     }
+
+	void SetAttackDelay(float value)
+	{
+		countAttackDelay = value;
+	}
 
     /// <summary>
     /// 입력 불가 시간 설정
@@ -380,7 +387,7 @@ public abstract class Fighter : MonoBehaviour
     private void Move()
     {
         if (!canInput) return;
-        if (rigidBody.velocity.x > 0.1f) return;
+        if (Mathf.Abs(rigidBody.velocity.x) > 0.1f) return;
         // IDLE과 점프일 때만 이동 함수 진입
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Jump)) return;
 
@@ -421,6 +428,7 @@ public abstract class Fighter : MonoBehaviour
             //print("Dash");
             run = 0;
             currentSpeed *= 10 / 15f;
+			animator.SetBool("Run", false);
             //rigidBody.AddForce(50 * (int)fighterPosition * Vector3.left, ForceMode.Impulse);
         }
 
@@ -436,6 +444,8 @@ public abstract class Fighter : MonoBehaviour
             {
                 run = 2;
                 currentSpeed *= 1.5f;
+
+				animator.SetBool("Run", true);
             }
         }
     }
@@ -538,8 +548,14 @@ public abstract class Fighter : MonoBehaviour
     /// </summary>
     private void Attack()
     {
-        if (!canInput) return;
+		if (countAttackDelay > 0)
+		{
+			countAttackDelay -= Time.deltaTime;
+			return;
+		}
+
         if (!isGround) return;
+        if (!canInput) return;
 
         if (!Input.GetKeyDown(KeySetting.keys[fighterNumber, 4])) return;
 
@@ -555,6 +571,7 @@ public abstract class Fighter : MonoBehaviour
             {
                 animator.CrossFade("Attack2", 0);
                 canNextAttack = false;
+				countAttackDelay = attackDelay;
             }
         }
     }
@@ -660,7 +677,6 @@ public abstract class Fighter : MonoBehaviour
         if (currentHP <= 0 && !isDead)
         {
             isDead = true;
-            print("!!!");
             animator.CrossFade("Death", 0);
             OffInput();
         }
@@ -765,19 +781,20 @@ public abstract class Fighter : MonoBehaviour
         else if (!(enemyFighter.fighterAction == FighterAction.None || enemyFighter.fighterAction == FighterAction.Hit))
         {
             damage *= status.counterDamageRate;
+			counterAttack = true;
         }
 
         // 현재 공격이 궁극기일 시, 시전시간+0.5초의 입력 불가 시간을 적에게 적용한다.
-        float ultimateCantInputTime = 0;
+        float ucit = 0;
         if (fighterAction == FighterAction.Ultimate)
         {
-            ultimateCantInputTime = ultimate.length + 0.5f;
+			ucit = ultimateCantInputTime;
         }
 
-        enemyFighter.Hit(damage, isGuard, fighterPosition == FighterPosition.Left ? 1 : -1, ultimateCantInputTime);
+        enemyFighter.Hit(damage, isGuard, fighterPosition == FighterPosition.Left ? 1 : -1, ucit);
 
-        currentUltimateGage = Mathf.Clamp(currentUltimateGage + 10, 0, 100);
-        enemyFighter.currentUltimateGage = Mathf.Clamp(enemyFighter.currentUltimateGage + 5, 0, 100);
+        currentUltimateGage = Mathf.Clamp(currentUltimateGage + 10, 0, status.ultimateGage);
+        enemyFighter.currentUltimateGage = Mathf.Clamp(enemyFighter.currentUltimateGage + 5, 0, status.ultimateGage);
     }
     #endregion
 }

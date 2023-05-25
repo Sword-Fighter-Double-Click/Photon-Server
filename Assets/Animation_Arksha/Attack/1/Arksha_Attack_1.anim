@@ -110,6 +110,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.5
+    functionName: SetAttackDelay
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.2
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
     functionName: SetAction
     data: None
     objectReferenceParameter: {fileID: 0}

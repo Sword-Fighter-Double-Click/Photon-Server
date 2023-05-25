@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.8390331, y: 2.8639686, z: 1}
-  m_Center: {x: -0.07818572, y: 0.73685426, z: 0}
+  m_Size: {x: 3.3757963, y: 2.6476593, z: 1}
+  m_Center: {x: -0.101735756, y: 0.6346232, z: 0}
 --- !u!1 &4137054400110192693
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
   HPBar: {fileID: 0}
   FPBar: {fileID: 0}
   ultimateScreen: {fileID: 0}
-  ultimate: {fileID: 7400000, guid: 7f96d8d6b9d4c5848a7a54180528df57, type: 2}
+  ultimateCantInputTime: 1
   fighterAction: 0
   canInput: 1
   isDead: 0
@@ -427,20 +427,20 @@ MonoBehaviour:
   currentSpeed: 0
   status:
     HP: 100
-    ultimateGage: 0
+    ultimateGage: 100
     speed: 4.5
     jumpForce: 14
     counterDamageRate: 1.2
-    hitKnockBackPower: 10
-    guardKnockBackPower: 5
+    hitKnockBackPower: 5
+    guardKnockBackPower: 2
   skills:
   - name: Attack1
-    damage: 10
+    damage: 5
     absorptionRate: 0.95
     colliderEnabled: 0
     collider: {fileID: 4134549386284330589}
   - name: Attack2
-    damage: 12
+    damage: 8
     absorptionRate: 0.95
     colliderEnabled: 0
     collider: {fileID: 8079202875153189763}
@@ -459,11 +459,17 @@ MonoBehaviour:
     absorptionRate: 0
     colliderEnabled: 0
     collider: {fileID: 0}
-  - name: Ultimate
-    damage: 35
+  - name: Ultimate1
+    damage: 10
     absorptionRate: 0.5
     colliderEnabled: 0
     collider: {fileID: 2060392006560769050}
+  - name: Ultimate2
+    damage: 25
+    absorptionRate: 0.5
+    colliderEnabled: 0
+    collider: {fileID: 2060392006560769050}
+  ultimatePower: 7
   jumpAttackUpPower: 3
   jumpAttackDownPower: 100
   stayJumpAttack: 0.5
@@ -482,7 +488,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 1
 --- !u!212 &1662246731970078425
 SpriteRenderer:

@@ -16,6 +16,7 @@ public class FightManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI roundStateText;
     [SerializeField] private Image HPBar1, HPBar2, ultimateGageBar1, ultimateGageBar2;
+	[SerializeField] private GameObject[] roundCounters1, roundCounters2;
 
     [Header("Value")]
     [SerializeField] private int roundTime = 60;
@@ -103,14 +104,19 @@ public class FightManager : MonoBehaviour
     {
         if (player1Lose)
         {
+			roundCounters2[player2WinCount].SetActive(true);
             player2WinCount++;
         }
         if (player2Lose)
         {
+			roundCounters1[player1WinCount].SetActive(true);
             player1WinCount++;
         }
 
         roundStateText.text = "Round Set";
+
+		player1.OffInput();
+		player2.OffInput();
 
         yield return new WaitForSeconds(2);
 
@@ -118,12 +124,33 @@ public class FightManager : MonoBehaviour
 
         if (player1WinCount == 3 || player2WinCount == 3)
         {
-            LoadSceneManager.LoadScene("Title");
-            yield break;
+			StartCoroutine(GameEnd());
+			yield break;
         }
 
         StartCoroutine(NewRound());
     }
+
+	private IEnumerator GameEnd()
+	{
+		if (player1WinCount == player2WinCount)
+		{
+			roundStateText.text = "Draw";
+		}
+		else if (player1WinCount == 3)
+		{
+			roundStateText.text = "Player1 Win";
+		}
+		else if (player2WinCount == 3)
+		{
+			roundStateText.text = "Player2 Win";
+		}
+
+		yield return new WaitForSeconds(3);
+
+		LoadSceneManager.LoadScene("Title");
+		yield break;
+	}
 
     private IEnumerator HandleTimesUp()
     {

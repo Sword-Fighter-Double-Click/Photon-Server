@@ -94,6 +94,7 @@ public class ArkSha : Fighter
 	/// <param name="path"></param>
 	void MoveDuringJumpAttack(int path)
 	{
+		print(path);
 		rigidBody.AddForce(path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower, ForceMode.Impulse);
 	}
 
@@ -107,7 +108,7 @@ public class ArkSha : Fighter
         {
 			// 추가타 발생
 			animator.CrossFade("HitUltimate", 0);
-
+			// 애니메이션 공격력 분리!!
 			// 궁극기 배경화면 활성화
             OnUltimateScreen();
 

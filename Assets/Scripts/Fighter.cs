@@ -67,8 +67,7 @@ public abstract class Fighter : MonoBehaviour
     protected AudioSource audioSource;
 
     private int attackCount = 1;
-    private float watingTimeToNextAttack = 0.3f;
-    private float countWatingTimeToNextAttack;
+    private bool canNextAttack;
     private int run;
     private int backDash;
     private float backDashDelay = 0.75f;
@@ -123,11 +122,11 @@ public abstract class Fighter : MonoBehaviour
 
         SetAirspeed();
 
+        SetVelocityX();
+
         HandleUI();
 
         Jump();
-
-        Move();
 
         Turn();
 
@@ -165,6 +164,11 @@ public abstract class Fighter : MonoBehaviour
                 GiveDamage(skill);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     #region HandleValue
@@ -242,7 +246,7 @@ public abstract class Fighter : MonoBehaviour
             fighterAction = FighterAction.None;
             animator.SetBool("Grounded", isGround);
             animator.SetBool("Jump", false);
-            physicMaterial.dynamicFriction = 1;
+            //physicMaterial.dynamicFriction = 1;
         }
     }
 
@@ -253,6 +257,11 @@ public abstract class Fighter : MonoBehaviour
     {
         // airSpeedY가 0 이하가 되면 낙하 애니메이션 출력
         animator.SetFloat("AirSpeedY", rigidBody.velocity.y);
+    }
+
+    private void SetVelocityX()
+    {
+        animator.SetFloat("VelocityX", rigidBody.velocity.x);
     }
 
     /// <summary>
@@ -295,6 +304,16 @@ public abstract class Fighter : MonoBehaviour
     void SetCantInputTime(float value)
     {
         cantInputTime = value;
+    }
+
+    void OnCanNextAttack()
+    {
+        canNextAttack = true;
+    }
+
+    void OffCanNextAttack()
+    {
+        canNextAttack = false;
     }
 
     /// <summary>
@@ -361,6 +380,7 @@ public abstract class Fighter : MonoBehaviour
     private void Move()
     {
         if (!canInput) return;
+        if (rigidBody.velocity.x > 0.1f) return;
         // IDLE과 점프일 때만 이동 함수 진입
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Jump)) return;
 
@@ -422,6 +442,7 @@ public abstract class Fighter : MonoBehaviour
 
     private void BackDash()
     {
+        if (!canInput) return;
         if (!isGround) return;
 
         if (countBackDashDelay > 0)
@@ -455,7 +476,8 @@ public abstract class Fighter : MonoBehaviour
             else if (backDash == 1 && ((Time.time - countWalkPressTime) < walkPressTime))
             {
                 backDash = 0;
-                rigidBody.AddForce(50 * (int)fighterPosition * Vector3.right, ForceMode.Impulse);
+                rigidBody.AddForce(10 * (int)fighterPosition * Vector3.right, ForceMode.Impulse);
+                animator.CrossFade("BackDash", 0f);
                 countBackDashDelay = backDashDelay;
             }
         }
@@ -484,7 +506,7 @@ public abstract class Fighter : MonoBehaviour
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, status.jumpForce);
             groundSensor.Disable(0.2f);
 
-            physicMaterial.dynamicFriction = 0;
+            //physicMaterial.dynamicFriction = 0;
         }
     }
 
@@ -525,20 +547,15 @@ public abstract class Fighter : MonoBehaviour
         if (fighterAction == FighterAction.None)
         {
             fighterAction = FighterAction.Attack;
-            if (Time.time - countWatingTimeToNextAttack <= watingTimeToNextAttack)
-            {
-                attackCount = attackCount == 2 ? 1 : attackCount++;
-            }
-            else
-            {
-                attackCount = 1;
-            }
-            animator.CrossFade("Attack" + attackCount, 0);
-            countWatingTimeToNextAttack = Time.time;
+            animator.CrossFade("Attack1", 0);
         }
-        else
+        else if (fighterAction == FighterAction.Attack)
         {
-
+            if (canNextAttack)
+            {
+                animator.CrossFade("Attack2", 0);
+                canNextAttack = false;
+            }
         }
     }
 

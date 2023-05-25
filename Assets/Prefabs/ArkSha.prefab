@@ -434,7 +434,7 @@ MonoBehaviour:
     hitKnockBackPower: 10
     guardKnockBackPower: 5
   skills:
-  - name: Attack
+  - name: Attack1
     damage: 10
     absorptionRate: 0.95
     colliderEnabled: 0

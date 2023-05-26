@@ -392,8 +392,8 @@ public abstract class Fighter : MonoBehaviour
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Jump)) return;
 
         // 키 입력 여부 저장
-        bool inputRight = Input.GetKey(KeySetting.keys[fighterNumber, 3]);
-        bool inputLeft = Input.GetKey(KeySetting.keys[fighterNumber, 1]);
+        bool inputRight = Input.GetKey(KeySetting.keys[fighterNumber, 3]) || ((CompareTag("Player2") && Input.GetAxisRaw("Horizontal") > 0));
+        bool inputLeft = Input.GetKey(KeySetting.keys[fighterNumber, 1]) || ((CompareTag("Player2") && Input.GetAxisRaw("Horizontal") < 0));
 
         // 방향 설정 및 저장
         int direction = (inputLeft ? -1 : 0) + (inputRight ? 1 : 0);
@@ -423,7 +423,7 @@ public abstract class Fighter : MonoBehaviour
 
         int keyNumber = fighterPosition == FighterPosition.Left ? 3 : 1;
 
-        if ((run == 2 && Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber])) || (run == 2 && !isGround))
+        if ((run == 2 && (Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]) || (CompareTag("Player2") && Input.GetAxisRaw("Horizontal") == 0))) || (run == 2 && !isGround))
         {
             //print("Dash");
             run = 0;
@@ -432,7 +432,7 @@ public abstract class Fighter : MonoBehaviour
             //rigidBody.AddForce(50 * (int)fighterPosition * Vector3.left, ForceMode.Impulse);
         }
 
-        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, keyNumber]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, keyNumber]) || (CompareTag("Player2") && (keyNumber == 3 ? Input.GetAxisRaw("Horizontal") < 0 : Input.GetAxisRaw("Horizontal") > 0)))
         {
             if (run == 0)
             {
@@ -468,14 +468,14 @@ public abstract class Fighter : MonoBehaviour
 
         int keyNumber = fighterPosition == FighterPosition.Left ? 1 : 3;
 
-        if (backDash == 2 && Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]))
+        if (backDash == 2 && (Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]) || (CompareTag("Player2") && Input.GetAxisRaw("Horizontal") == 0)))
         {
             //print("Dash");
             backDash = 0;
             //rigidBody.AddForce(50 * (int)fighterPosition * Vector3.left, ForceMode.Impulse);
         }
 
-        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, keyNumber]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, keyNumber]) || ((CompareTag("Player2") && (keyNumber == 1 ? Input.GetAxisRaw("Horizontal") < 0 : Input.GetAxisRaw("Horizontal") > 0))))
         {
             if (backDash == 0)
             {
@@ -503,7 +503,7 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 상태에만 함수 진입
         if (fighterAction != FighterAction.None) return;
 
-        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 0]))
+        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 0]) || (CompareTag("Player2") && Input.GetAxisRaw("Vertical") > 0))
         {
             // 벽끼임 방지를 위해 마찰력 0으로 설정
             //rigidBody.sharedMaterial.friction = 0;
@@ -530,13 +530,13 @@ public abstract class Fighter : MonoBehaviour
         // IDLE 및 가드 상태에만 함수 진입
         if (!(fighterAction == FighterAction.None || fighterAction == FighterAction.Guard)) return;
 
-        // 키를 누르고 있으면 가드 활성화, 떼면 가드 비활성화
-        if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 2]))
-        {
-            fighterAction = FighterAction.Guard;
-            animator.CrossFade("Guard", 0f);
-        }
-        else if (Input.GetKeyUp(KeySetting.keys[fighterNumber, 2]))
+		// 키를 누르고 있으면 가드 활성화, 떼면 가드 비활성화
+		if (Input.GetKeyDown(KeySetting.keys[fighterNumber, 2]) || (CompareTag("Player2") && Input.GetAxisRaw("Vertical") < 0))
+		{
+			fighterAction = FighterAction.Guard;
+			animator.CrossFade("Guard", 0f);
+		}
+		else if (Input.GetKeyUp(KeySetting.keys[fighterNumber, 2]) || (CompareTag("Player2") && Input.GetAxisRaw("Vertical") == 0))
         {
             fighterAction = FighterAction.None;
             animator.SetTrigger("UnGuard");

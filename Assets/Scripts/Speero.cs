@@ -66,7 +66,7 @@ public class Speero : Fighter
 	void MoveDuringJumpAttack()
 	{
 		animator.SetBool("Jump", false);
-		rigidBody.AddForce(Vector2.down * jumpAttackDownPower + (transform.rotation.y == 0 ? 1 : -1) * jumpAttackRushPower * Vector2.right, ForceMode.Impulse);
+		rigidBody.velocity = Vector2.down * jumpAttackDownPower + (transform.rotation.y == 0 ? 1 : -1) * jumpAttackRushPower * Vector2.right;
 		isGround = true;
 		animator.SetBool("Grounded", true);
 	}

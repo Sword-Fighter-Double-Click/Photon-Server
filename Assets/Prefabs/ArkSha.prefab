@@ -415,10 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05033824c06569c4eb737dd46aff2a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPBar: {fileID: 0}
-  FPBar: {fileID: 0}
-  ultimateScreen: {fileID: 0}
-  ultimateCantInputTime: 1
   fighterAction: 0
   canInput: 1
   isDead: 0
@@ -429,7 +425,7 @@ MonoBehaviour:
     HP: 100
     ultimateGage: 100
     speed: 4.5
-    jumpForce: 14
+    jumpForce: 18
     counterDamageRate: 1.2
     hitKnockBackPower: 5
     guardKnockBackPower: 2
@@ -469,6 +465,11 @@ MonoBehaviour:
     absorptionRate: 0.5
     colliderEnabled: 0
     collider: {fileID: 2060392006560769050}
+  HPBar: {fileID: 0}
+  FPBar: {fileID: 0}
+  ultimateScreen: {fileID: 0}
+  ultimateCantInputTime: 1
+  breakEffect: {fileID: 0}
   ultimatePower: 7
   jumpAttackUpPower: 3
   jumpAttackDownPower: 100

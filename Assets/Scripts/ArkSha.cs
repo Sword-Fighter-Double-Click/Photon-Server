@@ -3,6 +3,8 @@ using UnityEngine;
 // 캐릭터 추상화 클래스 상속으로 아크샤 설계
 public class ArkSha : Fighter
 {
+	[SerializeField] private GameObject breakEffect;
+
 	[Header("Arksha Value")]
 	[SerializeField] private float ultimatePower = 5;
 	// 점프공격 시 얼마나 이동하는지를 정하는 변수
@@ -95,12 +97,12 @@ public class ArkSha : Fighter
 	/// <param name="path"></param>
 	void MoveDuringJumpAttack(int path)
 	{
-		rigidBody.AddForce(path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower, ForceMode.Impulse);
+		rigidBody.velocity = path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower;
 	}
 
 	void MoveDuringUltimate()
 	{
-		rigidBody.AddForce(Vector3.up * ultimatePower, ForceMode.Impulse);
+		rigidBody.velocity = Vector3.up * ultimatePower;
 	}
 
 	/// <summary>
@@ -108,7 +110,7 @@ public class ArkSha : Fighter
 	/// </summary>
     void HandleUltimateAnimation()
     {
-		// 맞았다면
+		// 맞았다면 
         if (hitUltimate)
         {
 			// 추가타 발생

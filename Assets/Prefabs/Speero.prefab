@@ -94,10 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420fb03b3be6c8b43bf9e65c68a65960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPBar: {fileID: 0}
-  FPBar: {fileID: 0}
-  ultimateScreen: {fileID: 0}
-  ultimateCantInputTime: 2.3
   fighterAction: 0
   canInput: 1
   isDead: 0
@@ -107,8 +103,8 @@ MonoBehaviour:
   status:
     HP: 100
     ultimateGage: 100
-    speed: 4.5
-    jumpForce: 14
+    speed: 6
+    jumpForce: 18
     counterDamageRate: 1.2
     hitKnockBackPower: 5
     guardKnockBackPower: 2
@@ -143,8 +139,12 @@ MonoBehaviour:
     absorptionRate: 0
     colliderEnabled: 0
     collider: {fileID: 6299504304819092113}
+  HPBar: {fileID: 0}
+  FPBar: {fileID: 0}
+  ultimateScreen: {fileID: 0}
+  ultimateCantInputTime: 2.3
   ultimateAnimation: {fileID: 7700607198366470405, guid: 494eb1f8d4d668a49975aa5545af1cde, type: 3}
-  jumpAttackRushPower: 5
+  jumpAttackRushPower: 10
   jumpAttackDownPower: 100
 --- !u!54 &3434485483101110124
 Rigidbody:
@@ -203,12 +203,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7150ff4e539b88d45a0bb0623f703988, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48bd0ccc3c66b114e87ea0abf4e0ba8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3, y: 1.2}
+  m_Size: {x: 3.939394, y: 3.6363637}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

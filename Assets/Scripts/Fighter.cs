@@ -12,6 +12,7 @@ public abstract class Fighter : MonoBehaviour
         None,
         Hit,
         Jump,
+        Dash,
         Guard,
         Attack,
         ChargedAttack,
@@ -25,11 +26,6 @@ public abstract class Fighter : MonoBehaviour
         Right = 1
     }
 
-    [Header("Caching")]
-    [SerializeField] private Image HPBar;
-    [SerializeField] private Image FPBar;
-    [SerializeField] private GameObject ultimateScreen;
-    [SerializeField] private float ultimateCantInputTime;
 
     // 기존 에셋에 있던 먼지 효과 프리팹 오브젝트
     //[SerializeField] private GameObject m_RunStopDust;
@@ -60,6 +56,12 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField] protected FighterStatus status;
     [SerializeField] protected FighterSkill[] skills = new FighterSkill[5];
 
+    [Header("Cashing")]
+    [SerializeField] private Image HPBar;
+    [SerializeField] private Image FPBar;
+    [SerializeField] private GameObject ultimateScreen;
+    [SerializeField] private float ultimateCantInputTime;
+
     protected Animator animator;
     protected Rigidbody rigidBody;
     protected SpriteRenderer spriteRenderer;
@@ -72,6 +74,8 @@ public abstract class Fighter : MonoBehaviour
     private bool canNextAttack;
     private int run;
     private int backDash;
+    private float backDashMinTime = 0.75f;
+    private float countBackDashMinTime;
     private float backDashDelay = 0.75f;
     private float countBackDashDelay;
     private float walkPressTime = 0.2f;
@@ -140,7 +144,7 @@ public abstract class Fighter : MonoBehaviour
 
         Attack();
 
-        ChargedAttack();
+        StrongAttack();
 
         JumpAttack();
 
@@ -452,6 +456,12 @@ public abstract class Fighter : MonoBehaviour
 
     private void BackDash()
     {
+        if (countBackDashMinTime > 0)
+        {
+            countBackDashMinTime -= Time.deltaTime;
+            animator.SetFloat("BackDashTime", countBackDashMinTime);
+        }
+        
         if (!canInput) return;
         if (!isGround) return;
 
@@ -468,7 +478,7 @@ public abstract class Fighter : MonoBehaviour
 
         int keyNumber = fighterPosition == FighterPosition.Left ? 1 : 3;
 
-        if (backDash == 2 && (Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]) || (CompareTag("Player2") && Input.GetAxisRaw("Horizontal") == 0)))
+        if (backDash == 2 && Input.GetKeyUp(KeySetting.keys[fighterNumber, keyNumber]) || (CompareTag("Player2") && Input.GetAxisRaw("Horizontal") == 0))
         {
             //print("Dash");
             backDash = 0;
@@ -486,9 +496,11 @@ public abstract class Fighter : MonoBehaviour
             else if (backDash == 1 && ((Time.time - countWalkPressTime) < walkPressTime))
             {
                 backDash = 0;
-                rigidBody.AddForce(10 * (int)fighterPosition * Vector3.right, ForceMode.Impulse);
+                fighterAction = FighterAction.Dash;
+                rigidBody.velocity = 10 * (int)fighterPosition * Vector3.right;
                 animator.CrossFade("BackDash", 0f);
                 countBackDashDelay = backDashDelay;
+                countBackDashMinTime = backDashMinTime;
             }
         }
     }
@@ -579,7 +591,7 @@ public abstract class Fighter : MonoBehaviour
     /// <summary>
     /// 강공격
     /// </summary>
-    private void ChargedAttack()
+    private void StrongAttack()
     {
         if (!canInput) return;
         if (!isGround) return;

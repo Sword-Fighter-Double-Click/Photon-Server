@@ -97,12 +97,14 @@ public class ArkSha : Fighter
 	/// <param name="path"></param>
 	void MoveDuringJumpAttack(int path)
 	{
-		rigidBody.velocity = path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower;
+		//rigidBody.velocity = path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower;
+		velocity = path > 0 ? Vector3.up * jumpAttackUpPower : Vector3.down * jumpAttackDownPower;
 	}
 
 	void MoveDuringUltimate()
 	{
-		rigidBody.velocity = Vector3.up * ultimatePower;
+		//rigidBody.velocity = Vector3.up * ultimatePower;
+		velocity = Vector3.up * ultimatePower;
 	}
 
 	/// <summary>

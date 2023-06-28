@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Arksha_Attack_Jump_1
+  m_Name: Arksha_Run_Start
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: ed52751637a6230468209cb05fdb1aaf, type: 3}
+      value: {fileID: 21300000, guid: ffa55f8ff874acd48a3a64f017dd5195, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: d7c268345b50f2e4fac3e240d07af919, type: 3}
+      value: {fileID: 21300000, guid: 978d608e15f882842a647a15d327ace7, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: ed52751637a6230468209cb05fdb1aaf, type: 3}
-    - {fileID: 21300000, guid: d7c268345b50f2e4fac3e240d07af919, type: 3}
+    - {fileID: 21300000, guid: ffa55f8ff874acd48a3a64f017dd5195, type: 3}
+    - {fileID: 21300000, guid: 978d608e15f882842a647a15d327ace7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

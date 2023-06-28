@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Arksha_Ultimate_2
+  m_Name: Arksha_Run_Stop
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 84d20cc8625320d49a9c6dd31a25345e, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300000, guid: 0398dd8ee2e22cb4fbea793f8ed8d37e, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 9185c8445d0eac74da2b636e4af93102, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: 5012d50667879ec4b9b377ef3e605bd5, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 1e751f66211042446aa1e83b7d41a24a, type: 3}
+      value: {fileID: 21300000, guid: b672144dcc832a1439819bd107434328, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,17 +40,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 84d20cc8625320d49a9c6dd31a25345e, type: 3}
-    - {fileID: 21300000, guid: 0398dd8ee2e22cb4fbea793f8ed8d37e, type: 3}
-    - {fileID: 21300000, guid: 9185c8445d0eac74da2b636e4af93102, type: 3}
-    - {fileID: 21300000, guid: 5012d50667879ec4b9b377ef3e605bd5, type: 3}
-    - {fileID: 21300000, guid: 1e751f66211042446aa1e83b7d41a24a, type: 3}
+    - {fileID: 21300000, guid: b672144dcc832a1439819bd107434328, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4166667
+    m_StopTime: 0.083333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

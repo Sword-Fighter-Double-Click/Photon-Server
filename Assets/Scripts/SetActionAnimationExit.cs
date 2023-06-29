@@ -5,6 +5,7 @@ using UnityEngine;
 public class SetActionAnimationExit : StateMachineBehaviour
 {
     [SerializeField] Fighter.FighterAction setAction;
+    Fighter fighter = null;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -21,7 +22,14 @@ public class SetActionAnimationExit : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Fighter>().fighterAction = setAction;
+        if (fighter == null)
+        {
+            fighter = animator.GetComponent<Fighter>();
+        }
+        if (fighter.fighterAction != Fighter.FighterAction.BackDashAttack)
+        {
+            fighter.fighterAction = setAction;
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

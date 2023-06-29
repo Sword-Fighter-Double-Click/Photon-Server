@@ -813,8 +813,14 @@ public abstract class Fighter : MonoBehaviour
     /// <returns></returns>
     private bool SearchFighterWithinRange(BoxCollider searchRange)
     {
-        int count = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size / 2, new Collider[2], Quaternion.identity, LayerMask.GetMask("Player"));
-        return count > 1;
+        Collider[] colliders = new Collider[2];
+        int count = Physics.OverlapBoxNonAlloc(searchRange.bounds.center, searchRange.bounds.size / 2, colliders, Quaternion.identity, LayerMask.GetMask("Player"));
+        foreach (Collider collider in colliders)
+        {
+            if (collider == null) continue;
+            if (collider.CompareTag(tag)) count--;
+        }
+        return count > 0;
     }
 
     /// <summary>

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6315534527703515433}
   - component: {fileID: 6299504304819092113}
   m_Layer: 7
-  m_Name: 6
+  m_Name: Ultimate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6299504304819092113
 BoxCollider:
@@ -120,7 +120,7 @@ MonoBehaviour:
     colliderEnabled: 0
     collider: {fileID: 1801772194666745664}
   - name: ChargedAttack
-    damage: 10
+    damage: 7
     absorptionRate: 0.85
     colliderEnabled: 0
     collider: {fileID: 6616411511838288075}
@@ -129,6 +129,16 @@ MonoBehaviour:
     absorptionRate: 0.8
     colliderEnabled: 0
     collider: {fileID: 4721957777623338938}
+  - name: AntiAirAttack
+    damage: 5
+    absorptionRate: 0.5
+    colliderEnabled: 0
+    collider: {fileID: 5435487791337212094}
+  - name: BackDashAttack
+    damage: 8
+    absorptionRate: 0.85
+    colliderEnabled: 0
+    collider: {fileID: 8074608399255483293}
   - name: Ultimate1
     damage: 0
     absorptionRate: 0
@@ -147,6 +157,7 @@ MonoBehaviour:
   ultimateAnimation: {fileID: 7700607198366470405, guid: 494eb1f8d4d668a49975aa5545af1cde, type: 3}
   jumpAttackRushPower: 4
   jumpAttackDownPower: 100
+  backDashAttackRushPower: 3
 --- !u!212 &5470124895129570640
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -188,7 +199,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7d428a8ebd7b1a447a5227b17161476d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48bd0ccc3c66b114e87ea0abf4e0ba8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,7 +259,7 @@ GameObject:
   - component: {fileID: 4504688106142081311}
   - component: {fileID: 5435487791337212094}
   m_Layer: 7
-  m_Name: 4
+  m_Name: AntiAirAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +278,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5435487791337212094
 BoxCollider:
@@ -293,7 +304,7 @@ GameObject:
   - component: {fileID: 1050871258396740784}
   - component: {fileID: 8074608399255483293}
   m_Layer: 7
-  m_Name: 5
+  m_Name: BackDashAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +323,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8074608399255483293
 BoxCollider:
@@ -338,7 +349,7 @@ GameObject:
   - component: {fileID: 5762882590011825016}
   - component: {fileID: 4721957777623338938}
   m_Layer: 7
-  m_Name: 3
+  m_Name: JumpAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +368,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4721957777623338938
 BoxCollider:
@@ -383,7 +394,7 @@ GameObject:
   - component: {fileID: 8249379205294205971}
   - component: {fileID: 6616411511838288075}
   m_Layer: 7
-  m_Name: 2
+  m_Name: StrongAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,7 +413,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6616411511838288075
 BoxCollider:
@@ -445,7 +456,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6370564006041248667}
   - {fileID: 6232360679933808261}
   - {fileID: 4297297101469478116}
   - {fileID: 8249379205294205971}
@@ -455,37 +465,6 @@ Transform:
   - {fileID: 6315534527703515433}
   m_Father: {fileID: 912330041762853690}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6370564006041248664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6370564006041248667}
-  m_Layer: 6
-  m_Name: HitBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6370564006041248667
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6370564006041248664}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7178806535258181630
 GameObject:
@@ -498,7 +477,7 @@ GameObject:
   - component: {fileID: 6232360679933808261}
   - component: {fileID: 1085470590837185694}
   m_Layer: 7
-  m_Name: 1_1
+  m_Name: Attack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,7 +496,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1085470590837185694
 BoxCollider:
@@ -601,7 +580,7 @@ GameObject:
   - component: {fileID: 4297297101469478116}
   - component: {fileID: 1801772194666745664}
   m_Layer: 7
-  m_Name: 1_2
+  m_Name: Attack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +599,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6370564005911511316}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1801772194666745664
 BoxCollider:

@@ -11,6 +11,7 @@ public class Speero : Fighter
 	[Header("Speero Value")]
 	[SerializeField] private float jumpAttackRushPower = 30;
 	[SerializeField] private float jumpAttackDownPower = 100;
+	[SerializeField] private float backDashAttackRushPower = 3;
 
 	/// <summary>
 	/// 생성된 궁극기 애니메이션 오브젝트의 데이터를 저장하는 변수
@@ -71,6 +72,11 @@ public class Speero : Fighter
 		isGround = true;
 		animator.SetBool("Grounded", true);
 	}
+
+	void MoveDuringBackDashAttack()
+	{
+        velocity.x -= (int)fighterPosition * backDashAttackRushPower;
+    }
 
 	/// <summary>
 	/// 카운터 데미지 배율 설정

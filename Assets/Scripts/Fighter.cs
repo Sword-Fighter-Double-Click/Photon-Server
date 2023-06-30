@@ -244,6 +244,8 @@ public abstract class Fighter : MonoBehaviour
 
     private void SetPositionWithEnemyFighter()
     {
+        print(enemyFighter.transform.position.x);
+        print(transform.position.x);
         fighterPosition = enemyFighter.transform.position.x > transform.position.x ? FighterPosition.Left : FighterPosition.Right;
     }
 

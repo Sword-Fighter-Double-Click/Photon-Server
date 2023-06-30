@@ -43,6 +43,8 @@ MonoBehaviour:
   - Movement
   - SetFlip
   - Flip
+  - RoundTime
+  - SendClonesValue
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

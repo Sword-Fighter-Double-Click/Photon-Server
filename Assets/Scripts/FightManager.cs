@@ -3,9 +3,11 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor;
 
-public class FightManager : MonoBehaviour
+public class FightManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static int fighter1CharacterNumber = 0;
     public static int fighter2CharacterNumber = 1;
@@ -21,24 +23,29 @@ public class FightManager : MonoBehaviour
     [Header("Value")]
     [SerializeField] private int roundTime = 60;
 
-    private Fighter player1, player2;
-
+    public Fighter player1, player2;
+    public Fighter clone1, clone2;
+   
     private int player1WinCount = 0, player2WinCount = 0;
 
     private float countTime;
 
     private bool roundStarted = false;
 
+    private void Awake()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            player1 = PhotonNetwork.Instantiate(fighters[fighter1CharacterNumber].name, new Vector3(-6, 0, 3), Quaternion.identity).GetComponent<Fighter>();
+            player2 = PhotonNetwork.Instantiate(fighters[fighter2CharacterNumber].name, new Vector3(6, 0, 3), Quaternion.identity).GetComponent<Fighter>();
+        }
+    }
+
     private void Start()
     {
-        player1 = Instantiate(fighters[fighter1CharacterNumber]).GetComponent<Fighter>();
-        player2 = Instantiate(fighters[fighter2CharacterNumber]).GetComponent<Fighter>();
-
-        player1.tag = "Player1";
         player1.SetEnemyFighter(player2);
         player1.SettingUI();
 
-        player2.tag = "Player2";
         player2.SetEnemyFighter(player1);
         player2.SettingUI();
 
@@ -48,9 +55,6 @@ public class FightManager : MonoBehaviour
     private void Update()
     {
         if (!roundStarted) return;
-
-        countTime = Mathf.Clamp(countTime - Time.deltaTime, 0, roundTime);
-        timerText.text = countTime.ToString("F0");
 
         if (countTime <= 0)
         {
@@ -92,7 +96,7 @@ public class FightManager : MonoBehaviour
         player2.OnInput();
 
         roundStateText.text = "Start!";
-        
+
         yield return new WaitForSeconds(0.75f);
 
         roundStateText.text = "";
@@ -161,5 +165,30 @@ public class FightManager : MonoBehaviour
         roundStateText.text = "";
 
         StartCoroutine(NewRound());
+    }
+
+    
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            countTime = Mathf.Clamp(countTime - Time.deltaTime, 0, roundTime);
+            timerText.text = countTime.ToString("F0");
+            stream.SendNext(countTime);
+        }
+        else
+        {
+            countTime = (float)stream.ReceiveNext();
+            print(countTime);
+            timerText.text = countTime.ToString("F0");
+            print(countTime);
+        }
+    }
+
+    [PunRPC]
+    void SendClonesValue(Fighter clone1, Fighter clone2)
+    {
+        player1 = clone1;
+        player2 = clone2;
     }
 }

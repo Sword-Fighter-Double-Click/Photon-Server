@@ -1,20 +1,24 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class LoadSceneManager : MonoBehaviour
+public class LoadSceneManager : MonoBehaviourPunCallbacks
 {
     public static string nextScene;
 
     private void Start()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
+
         StartCoroutine(Loading());
     }
 
     public static void LoadScene(string sceneName)
     {
         nextScene = sceneName;
-        SceneManager.LoadScene("Load");
+        PhotonNetwork.LoadLevel(nextScene);
     }
 
     private IEnumerator Loading()

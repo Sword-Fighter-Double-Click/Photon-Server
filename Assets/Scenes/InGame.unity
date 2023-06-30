@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2007936836}
-  m_IndirectSpecularColor: {r: 0.19557647, g: 0.23695676, b: 0.3105412, a: 1}
+  m_IndirectSpecularColor: {r: 0.19559154, g: 0.23698464, b: 0.31058574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5042,6 +5042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590721760}
   - component: {fileID: 1590721759}
+  - component: {fileID: 1590721761}
   m_Layer: 0
   m_Name: FightManager
   m_TagString: Untagged
@@ -5062,8 +5063,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighters:
-  - {fileID: 3434485483101110125, guid: c58623fc1b7e05542b357dd60f648bef, type: 3}
-  - {fileID: 8457836882072688806, guid: aa46fdb9ba522204d873dd4860e79ad0, type: 3}
+  - {fileID: 3434485483101110125, guid: d2127fb65ee561e4e9872d3b3ebc4463, type: 3}
+  - {fileID: 8457836882072688806, guid: eebdf3577a570e44ebd7778e3476745d, type: 3}
   timerText: {fileID: 1271210310}
   roundStateText: {fileID: 1496612944}
   HPBar1: {fileID: 1674688016}
@@ -5079,6 +5080,8 @@ MonoBehaviour:
   - {fileID: 1032449588}
   - {fileID: 1986279315}
   roundTime: 60
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!4 &1590721760
 Transform:
   m_ObjectHideFlags: 0
@@ -5094,6 +5097,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590721761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590721758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1590721759}
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1592122345
 PrefabInstance:
   m_ObjectHideFlags: 0

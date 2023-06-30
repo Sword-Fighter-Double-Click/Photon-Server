@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ public class Speero : Fighter
 
 	private bool usingUltimateAnimation;
 
-	protected override void Update()
+    protected override void Update()
 	{
 		base.Update();
 

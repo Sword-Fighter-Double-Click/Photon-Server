@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 // 캐릭터 추상화 클래스 상속으로 아크샤 설계
@@ -30,7 +31,7 @@ public class ArkSha : Fighter
 
 	private bool isLethalMove;
 
-	protected override void Update()
+    protected override void Update()
 	{
 		base.Update();
 
